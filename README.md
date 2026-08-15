@@ -1,37 +1,51 @@
 # klua_doc
 
-#### 介绍
-文档仓库
+klua 生态集中文档库 (Obsidian vault). 与 `klb/`、`portfs/` 等代码仓并列; 用户文档逐步自各子项目迁入.
 
-#### 软件架构
-软件架构说明
+## 用途
 
+| 放这里 | 不放这里 |
+|--------|----------|
+| klb / pfs 用户文档, API 说明, 规范镜像, 教程笔记 | 源码, 编译产物 |
+| Obsidian 笔记与附件 (`_assets/`) | `.cursor/skills/*-design` 实现设计 |
 
-#### 安装教程
+## Obsidian
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- Vault 根: 本目录 `klua_doc/`
+- 默认附件: `_assets/` (见 `.obsidian/app.json`)
+- 模板: `_meta/templates/`
 
-#### 使用说明
+## 协议
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+文档正文见 [LICENSE](LICENSE) (CC BY-SA 4.0). 源码协议见各代码仓 `LICENSE` (klb/pfs 为 LGPL-3.0).
 
-#### 参与贡献
+---
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+# 导航
 
+> Vault 总入口. 链接用相对路径 Markdown, 便于 Obsidian / Git / ai 共用.
 
-#### 特技
+## 子项目
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+| 子项目 | 入口 | 代码仓 |
+|--------|------|--------|
+| klb | [klb/readme.md](klb/readme.md) | `klb/` |
+| pfs | [pfs/readme.md](pfs/readme.md) | `portfs/` |
+| 其它 | [misc/readme.md](misc/readme.md) | — |
+
+## 基础设施
+
+| 路径 | 用途 |
+|------|------|
+| [_meta/inbox/](_meta/inbox/readme.md) | 速记收件箱 |
+| [_meta/templates/](_meta/templates/) | Obsidian 笔记模板 |
+| [_meta/tags.md](_meta/tags.md) | 标签约定 |
+| [_assets/](_assets/readme.md) | 附件根 |
+| [licenses/](licenses/readme.md) | 协议副本与索引 |
+
+## 迁移状态
+
+| 来源 | 目标 | 状态 |
+|------|------|------|
+| `klb/bin/klbdocs/` | `klua_doc/klb/` | 已迁入 (`klbdocs/` 仅跳转) |
+| `portfs/docs/` | `klua_doc/pfs/` | 已迁入 |

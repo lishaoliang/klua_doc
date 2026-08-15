@@ -1,0 +1,85 @@
+# require 库清单
+
+> `klua_doc/klb/klua/design/require-guide.md` — 代码: `klb/src_c/klua/klua.c` (`klua_loadlib_all`)
+
+对话问「Lua 有哪些库」→ **本节 §0～§4** 为 klb 默认范畴; §5～§6 视产品而定.
+
+## §0 Lua 5.4 标准库
+
+> 代码: `klb/src_c/klua/lua-5.4.6/src/linit.c` (`luaL_openlibs`)
+
+| 全局名 | 说明 | klb 注意 |
+|--------|------|----------|
+| `_G` | base (print, type, error…) | — |
+| `package` | require, path, loaded | klbcore 依赖 path 配置 |
+| `coroutine` | Lua 内置协程 | **业务勿用**; 用 **`kco`** |
+| `table` | 表操作 | — |
+| `io` | 文件/标准 IO | — |
+| `os` | 时间, 环境, execute 等 | 嵌入式慎用 `os.execute` |
+| `string` | 字符串 | — |
+| `math` | 数学 | — |
+| `utf8` | UTF-8 | — |
+| `debug` | 调试 | — |
+
+## §1 bundled 第三方 (C 预加载)
+
+| require | 裁剪宏 |
+|---------|--------|
+| `cjson`, `cjson.safe` | — |
+| `lfs` | — |
+| `LuaXML_lib` | — |
+| `lpeg` | `__KLB_NO_LPEG__` |
+| `zlib` | `__KLB_NO_ZLIB__` |
+| `lsqlite3` | `__KLB_NO_SQLITE__` |
+
+## §2 klb 自有 k* (C 预加载, 默认全注册)
+
+| 分类 | require | 源码目录 | API 文档 |
+|------|---------|----------|----------|
+| 协程/IPC | `kco`, `klpc` | `klua_base/` | [kco](../k/kco.lua.md), [klpc](../k/klpc.lua.md) |
+| GUI/包 | `kgui`, `kkpa` | `klua_base/` | [kgui](../k/kgui.lua.md); kkpa 待定 |
+| 环境/系统 | `kenv`, `ksys`, `krand`, `kos`, `ktime` | `klua_util/`, `klua_platform/` | [kenv](../k/kenv.lua.md), [ksys](../k/ksys.lua.md), [krand](../k/krand.lua.md), [kos](../k/kos.lua.md), [ktime](../k/ktime.lua.md) |
+| 多线程/容器 | `kthread`, `klist`, `kmcache` | `klua_multithread/` | [kthread](../k/kthread.lua.md) |
+| 网络 | `kurl`, `kmnp`, `ksmp`, `krtsp`, `khttp_flv`, `khttp_mnp`, `kws_flv`, `kws_mnp` | `klua_net/` | [k/net/](k/net/) |
+| 格式 | `kh26x` | `klua_format/` | 待补充 |
+
+**未进 `klua_loadlib_all`**: 如 `krtp`, `kws_rtp` (须产品自行 `klua_loadlib`).
+
+## §3 kpa_* 扩展包
+
+`__KLB_NO_PACKAGES__` 可裁.
+
+`kpa_mgui`, `kpa_http`, `kpa_ws`, `kpa_mnp`, `kpa_flv`, `kpa_sip` — 目录 `klb/src_packages/kpa_*/`; `kpa_rtsp` 已迁 `klb/backup/src_packages/kpa_rtsp/`.
+
+## §4 klbcore 纯 Lua (须 package.path)
+
+| require 前缀 | 路径 | 说明 |
+|--------------|------|------|
+| `klbcore.klbui` | `klbui/` | 声明式 UI; 见 [klbui 文档](../../klbui/readme.md) |
+| `klbcore.klbsmp` | `klbsmp/` | SMP 脚本层; **klb-mnp-smp-design** |
+| `klbcore.klbrtsp` | `klbrtsp/` | RTSP 脚本层; [klbcore/design/net-rtsp.md](../../klbcore/design/net-rtsp.md) |
+| `klbcore.net.http_mime` | `http_mime.lua` | MIME 辅助 |
+
+**已迁 backup**: `klbcore.net.httpc` (`klb/backup/klbcore/net/`); 依赖旧 `khttp` multiplex 绑定.
+| `klbcore.util.*` / `base.*` / `help.*` | `util/`, `base/`, `help/` | 通用与示例桩 |
+
+路径根: `klb/bin/klbcore/` (部署常拷至产品 `bin/klbcore`).
+
+## §5 产品层追加
+
+产品可在 `cb_pre_load` 中追加自有 C 预加载或 `require` 路径. 见 **klb-app-design**.
+
+## §6 其它来源
+
+| 来源 | 说明 |
+|------|------|
+| app **plugins** dll | `klbappex_pre_open` 注入 C 预加载 |
+| 产品 `bin/*lua/` | 业务脚本, `package.path` |
+
+## 加载顺序小结
+
+1. `luaL_openlibs` — §0
+2. `cb_pre_load` — 通常 `klua_loadlib_all` + plugins → §1～§3
+3. 入口脚本配置 `package.path` → §4
+
+预加载机制详 [preload.md](preload.md); 环境生命周期 [lifecycle.md](lifecycle.md).
