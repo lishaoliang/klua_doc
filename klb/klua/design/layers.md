@@ -47,16 +47,16 @@ L0  VM + bundled           lua-5.4.6/ 等        require("cjson") 等
 | `klua_object.h` | L2/L3 | `klb_obj_t` 桥 |
 | `klua_gui.h` 等 | L2 | GUI / multiplex 桥 |
 
-详 [c-env-api.md](c-env-api.md).
+详 [../api/klua_env.md](../api/klua_env.md).
 
 ### B. Lua 脚本 (L3/L6/L7)
 
 | 加载 | 示例 | 文档 |
 |------|------|------|
-| C 预加载 | `require("kco")` | [k/readme.md](k/readme.md) |
-| bundled | `require("cjson")` | [require-guide.md](require-guide.md) |
-| klbcore | `require("klbcore.klbui")` | [klbui/readme.md](../../klbui/readme.md) |
-| klbcore net/rtsp | `require("klbcore.net.*")`, `klbcore.klbrtsp` | [klbcore/design/net-rtsp.md](../../klbcore/design/net-rtsp.md) |
+| C 预加载 | `require("kco")` | [lua/klua/readme.md](../../../lua/klua/readme.md) |
+| bundled | `require("cjson")` | [lua/bundled/readme.md](../../../lua/bundled/readme.md) |
+| klbcore | `require("klbcore.klbui")` | [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) |
+| klbcore net/rtsp | `require("klbcore.net.*")`, `klbcore.klbrtsp` | **klbcore-net-design** |
 
 Lua **不应**直接调用 `klua_env_register_extension`.
 
@@ -68,7 +68,7 @@ Lua **不应**直接调用 `klua_env_register_extension`.
 |----|------|------|
 | A C 预加载 | L0 + L3 | [preload.md](preload.md) |
 | B kpa_* | L0/L3 | [require-guide.md](require-guide.md) |
-| C klbcore | L6 | [klbcore/design/layers.md](../../klbcore/design/layers.md) |
+| C klbcore | L6 | **klbcore-design**; [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) |
 | D env 扩展 | **L2** | [env-extension.md](env-extension.md) |
 | E plugins | L5→A | [plugins.md](../../klbapp/design/plugins.md) |
 
@@ -78,14 +78,14 @@ plugins (如 `libkpfs` / `kpfs`) 走 **L5 注入 L3**, **不进 L2**.
 
 | 需求 | 层 | 做法 | 文档 |
 |------|-----|------|------|
-| 新 Lua 可调 C API | L3 | `klua_open_kxxx` + `klua_loadlib` | 新建 `k/kxxx.lua.md` |
+| 新 Lua 可调 C API | L3 | `klua_open_kxxx` + `klua_loadlib` | 新建 `lua/klua/kxxx.md` |
 | env 级调度/资源 | L2 | `klua_ex_*.c` + register | [env-extension.md](env-extension.md) |
 | 纯业务逻辑 | L6/L7 | klbcore 或产品脚本 | klbcore / 产品 path |
 | 闭源 C dll | L5 | `klbappex_pre_open` | [plugins.md](../../klbapp/design/plugins.md) |
 | 升级 Lua | L0 | vendor 目录 | **klb-vendor-subagents** |
 | C 产品持 env | L1/L5 | `klua_env_*` / klbapp | [lifecycle.md](lifecycle.md) |
-| GUI C 框架 | — | `klb_gui_*`, klbuiex | [klbui/design/layers.md](../../klbui/design/layers.md) |
-| 模块间异步消息 | L2+L3 | `klpc` + `kco` | [k/klpc.lua.md](../k/klpc.lua.md) |
+| GUI C 框架 | — | `klb_gui_*`, klbuiex | [klbgui/design/layers.md](../../klbgui/design/layers.md) |
+| 模块间异步消息 | L2+L3 | `klpc` + `kco` | [lua/klua/klpc.md](../../../lua/klua/klpc.md) |
 
 ## 横切能力
 
@@ -104,7 +104,7 @@ plugins (如 `libkpfs` / `kpfs`) 走 **L5 注入 L3**, **不进 L2**.
 | [preload.md](preload.md) | L0/L3 预加载 |
 | [coroutine.md](coroutine.md) | kco vs `coroutine` |
 | [k-bindings.md](k-bindings.md) | L3 k* 机制 |
-| [k/readme.md](../k/readme.md) | k* API 索引 |
-| [c-env-api.md](c-env-api.md) | L1/L2 C 头导读 |
-| [klbui/design/layers.md](../../klbui/design/layers.md) | klbgui 分层 |
-| [klbcore/design/layers.md](../../klbcore/design/layers.md) | klbcore 域分配 |
+| [lua/klua/readme.md](../../../lua/klua/readme.md) | k* Lua API 索引 |
+| [klua_env.md](../api/klua_env.md) | L1/L2 C 头导读 |
+| [klbgui/design/layers.md](../../klbgui/design/layers.md) | klbgui 分层 |
+| [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) | klbcore 域分配 (**klbcore-design**) |

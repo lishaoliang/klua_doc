@@ -6,10 +6,10 @@
 
 | 类别 | 入口 |
 |------|------|
-| API | [api/readme.md](api/readme.md) |
+| **Lua 脚本文档** | [../lua/readme.md](../lua/readme.md) |
 | app (klbapp) | [klbapp/readme.md](klbapp/readme.md) |
-| GUI (klbui) | [klbui/readme.md](klbui/readme.md) |
-| klbcore 脚本库 | [klbcore/readme.md](klbcore/readme.md) |
+| GUI (klbgui) | [klbgui/readme.md](klbgui/readme.md) |
+| klbcore 脚本库 | [../lua/klbcore/readme.md](../lua/klbcore/readme.md) |
 | klua | [klua/readme.md](klua/readme.md) |
 | 第三方协议副本 | [licenses/readme.md](licenses/readme.md) |
 
@@ -18,13 +18,13 @@
 ```
 klua_doc/klb/
   readme.md
-  api/              ← C API (手写 overview + 规划 _gen/)
-  klbapp/           ← 应用壳, 启动, 扩展, plugins
-  klbui/            ← GUI 控件, CSS, 设计
-  klbcore/          ← 纯 Lua 运行时库 (net/rtsp/ui…)
-  klua/             ← Lua API
+  klbapp/           ← 应用壳 (readme + design/ + api/)
+  klbgui/           ← C klbgui (readme + design/ + api/)
+  klua/             ← klua C 机制 (readme + design/ + api/; Lua k* → ../lua/klua/)
   licenses/         ← 第三方协议副本
 ```
+
+C/C++ 模块文档格式 (readme / design / api): **doc-writing** § klb C/C++ 模块文档; 样板 [klbapp/readme.md](klbapp/readme.md).
 
 ## 查阅顺序 (ai)
 

@@ -29,6 +29,7 @@ klua 生态集中文档库 (Obsidian vault). 与 `klb/`、`portfs/` 等代码仓
 
 | 子项目 | 入口 | 代码仓 |
 |--------|------|--------|
+| **lua** | [lua/readme.md](lua/readme.md) | `klb/` + `portfs/src_klua/` (脚本侧) |
 | klb | [klb/readme.md](klb/readme.md) | `klb/` |
 | pfs | [pfs/readme.md](pfs/readme.md) | `portfs/` |
 | 其它 | [misc/readme.md](misc/readme.md) | — |
@@ -49,3 +50,7 @@ klua 生态集中文档库 (Obsidian vault). 与 `klb/`、`portfs/` 等代码仓
 |------|------|------|
 | `klb/bin/klbdocs/` | `klua_doc/klb/` | 已迁入 (`klbdocs/` 仅跳转) |
 | `portfs/docs/` | `klua_doc/pfs/` | 已迁入 |
+| `klb/klua/k/` 等 | `lua/klua/` | 已迁入 (stub 已删) |
+| `pfs/kpfs.md` | `lua/kpfs/` | 已迁入 (stub 已删) |
+| `klb/klbcore/` (已删), `klb/klbui/widgets/` | `lua/klbcore/` | 已迁入; `klb/klbcore/` 目录已删除 |
+| `klb/klbui/` (C klbgui 文档) | `klb/klbgui/` | 已重命名; 与源码 `klbgui/` 对齐 |

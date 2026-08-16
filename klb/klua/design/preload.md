@@ -1,6 +1,8 @@
 # 预加载与 require
 
 > `klua_doc/klb/klua/design/preload.md` — 代码: `klb/src_c/klua/klua.c`, `klb/src_c/klua/klua_env.c`
+>
+> **Lua 脚本 API**: [lua/readme.md](../../../lua/readme.md); 清单 [require-guide.md](require-guide.md).
 
 ## 两条加载路径
 
@@ -71,7 +73,7 @@ package.path = package.path .. ';' .. base .. '?.lua;' .. base .. '?/init.lua;'
 local klbui = require('klbcore.klbui')
 ```
 
-示例: `bin/sample/sample_ui/main_ui.lua`.
+示例: `bin/sample/sample_ui/main_ui.lua`. 脚本文档: [lua/klbcore/readme.md](../../../lua/klbcore/readme.md).
 
 ## worker 子线程
 

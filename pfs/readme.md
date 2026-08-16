@@ -41,6 +41,7 @@ klua_doc/pfs/
 | 基础概念 | [pfs_basics.md](pfs_basics.md) |
 | 自测用例 | [pfs_test.md](pfs_test.md) |
 | 用户工具 CLI | [pfs_tool.md](pfs_tool.md) |
+| kpfs Lua 模块 | [../lua/kpfs/readme.md](../lua/kpfs/readme.md) |
 | FAT 个人笔记 | [pfs_fat.md](pfs_fat.md) |
 | exFAT 个人笔记 | [pfs_exfat.md](pfs_exfat.md) |
 | NTFS 个人笔记 | [pfs_ntfs.md](pfs_ntfs.md) |

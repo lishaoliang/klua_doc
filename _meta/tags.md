@@ -24,4 +24,4 @@
 
 ## project
 
-`klb` | `pfs` | `misc`
+`klb` | `pfs` | `lua` | `misc`

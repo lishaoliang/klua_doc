@@ -15,7 +15,7 @@
 | 驱动 | `require` 懒加载 | `klua_env_loop_once` / LPC 消息 |
 | 文档 | [preload.md](preload.md) | 本文 |
 
-plugins dll (如 `libkpfs`) 走预加载链, **不**注册 env 扩展表.
+plugins dll (如 `libkpfs`) 走预加载链; **不在** `klua_env_create` 时注册 env 扩展, 但可在 **openlib 首次 `require`** 时调用 `klua_env_register_extension` 懒登记 (见下节 kpfs).
 
 ## 与五线扩展的关系
 
@@ -125,7 +125,7 @@ klua_env_push_lpc_msg (跨线程)
   → klpc 模块唤醒 kco 或暂存
 ```
 
-Lua 侧用法见 [k/klpc.lua.md](../k/klpc.lua.md). 找不到 `dst_name` 时 C 层 **assert** 失败.
+Lua 侧用法见 [lua/klua/klpc.md](../../../lua/klua/klpc.md). 找不到 `dst_name` 时 C 层 **assert** 失败.
 
 ## 标准 env 扩展
 
@@ -152,7 +152,7 @@ Lua 侧用法见 [k/klpc.lua.md](../k/klpc.lua.md). 找不到 `dst_name` 时 C �
 | `kgui` | gui |
 | `klpc` | lpc + coroutine |
 
-协程详 [coroutine.md](coroutine.md); GUI 详 [k/kgui.lua.md](../k/kgui.lua.md).
+协程详 [lua/klua/guide/coroutine.md](../../../lua/klua/guide/coroutine.md); GUI 详 [lua/klua/kgui.md](../../../lua/klua/kgui.md).
 
 ## 新增 env 扩展 (C 开发者)
 
@@ -161,7 +161,17 @@ Lua 侧用法见 [k/klpc.lua.md](../k/klpc.lua.md). 找不到 `dst_name` 时 C �
 3. 在 `klua_register_extension_std` 或产品 `klua_env_create` 后注册
 4. 对外提供 `klua_ex_get_xxx` → `klua_env_get_extension`
 
-闭源动态库 **不能** 直接注册 env 扩展; 须静态链接或 app `klbappex_ex_open`.
+闭源动态库 **不能** 编入 `klua_register_extension_std`; 可在运行时 `klua_env_register_extension` (kpfs 范例), 或经 app `klbappex_ex_open` (app 级扩展).
+
+### kpfs (`libkpfs.so`, pfs klua)
+
+| 项 | 约定 |
+|----|------|
+| 注册名 | `_KPFS_EX_ENV_` (`PFS_KLUA_EX_NAME`) |
+| 源文件 | `portfs/src_klua/pfs_klua_ex.{h,c}` |
+| 触发 | `pfs_klua_ex_get` / `pfs_klua_ex_get_by_L` — 首次 get 注册 vtable 并创建实例; 绑定层按需调用 |
+| 作用 | 每 env 单例; disk 登记表; `KLUA_ENV_EX_quit` 兜底 close |
+| 设计 | **pfs-klua-design** § env 扩展 |
 
 ## 审查要点
 
@@ -170,7 +180,7 @@ Lua 侧用法见 [k/klpc.lua.md](../k/klpc.lua.md). 找不到 `dst_name` 时 C �
 | 懒激活 | 扩展须被 `get_extension` 后才进 loop |
 | `tc` 顺序 | loop 内须先更新 `tc` 再跑扩展 |
 | quit | coroutine 与 gui 有 `cb_ctrl(quit)` 清理 |
-| plugins | `kpfs` 等走预加载, 不走本机制 |
+| plugins | `kpfs` 预加载 + `pfs_klua_ex_get` 懒注册 env 扩展 (非 create 时 std 注册) |
 
 ## 相关文档
 
@@ -179,5 +189,5 @@ Lua 侧用法见 [k/klpc.lua.md](../k/klpc.lua.md). 找不到 `dst_name` 时 C �
 | [lifecycle.md](lifecycle.md) | `klua_env` 调用序与 loop 总览 |
 | [preload.md](preload.md) | `require` 预加载 (A 线) |
 | [coroutine.md](coroutine.md) | kco 与 coroutine 扩展 |
-| [k/klpc.lua.md](../k/klpc.lua.md) | LPC Lua API |
+| [lua/klua/klpc.md](../../../lua/klua/klpc.md) | LPC Lua API |
 | [klbapp/plugins.md](../../klbapp/design/plugins.md) | plugins 预加载 (E 线) |
