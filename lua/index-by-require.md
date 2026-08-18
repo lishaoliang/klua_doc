@@ -6,10 +6,18 @@
 
 详 [std/readme.md](std/readme.md). 代码: `klb/src_c/klua/lua-5.4.6/src/linit.c`.
 
-| require | 说明 | klb 注意 |
-|---------|------|----------|
-| `_G`, `package`, `table`, `io`, `os`, `string`, `math`, `utf8`, `debug` | Lua 5.4 标准库 | — |
-| `coroutine` | 内置协程 | **业务勿用**; 用 **`kco`** → [klua/kco.md](klua/kco.md) |
+| require / 全局 | 文档 | klb 注意 |
+|----------------|------|----------|
+| `_G` (base) | [std/base.md](std/base.md) | — |
+| `package` | [std/package.md](std/package.md) | klbcore path; k* 在 preload |
+| `table` | [std/table.md](std/table.md) | — |
+| `io` | [std/io.md](std/io.md) | — |
+| `os` | [std/os.md](std/os.md) | 慎用 `os.execute`; env 退出用 `kenv`/`ksys` |
+| `string` | [std/string.md](std/string.md) | 模式/JSON 见 bundled |
+| `math` | [std/math.md](std/math.md) | 业务随机见 `krand` |
+| `utf8` | [std/utf8.md](std/utf8.md) | — |
+| `debug` | [std/debug.md](std/debug.md) | 生产慎用 |
+| `coroutine` | [std/coroutine.md](std/coroutine.md) | **业务勿用**; 用 **`kco`** → [klua/kco.md](klua/kco.md) |
 
 ## ② bundled 第三方
 
@@ -26,12 +34,19 @@
 
 ## ③ klbcore 纯 Lua
 
-详 [klbcore/readme.md](klbcore/readme.md). 路径根: `klb/bin/klbcore/`.
+详 [klbcore/readme.md](klbcore/readme.md). 路径根: `bin/klbcore/` (源 `klb/bin/klbcore/`).
 
 | require | 文档 |
 |---------|------|
 | `klbcore.*` (模块总览) | [klbcore/readme.md](klbcore/readme.md) |
+| `klbcore.klbui` | [klbcore/klbui.md](klbcore/klbui.md) |
 | klbui 控件/CSS | [klbcore/css/](klbcore/css/) |
+| `klbcore.klbrtsp` | [klbcore/klbrtsp.md](klbcore/klbrtsp.md) |
+| `klbcore.klbsmp` | [klbcore/klbsmp.md](klbcore/klbsmp.md) |
+| `klbcore.net.http_mime` | [klbcore/net/http_mime.md](klbcore/net/http_mime.md) |
+| `klbcore.util.*` | [klbcore/util.md](klbcore/util.md) |
+| `klbcore.base.pname` | [klbcore/base/pname.md](klbcore/base/pname.md) |
+| `klbcore.base.klpcex` | [klbcore/base/klpcex.md](klbcore/base/klpcex.md) |
 
 ## ④ klua k* (C 预加载)
 
@@ -48,7 +63,14 @@
 | `kos` | [klua/kos.md](klua/kos.md) |
 | `ktime` | [klua/ktime.md](klua/ktime.md) |
 | `kthread` | [klua/kthread.md](klua/kthread.md) |
-| `kurl`, `kmnp`, `ksmp`, `krtsp` | 待定; 见 [klua/readme.md](klua/readme.md) 网络节、**klb-net-design** |
+| `kmcache` | [klua/kmcache.md](klua/kmcache.md) |
+| `kurl` | [klua/kurl.md](klua/kurl.md) |
+| `ksmp` | [klua/ksmp.md](klua/ksmp.md) |
+| `krtsp` | [klua/krtsp.md](klua/krtsp.md) |
+| `klist` | [klua/klist.md](klua/klist.md) |
+| `kkpa` | [klua/kkpa.md](klua/kkpa.md) |
+| `kh26x` | [klua/kh26x.md](klua/kh26x.md) |
+| `kmnp` | 空库; 见 [klua/readme.md](klua/readme.md) 网络节、**klb-net-design** |
 | `khttp_flv`, `khttp_mnp`, `kws_flv`, `kws_mnp` | 同上 |
 | `krtp`, `kws_rtp` | 同上 (未进 `klua_loadlib_all`) |
 

@@ -52,7 +52,7 @@
 
 - `pfs.probe.fs`
 
-步骤: 1. `image.create` → `mkpt` → `mkfs` (exfat, `mkfs` 须 `force`); 2. [`probe.fs`](../../kpfs/kpfs_probe.md)(image_path)
+步骤: 1. `image.create` → `mkpt` → `mkfs` (fat32); 2. [`probe.fs`](../../kpfs/kpfs_probe.md)(image_path)
 
 预期: 首分区或 `bare_fs` 的 `mount_ok == true`
 

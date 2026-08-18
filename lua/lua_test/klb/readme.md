@@ -4,6 +4,8 @@
 
 总入口 [../readme.md](../readme.md). 约定 **klua-test-design**.
 
+**源码目录**: `bin/lua_test/klb/`（第 1 章根）; 新增用例推荐 `ch1_s{M}_{z}.lua`（`1.M.z`）; 现行 `kco_fork.lua` = `1.1.1`.
+
 ## 1.1 kco
 
 API: [kco.md](../../klua/kco.md)
@@ -27,6 +29,6 @@ API: [kco.md](../../klua/kco.md)
 ## 新增用例
 
 1. 在本章下增 `## 1.x <模块>` 与 `### 1.x.y` 节.
-2. `bin/lua_test/klb/` 实现 `run(...)`.
+2. `bin/lua_test/klb/` 实现 `run(...)`（推荐 `ch1_s{M}_{z}.lua`）.
 3. `registry.lua` 登记 `doc_id` 与 `ids`.
 4. 更新根 [readme.md](../readme.md) § 已实现用例.

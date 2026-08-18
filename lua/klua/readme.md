@@ -17,31 +17,31 @@ C 经 `klua_loadlib` 注册到 `registry._PRELOAD`, Lua 侧 `require("kxxx")`. �
 | `kco` | [kco.md](kco.md) | `klua_base/klua_kcoro.c` | 已有 |
 | `klpc` | [klpc.md](klpc.md) | `klua_base/klua_klpc.c` | 已有 |
 | `kgui` | [kgui.md](kgui.md) | `klua_base/klua_kgui.c` | 已有 (**文档样板**) |
-| `kkpa` | — | `klua_base/klua_kpackage.c` | 桩 (无文档) |
+| `kkpa` | [kkpa.md](kkpa.md) | `klua_base/klua_kpackage.c` | 已有 (P2) |
 | `kenv` | [kenv.md](kenv.md) | `klua_util/klua_kenv.c` | 已有 |
 | `ksys` | [ksys.md](ksys.md) | `klua_util/klua_ksys.c` | 已有 |
 | `krand` | [krand.md](krand.md) | `klua_util/klua_krand.c` | 已有 |
 | `kos` | [kos.md](kos.md) | `klua_platform/klua_kos.c` | 已有 |
 | `ktime` | [ktime.md](ktime.md) | `klua_platform/klua_ktime.c` | 已有 |
 | `kthread` | [kthread.md](kthread.md) | `klua_multithread/klua_kthread.c` | 已有 |
-| `klist` | — | `klua_multithread/klua_klist.c` | P2 |
-| `kmcache` | — | `klua_multithread/klua_kmcache.c` | P2 |
-| `kh26x` | — | `klua_format/klua_kh26x.c` | P2 |
+| `klist` | [klist.md](klist.md) | `klua_multithread/klua_klist.c` | 已有 |
+| `kmcache` | [kmcache.md](kmcache.md) | `klua_multithread/klua_kmcache.c` | 已有 |
+| `kh26x` | [kh26x.md](kh26x.md) | `klua_format/klua_kh26x.c` | 已有 (P2) |
 
 ## 网络 (k*; 待定)
 
-| require | C 源 | 状态 |
-|---------|------|------|
-| `krtsp` | `klua_net/klua_krtsp.c` | 桩 |
-| `ksmp` | `klua_net/klua_ksmp.c` | 桩 |
-| `kurl` | `klua_net/klua_kurl.c` | 桩 |
-| `kmnp` | `klua_net/klua_kmnp.c` | 空库桩 |
-| `khttp_flv` | `klua_net/klua_khttp_flv.c` | 空库桩 |
-| `khttp_mnp` | `klua_net/klua_khttp_mnp.c` | 空库桩 |
-| `kws_flv` | `klua_net/klua_kws_flv.c` | 空库桩 |
-| `kws_mnp` | `klua_net/klua_kws_mnp.c` | 空库桩 |
-| `krtp` | `klua_net/klua_krtp.c` | 空库桩 |
-| `kws_rtp` | `klua_net/klua_kws_rtp.c` | 空库桩 |
+| require | 文档 | C 源 | 状态 |
+|---------|------|------|------|
+| `krtsp` | [krtsp.md](krtsp.md) | `klua_net/klua_krtsp.c` | 已有 |
+| `ksmp` | [ksmp.md](ksmp.md) | `klua_net/klua_ksmp.c` | 已有 |
+| `kurl` | [kurl.md](kurl.md) | `klua_net/klua_kurl.c` | 已有 |
+| `kmnp` | — | `klua_net/klua_kmnp.c` | 空库桩 |
+| `khttp_flv` | — | `klua_net/klua_khttp_flv.c` | 空库桩 |
+| `khttp_mnp` | — | `klua_net/klua_khttp_mnp.c` | 空库桩 |
+| `kws_flv` | — | `klua_net/klua_kws_flv.c` | 空库桩 |
+| `kws_mnp` | — | `klua_net/klua_kws_mnp.c` | 空库桩 |
+| `krtp` | — | `klua_net/klua_krtp.c` | 空库桩 |
+| `kws_rtp` | — | `klua_net/klua_kws_rtp.c` | 空库桩 |
 
 **未进 `klua_loadlib_all`**: `krtp`, `kws_rtp` (须产品自行 `klua_loadlib`); `ksip` 无 open 入口.
 

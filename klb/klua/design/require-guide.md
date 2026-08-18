@@ -43,7 +43,7 @@
 | 协程/IPC | `kco`, `klpc` | `klua_base/` | [kco](../../../lua/klua/kco.md), [klpc](../../../lua/klua/klpc.md) |
 | GUI/包 | `kgui`, `kkpa` | `klua_base/` | [kgui](../../../lua/klua/kgui.md); kkpa 待定 |
 | 环境/系统 | `kenv`, `ksys`, `krand`, `kos`, `ktime` | `klua_util/`, `klua_platform/` | [kenv](../../../lua/klua/kenv.md), [ksys](../../../lua/klua/ksys.md), [krand](../../../lua/klua/krand.md), [kos](../../../lua/klua/kos.md), [ktime](../../../lua/klua/ktime.md) |
-| 多线程/容器 | `kthread`, `klist`, `kmcache` | `klua_multithread/` | [kthread](../../../lua/klua/kthread.md) |
+| 多线程/容器 | `kthread`, `klist`, `kmcache` | `klua_multithread/` | [kthread](../../../lua/klua/kthread.md), [kmcache](../../../lua/klua/kmcache.md) |
 | 网络 | `kurl`, `kmnp`, `ksmp`, `krtsp`, `khttp_flv`, `khttp_mnp`, `kws_flv`, `kws_mnp` | `klua_net/` | 待定; **klb-net-design**; [k/readme.md](../../../lua/klua/readme.md) |
 | 格式 | `kh26x` | `klua_format/` | 待补充 |
 

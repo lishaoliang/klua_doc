@@ -28,21 +28,22 @@ klua.exe test.lua pfs.probe
 ## 批量
 
 ```bash
-./klua test.lua a          # 全部 batch_ok
-./klua test.lua 1.x        # 第 1 章
-./klua test.lua 1.1.x      # 节 1.1
-./klua test.lua 2.1.x      # 节 2.1 (章 2 禁 2.x, 节 2.1 允许)
+./klua test.lua a          # all registered cases
+./klua test.lua 1.x        # chapter 1
+./klua test.lua 1.1.x      # section 1.1
+./klua test.lua 2.x        # chapter 2 (2.1.1 .. 2.6.20)
+./klua test.lua 2.1.x      # section 2.1 only
 ```
 
 | 过滤 | 说明 |
 |------|------|
-| `a` / `all` | 所有 `batch_ok` 用例 |
-| `1.x` | 第 1 章可批量 |
-| `1.1.x` / `1.1` | 节内可批量 |
-| `2.x` | **跳过** (第 2 章整章禁批量) |
-| `2.1.x` | 节 2.1 可批量 |
+| `a` / `all` | 全部已登记用例 |
+| `1.x` | 第 1 章 |
+| `1.1.x` / `1.1` | 节 1.1 |
+| `2.x` | 第 2 章全部 |
+| `2.1.x` / `2.1` | 节 2.1 |
 
-`batch_ok=false` (**SINGLE_ONLY**) 仅精确 id 单跑; 批量时打印 `[SKIP]`. 详 **klua-test-design** § 批量.
+`batch_ok=false` 在 `list` 标 `[SINGLE_ONLY]` (提示重流程); 批量 `a`/`N.x`/`N.M.x` 仍会执行. 详 **klua-test-design** § 批量.
 
 参数经 `ksys.get_args()` 传递: `[1]` klua 路径, `[2]` test.lua, `[3]` 用例 id 或批量过滤, `[4]…` 用例参数.
 
@@ -71,7 +72,17 @@ klua.exe test.lua pfs.probe
 | doc_id | 语义 id (主) | 别名 | 文档 |
 |--------|--------------|------|------|
 | `1.1.1` | `klb.kco.fork` | `klb.kco_fork` | [klb/readme.md](klb/readme.md) |
+| `2.1.1` | `kpfs.version` | `pfs.version` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
 | `2.1.2` | `kpfs.probe.all` | `pfs.probe.all`, `pfs.probe` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
+| `2.1.3` | `kpfs.probe.part` | `pfs.probe.part` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
+| `2.1.4` | `kpfs.probe.fs` | `pfs.probe.fs` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
+| `2.2.1` | `kpfs.image` | `pfs.image` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.2` | `kpfs.image.vhd` | `pfs.image.vhd` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.3` | `kpfs.image.fixed` | `pfs.image.fixed` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.4` | `kpfs.image.vhd_fixed` | `pfs.image.vhd_fixed` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.5` | `kpfs.mkpt` | `pfs.mkpt` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.6` | `kpfs.mkfs` | `pfs.mkfs` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
+| `2.2.7` | `kpfs.mkvol` | `pfs.mkvol` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
 
 kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 
@@ -82,8 +93,19 @@ kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 | 路径 | 说明 |
 |------|------|
 | `bin/test.lua` | **唯一入口** |
-| `bin/lua_test/` | 用例实现 (`registry`, `batch`, `paths`, `klb/`, `pfs/`) |
+| `bin/lua_test/` | 框架 (`registry`, `batch`, `paths`, `util/`) |
+| `bin/lua_test/klb/` | **第 1 章** klb k* 用例 |
+| `bin/lua_test/pfs/` | **第 2 章** kpfs 用例 |
 | `bin/tmp/` | Windows 运行时临时根 (`kenv.base_path() .. "tmp"`) |
+
+### 用例源码布局（章 = 子项目目录）
+
+| 章 | 根目录 | 命名 |
+|----|--------|------|
+| **1** | `klb/` | 推荐 `ch1_s{M}_{z}.lua`（`1.M.z`）；现行 `kco_fork.lua` = `1.1.1` |
+| **2** | `pfs/` | 节子目录 `probe`…`mtd`；用例 `ch2_s{M}_{z}.lua`；公共 `make/mount/mtd/common.lua`；`test_disk.lua` |
+
+示例: `2.3.8` → `pfs/mount/ch2_s3_8.lua` → `mod` `lua_test.pfs.mount.ch2_s3_8`. 详 **klua-test-design** § 用例目录.
 
 ## 临时目录
 

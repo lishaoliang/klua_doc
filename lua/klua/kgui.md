@@ -186,6 +186,13 @@ kgui.get_shwnd_css = function (path, ...)
 end
 
 
+-- @brief 是否多画布图层模式 (modal/popup/messagebox 分画布)
+-- @return [boolean] true 多画布; false 单画布
+kgui.is_multi_canvas_layer = function ()
+	return false
+end
+
+
 -- @brief 加载图片
 -- @param [in] key[string]			关键字
 -- @param [in] path[string]			图片路径
@@ -194,6 +201,23 @@ kgui.load_image = function (key, path)
 	return 0
 end
 
+
+-- @brief 清空消息事件队列
+-- @return 无
+kgui.clear_msg = function ()
+	return
+end
+
+
+-- @brief 获取窗口 kwnd 操作接口
+-- @param [in] path[string]			窗口路径: eg. "/home/btn1"
+-- @return [userdata] kwnd; 失败 nil
+-- @note 成功时返回 kwnd userdata, 方法见下节 **kwnd 对象**
+kgui.get_kwnd = function (path)
+	return nil
+end
+
+
 -- @brief 添加窗口
 -- @param [in] t[string]			窗口/控件类型: eg. "kbutton"
 -- @param [in] path[string]			窗口路径名: eg. "/home/btn1"
@@ -201,8 +225,9 @@ end
 -- @param [in] y[number(int)]		相对父窗口y坐标
 -- @param [in] w[number(int)]		宽
 -- @param [in] h[number(int)]		高
+-- @param [in] style[number(int)]	[可选] 样式, 默认 0
 -- @return [number(int)] 	0.成功; 非0.失败
-kgui.append = function (t, path, x, y, w, h)
+kgui.append = function (t, path, x, y, w, h, style)
 	return 0
 end
 
@@ -282,6 +307,27 @@ kgui.messagebox_end = function ()
 end
 
 
+-- @brief 当前 modal 窗口数量
+-- @return [number(int)] 数量
+kgui.modal_num = function ()
+	return 0
+end
+
+
+-- @brief 当前 popup 窗口数量
+-- @return [number(int)] 数量
+kgui.popup_num = function ()
+	return 0
+end
+
+
+-- @brief 当前 messagebox 窗口数量
+-- @return [number(int)] 数量
+kgui.messagebox_num = function ()
+	return 0
+end
+
+
 -- @brief 显示或隐藏窗口
 kgui.show = function (path, show)
 	return 0
@@ -320,6 +366,14 @@ end
 
 -- @brief 窗口刷新(仅标记, UI框架决定刷新时机)
 kgui.refresh = function ()
+	return
+end
+
+
+-- @brief 更新全局 tip
+-- @param [in] tip[string]			[可选] tip 文本; 省略则刷新当前 tip
+-- @return 无
+kgui.update_tip = function (tip)
 	return
 end
 
@@ -364,14 +418,170 @@ end
 
 -- @brief 设置 内部控件定时器运行间隔 (单位毫秒ms)
 kgui.ticker_interval = function (interval)
-	return 
+	return
+end
+
+
+-- @brief 绑定/解绑用户图层对应窗口
+-- @param [in] path[string]			[可选] 窗口路径; 省略则解绑
+-- @return [number(int)] 0 成功; 非 0 失败
+kgui.bind_udatalayer = function (path)
+	return 0
+end
+
+
+-- @brief 移动用户图层
+-- @param [in] x[number(int)]		[可选] x 坐标, 默认 0
+-- @param [in] y[number(int)]		[可选] y 坐标, 默认 0
+-- @return 无
+kgui.move_udatalayer = function (x, y)
+	return
+end
+
+
+-- @brief 显示/隐藏用户图层
+-- @param [in] show[boolean]		[可选] 默认 false
+-- @return 无
+kgui.show_udatalayer = function (show)
+	return
+end
+
+
+-- @brief 绑定/解绑等待图层对应窗口
+-- @param [in] path[string]			[可选] 窗口路径; 省略则解绑
+-- @return [number(int)] 0 成功; 非 0 失败
+kgui.bind_waitlayer = function (path)
+	return 0
+end
+
+
+-- @brief 移动等待图层
+-- @param [in] x[number(int)]		[可选] x 坐标, 默认 0
+-- @param [in] y[number(int)]		[可选] y 坐标, 默认 0
+-- @return 无
+kgui.move_waitlayer = function (x, y)
+	return
+end
+
+
+-- @brief 开启/关闭等待图层
+-- @param [in] on[boolean]			[可选] 默认 false
+-- @return 无
+kgui.wait = function (on)
+	return
+end
+
+
+-- @brief 设置/获取是否完整绘制事件流程
+-- @param [in] is_full[boolean]		[可选] 设置时传入; 省略则只读当前值
+-- @return [boolean] 是否完整绘制
+kgui.redraw_full_event = function (is_full)
+	return false
 end
 
 
 return kgui
 ```
 
-完整桩代码 (含 `@note` 长注释): `klb/bin/klbcore/help/k/kgui.lua`.
+**kwnd 对象** (`get_kwnd` 成功时, userdata):
+
+```lua
+-- @brief 设置/获取窗口样式
+-- @param [in] style[number(int)]	[可选] 设置时传入; 省略则读取
+-- @return [number(int)] 样式值 (读取时)
+function kwnd:style(style)
+	return 0
+end
+
+
+-- @brief 设置/获取显示状态
+-- @param [in] show[boolean]		[可选] 设置时传入; 省略则读取
+-- @return [boolean] 是否显示 (读取时)
+function kwnd:show(show)
+	return false
+end
+
+
+-- @brief 设置/获取隐藏状态
+-- @param [in] hide[boolean]		[可选] 设置时传入; 省略则读取
+-- @return [boolean] 是否隐藏 (读取时)
+function kwnd:hide(hide)
+	return false
+end
+
+
+-- @brief 设置/获取静态 tip
+-- @param [in] tip[string]			[可选] 设置时传入; 省略则读取
+-- @return [string] tip 文本 (读取时; 无则为 "")
+function kwnd:tip(tip)
+	return ""
+end
+
+
+-- @brief 设置/获取动态 tip
+-- @param [in] tip[string]			[可选] 设置时传入; 省略则读取
+-- @return [string] tip 文本 (读取时; 无则为 "")
+function kwnd:tip_dynamic(tip)
+	return ""
+end
+
+
+-- @brief 刷新 tip 显示
+-- @return 无
+function kwnd:tip_update()
+	return
+end
+
+
+-- @brief 相对父窗口移动
+-- @param [in] x[number(int)]		[可选] x, 默认 0
+-- @param [in] y[number(int)]		[可选] y, 默认 0
+-- @return 无
+function kwnd:move(x, y)
+	return
+end
+
+
+-- @brief 改大小
+-- @param [in] w[number(int)]		宽
+-- @param [in] h[number(int)]		高
+-- @return 无
+function kwnd:resize(w, h)
+	return
+end
+
+
+-- @brief 刷新本窗口 (标记, 由 UI 框架决定时机)
+-- @return 无
+function kwnd:refresh()
+	return
+end
+
+
+-- @brief 设置控件数据 (样式/显示/状态等)
+-- @param [in] [任意]...			键值对
+-- @return [number(int)] 0 成功; 非 0 失败
+function kwnd:set(...)
+	return 0
+end
+
+
+-- @brief 获取控件数据
+-- @param [in] [任意]...			查询键
+-- @return [任意]...				多返回值
+function kwnd:get(...)
+	return ...
+end
+
+
+-- @brief 本窗口 GUI 伪系统滴答 (ms)
+-- @return [number(int)]
+function kwnd:tick_count()
+	return 0
+end
+```
+
+对照桩: `klb/bin/klbcore/help/k/kgui.lua` (模块级 API 与本文一致; `@note` 长注释见 help 桩).
 
 ### 示例
 

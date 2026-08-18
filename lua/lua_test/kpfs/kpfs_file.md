@@ -14,7 +14,7 @@
 
 - `pfs.vfs.open`
 
-前置: [`mount`](../../kpfs/kpfs.md)("T", …, 0x02) RDWR.
+前置: [`mount`](../../kpfs/kpfs.md)("T", …, "rw") 或 [`remount`](../../kpfs/kpfs.md)("T", "rw").
 
 步骤: 1. 确保 `T1:/kpfs_lt_new.txt` 不存在; 2. [`vfs.open`](../../kpfs/kpfs_vfs.md)(..., "w") 写已知数据; 3. `close`; 4. 再 `open` 读回
 
@@ -45,5 +45,115 @@
 预期: seek/tell/truncate 行为正确; 缩短后旧尾不可读
 
 失败: 错位写; truncate 后崩溃
+
+---
+
+### 2.4.4 覆盖写已存在文件
+
+- `pfs.vfs.write`
+
+步骤: 1. 预置 `T1:/kpfs_lt_over.txt` 已知内容; 2. [`vfs.open`](../../kpfs/kpfs_vfs.md)(..., "w") 写新数据; 3. `close`; 4. 再 `open` 读回
+
+预期: 覆盖成功; 内容为最后一次写入
+
+失败: 追加误写; 旧内容残留
+
+---
+
+### 2.4.5 打开不存在路径 (负例)
+
+- `pfs.vfs.open.enoent`
+
+步骤: 1. [`vfs.open`](../../kpfs/kpfs_vfs.md)("T1:/kpfs_lt_nope.txt", "r")
+
+预期: 返回 `rc, msg` (非 userdata); `rc ~= 0`
+
+失败: 误创建文件; 崩溃
+
+---
+
+### 2.4.6 `open` 模式 `r+` / `a` / `a+`
+
+- `pfs.vfs.open.mode`
+
+步骤: 1. `f =` [`vfs.open`](../../kpfs/kpfs_vfs.md)("T1:/kpfs_lt_mode.txt", "r+") 读写; 2. 另测 `"a"` 追加 (写后 `tell` 在末尾); 3. `"a+"` 可读可追加
+
+预期: 各模式打开成功; 追加模式定位在 EOF; 读写语义正确
+
+失败: 模式解析错; 追加覆盖首部
+
+---
+
+### 2.4.7 分块 `read(n)`
+
+- `pfs.vfs.read.chunk`
+
+步骤: 1. 预置 ≥8KiB 已知内容; 2. `f:read(1024)` 循环至 EOF; 3. 拼接比对
+
+预期: 分块读与一次读内容一致; 短读为实际长度
+
+失败: 块边界错乱; 提前 EOF
+
+---
+
+### 2.4.8 空文件 (CREAT 不写即 close)
+
+- `pfs.vfs.empty`
+
+步骤: 1. [`vfs.open`](../../kpfs/kpfs_vfs.md)("T1:/kpfs_lt_empty.txt", "w"); 2. 直接 `close`; 3. [`vfs.access`](../../kpfs/kpfs_vfs.md)(..., "f"); 4. `open` 读长度为 0; 5. [`unlink`](../../kpfs/kpfs_vfs.md)
+
+预期: 0 字节文件存在且可删; 行为稳定
+
+失败: 损坏目录项; 无法删除
+
+---
+
+### 2.4.9 `truncate` 扩展
+
+- `pfs.vfs.truncate.extend`
+
+步骤: 1. 文件长度 S; 2. [`truncate`](../../kpfs/kpfs_vfs.md)(S * 2); 3. `seek` 到扩展区再 `write`; 4. 读回校验
+
+预期: 扩展后可写; 原 S 字节内容不变
+
+失败: 扩展崩溃; 长度与内容不一致
+
+---
+
+### 2.4.10 非法 seek / seek 到 EOF 再读
+
+- `pfs.vfs.seek.bad`
+
+步骤: 1. 对短文件 `seek` 超大负偏移或越界 (以实现为准); 2. `seek(0,"end")` 后 `read` 应得 `""` 且 `eof` 为真
+
+预期: 非法 seek 返回 `rc, msg`; EOF seek+read 不崩溃
+
+失败: 非法 seek 成功写坏; EOF 后仍读出数据
+
+---
+
+### 2.4.11 `f:error()` 流错误查询
+
+- `pfs.vfs.error`
+
+步骤: 1. 正常读写后 `f:error()`; 2. 触发已知错误 (如只读 mount 下写) 后再 `f:error()`
+
+预期: 无错时 `rc == 0`; 有错时 `rc ~= 0` 且 `msg` 非空
+
+失败: 错误 latch 不更新; 误报 OK
+
+---
+
+### 2.4.12 `fsync` 持久化 (umount 周期)
+
+- `pfs.vfs.fsync`
+
+步骤: 1. 写数据后 [`fsync`](../../kpfs/kpfs_vfs.md); 2. [`umount`](../../kpfs/kpfs.md)("T"); 3. 再 [`mount`](../../kpfs/kpfs.md) 读回
+
+预期: `fsync` `rc == 0`; remount 后数据仍在
+
+失败: sync 后数据丢失
+
+注: 标 **UMOUNT_FLOW**; **禁止**进 `a`/`2.1.x`.
 
 ---
