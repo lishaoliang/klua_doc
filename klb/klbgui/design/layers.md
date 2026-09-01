@@ -23,7 +23,7 @@ L0  画布 (klbutil)              klb_canvas_t
 
 | 层 | 名称 | 谁用 | 典型路径 | 对外形态 |
 |----|------|------|----------|----------|
-| L0 | 画布 | 核心/扩展 | `klbutil/klb_canvas.h` | `klb_gui_attach_canvas` |
+| L0 | 画布 | 核心/扩展 | `klbutil/klb_canvas.h` | `klb_gui_attach_canvas` — [canvas.md](canvas.md) |
 | L1 | C 核心 | C/C++ 产品 | `klb_gui.c`, `klb_wnd.c` | `klb_gui.h` API |
 | L2 | klbuiex 扩展 | 框架内部 | `extensions/klbuiex_*.c` | `klbui_extension.h` |
 | L2′ | klua env GUI | klua 运行时 | `klua_ex_gui.c` | env 扩展, 非 require |
@@ -78,7 +78,7 @@ L0  画布 (klbutil)              klb_canvas_t
 |----|------|
 | 工厂 | `klbuiex_wndhash` — path 树 + type→create |
 | 注册 | `klbuiex_wndhash_register`; 宏 `klbui_register_k*` (`klbui_widgets.h`) |
-| 现状 | **`KLB_GUI_REGISTER_STD` 已注释**; 控件实现归档 `klb/backup/wnd/` (**klb-backup-design**) |
+| 现状 | **`KLB_GUI_REGISTER_STD` 已注释**; 控件实现归档 `backup/wnd/` (**klb-backup-design**) |
 | Lua | `dialog.type` 须已注册; `kgui.append(type, path, …)` |
 
 ## 我该改哪一层

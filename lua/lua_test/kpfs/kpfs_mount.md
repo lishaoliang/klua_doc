@@ -76,7 +76,7 @@
 
 - `pfs.mount.part_mode`
 
-前置: 固定盘 **N** (MBR×2, `bin/tmp/test_disk/disks/n.vhd`); 须 `test_disk setup --partition` 已写分区表; 用例内 `disk.mkfs` 格式化 `N1`/`N2` exfat (见 `mount_common.prepare_slot_dual_exfat`).
+前置: 固定盘 **N** (MBR×2, `klua_run/tmp/test_disk/disks/n.vhd`); 须 `test_disk setup --partition` 已写分区表; 用例内 `disk.mkfs` 格式化 `N1`/`N2` exfat (见 `mount_common.prepare_slot_dual_exfat`).
 
 步骤: 1. [`kpfs.mount`](../../kpfs/kpfs.md)("N", image_path, { "r", "rw" }); 2. `N1:` 只读下写失败; `N2:` 写成功; 3. [`umount`](../../kpfs/kpfs.md)("N")
 

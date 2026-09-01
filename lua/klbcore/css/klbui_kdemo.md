@@ -1,19 +1,20 @@
-## 静态显示框
+## 学习样板
 
-* 注册类型: kstatic
+* 注册类型: kdemo
 
 ### 1. 概述
 
 ```c
-// C实现文件: ./klb/src_packages/klbwui/embed_widgets/klbui_static.c
-// 窗口实现: ./klb/src_packages/klbwui/embed_wnd/klbwnd_static.c
+// C实现文件: ./klb/src_packages/klbwui/embed_widgets/klbui_demo.c
+// 窗口实现: ./klb/src_packages/klbwui/embed_wnd/klbwnd_demo.c
 // 控件通用 CSS 方法: ./klb/src_c/klbgui/klbui_css_std_function.c
 ```
 
 * 所有已注册控件均通过 `klb_gui_css_map_append_std_function` 挂载 **控件通用属性/方法**（见下文「3. 控件通用属性/方法」）
-* kstatic 仅支持 **normal** 状态的样式属性; 无 `:focus` / `:disabled` / `:checked`
-* 默认窗口样式: `style-nocommand` + `style-focus-without-redraw` + `style-focus-delay`; 默认开启 `dynamic-tip`
-* 文本走 `color` / `text-align` / `font-size`; 背景图走 `background-image` + `background-image-mode` + `background-image-color-key`
+* kdemo 是最小 wnd+widgets 学习样板; 固定绘制文本 `"kdemo"`; 无 `title` / `value`
+* 仅支持 **normal** 状态的样式属性; 无 `:focus` / `:disabled` / `:checked`
+* 默认窗口样式: `style-nofocus` + `style-focus-without-redraw`
+* 文本走 `color` / `font-size`; 背景图走 `background-image` + `background-image-mode` + `background-image-color-key`
 
 ### 2. 支持状态
 
@@ -413,39 +414,20 @@
 
 * 属性: color
 * 支持状态: normal
+* 作用于固定文本 `"kdemo"`
 
 * 设置
 ```lua
 {
-    ['color'] = {255,220,220,220},          -- normal 常规状态
-    ['color'] = 0xFFA0A0A0,                 -- normal 常规状态
-    ['color'] = '0xFFA0A0A0',               -- normal 常规状态
+    ['color'] = {255,220,220,220},
+    ['color'] = 0xFFA0A0A0,
+    ['color'] = '0xFFA0A0A0',
 }
 ```
 
 * 获取
 ```lua
     0xFFA0A0A0
-```
-
-##### 4.4.2 文本对齐
-
-* 属性: text-align
-* 支持状态: normal
-* 设置
-```lua
-{
-    ['text-align'] = 'left',
-    ['text-align'] = 'center',
-    ['text-align'] = 'right',
-}
-```
-
-* 获取
-```lua
-    'center'        -- 中心对齐
-    'left'          -- 左对齐
-    'right'         -- 右对齐
 ```
 
 #### 4.5 字体
@@ -590,98 +572,12 @@
 
 ### 5. 自定义属性
 
-#### 5.1 标题
-
-* 属性: title
-* 无状态
-
-* 设置
-```lua
-{
-    ['title'] = '静态文本1',
-}
-```
-
-* 获取
-```lua
-    '静态文本1'
-```
-
-#### 5.2 值
-
-* 属性: value
-* 无状态
-* 与 **title** 同义
-
-* 设置
-```lua
-{
-    ['value'] = '静态文本1',
-}
-```
-
-* 获取
-```lua
-    '静态文本1'
-```
-
-#### 5.3 索引
-
-* 属性: index
-* 无状态
-
-* 设置
-```lua
-{
-    ['index'] = 1,
-}
-```
-
-* 获取
-```lua
-    1
-```
-
-#### 5.4 提示
-
-* 属性: tip
-* 无状态
-* 设置时会关闭 **dynamic-tip**
-
-* 设置
-```lua
-{
-    ['tip'] = '这是提示文本',
-}
-```
-
-* 获取
-```lua
-    '这是提示文本'
-```
-
-#### 5.5 动态提示
-
-* 属性: dynamic-tip
-* 无状态
-
-* 设置
-```lua
-{
-    ['dynamic-tip'] = true,
-}
-```
-
-* 获取
-```lua
-    false
-```
+* kdemo 无 `title` / `value` / `index`; 绘制文本固定为 `"kdemo"`
 
 ### 6. CSS总表
 
-* 先公共后私有; ① 见 `klbui_css_std_function.c`; ②③ 见 `klbui_static.c` `init_func_map`
+* 先公共后私有; ① 见 `klbui_css_std_function.c`; ②③ 见 `klbui_demo.c` `init_func_map`
 * 仅 **normal**; 无伪类后缀
-* `tip` 由 kstatic 覆盖通用实现; 设置 `tip` 会关闭 `dynamic-tip`
 
 | 分组    | 键                                 | 读写      | 说明                          |
 | ----- | --------------------------------- | ------- | --------------------------- |
@@ -692,20 +588,20 @@
 | 控件通用  | `layout`                          | set     | 触发 `KLBUI_layout`           |
 | 控件通用  | `refresh`                         | set     | 重绘                          |
 | 控件通用  | `style-peek-event`                | get/set | 冒泡读消息                       |
-| 控件通用  | `style-nofocus`                   | get/set | 无聚焦                         |
-| 控件通用  | `style-nocommand`                 | get/set | 无 `on_command`; kstatic 默认 `true` |
-| 控件通用  | `style-focus-without-redraw`      | get/set | 聚焦不重绘; kstatic 默认 `true`    |
+| 控件通用  | `style-nofocus`                   | get/set | 无聚焦; kdemo 默认 `true`        |
+| 控件通用  | `style-nocommand`                 | get/set | 无 `on_command`              |
+| 控件通用  | `style-focus-without-redraw`      | get/set | 聚焦不重绘; kdemo 默认 `true`      |
 | 控件通用  | `style-focus-continue`            | get/set | 继续寻找焦点                      |
-| 控件通用  | `style-focus-delay`               | get/set | 聚焦延时消息; kstatic 默认 `true`  |
+| 控件通用  | `style-focus-delay`               | get/set | 聚焦延时消息                      |
 | 控件通用  | `show` / `hide`                   | get/set | 显示 / 隐藏                     |
 | 控件通用  | `input` / `check`                 | get/set | 输入 / 选中                     |
 | 控件通用  | `disable` / `enable`              | get/set | 不使能 / 使能                    |
 | 控件通用  | `topmost`                         | get     | 是否视觉最顶层                     |
+| 控件通用  | `tip`                             | get/set | 提示文本                        |
 | 控件通用  | `visibility`                      | get/set | `visible` / `hidden` 或 bool |
 | CSS公共 | `margin` / `margin-*`             | get/set | 四边及拆分                       |
 | CSS公共 | `padding` / `padding-*`           | get/set | 四边及拆分                       |
-| CSS公共 | `color`                           | get/set | 文本色                         |
-| CSS公共 | `text-align`                      | get/set | `'left'` / `'center'` / `'right'`; 默认 `'left'` |
+| CSS公共 | `color`                           | get/set | 固定文本色                       |
 | CSS公共 | `font-size`                       | get/set | 字号                          |
 | CSS公共 | `background-color`                | get/set | 无图时填充                       |
 | CSS公共 | `background-image`                | get/set | 背景图路径; 有图不画 border          |
@@ -713,25 +609,17 @@
 | CSS公共 | `border-color`                    | get/set | 无图时生效                       |
 | CSS私有 | `background-image-mode`           | get/set | `'default'` / `'scale9'`    |
 | CSS私有 | `background-image-color-key`      | get/set | 关键色透明                       |
-| 自定义   | `title` / `value`                 | get/set | 标题; 两键同 handler             |
-| 自定义   | `index`                           | get/set | 索引                          |
-| 自定义   | `tip`                             | get/set | 提示文本; 设置时关闭 `dynamic-tip`  |
-| 自定义   | `dynamic-tip`                     | get/set | 文本超宽时动态 tip; 默认 `true`     |
 
 #### 6.1 参考
 ```lua
 {
-    ['type'] = 'kstatic',
-    ['pos'] = {10, 10, 200, 32},
-    ['name'] = 'sta1',
-    ['title'] = '静态文本1',
-    ['value'] = '静态文本1',
-    ['index'] = 1,
+    ['type'] = 'kdemo',
+    ['pos'] = {10, 10, 120, 36},
+    ['name'] = 'demo1',
     ['visibility'] = 'visible',
     ['margin'] = {0, 0, 0, 0},
     ['padding'] = {1, 1, 1, 1},
     ['color'] = 0xFFDCDCDC,
-    ['text-align'] = 'left',
     ['font-size'] = 24,
     ['background-color'] = {255, 31, 31, 31},
     ['background-image'] = 'panel.bmp',
@@ -739,7 +627,6 @@
     ['border-color'] = 0xFF505050,
     ['background-image-mode'] = 'scale9',
     ['background-image-color-key'] = true,
-    ['dynamic-tip'] = true,
 }
 ```
 
@@ -750,11 +637,9 @@
 ```lua
 local klbui = require("klbcore.klbui")
 
--- 类型全局 CSS, 须在 parse 之前
-klbui.global_css('kstatic', {
+klbui.global_css('kdemo', {
     ['font-size'] = 24,
     ['color'] = 0xFFDCDCDC,
-    ['text-align'] = 'left',
     ['padding'] = {1, 1, 1, 1},
 })
 
@@ -764,10 +649,9 @@ local dialog = {
     ['name'] = 'view1',
     ['child'] = {
         {
-            ['type'] = 'kstatic',
-            ['pos'] = {10, 10, 200, 32},
-            ['name'] = 'sta1',
-            ['title'] = '静态文本1',
+            ['type'] = 'kdemo',
+            ['pos'] = {10, 10, 120, 36},
+            ['name'] = 'demo1',
             ['background-image'] = 'panel.bmp',
             ['background-image-mode'] = 'scale9',
             ['background-image-color-key'] = true,
@@ -775,21 +659,8 @@ local dialog = {
     },
 }
 
-local commands = {
-    ['view1'] = {
-        ['onload'] = function ()
-            print('view1 onload')
-        end,
-    },
-}
-
-local css = {
-    ['type'] = {
-        ['kstatic'] = {
-            ['margin'] = {0, 0, 0, 0},
-        },
-    },
-}
+local commands = {}
+local css = {}
 
 klbui.parse(dialog, commands, css)
 ```
@@ -799,14 +670,11 @@ klbui.parse(dialog, commands, css)
 ```lua
 local jq = klbui.select(dialog)
 
-jq('sta1').css({
-    ['title'] = '新文本',
+jq('demo1').css({
     ['color'] = 0xFFA0A0A0,
-    ['background-image'] = 'panel.bmp',
     ['background-image-mode'] = 'scale9',
     ['background-image-color-key'] = true,
 })
 
-local mode = jq('sta1').css('background-image-mode')
-local title = jq('sta1').css('title')
+local mode = jq('demo1').css('background-image-mode')
 ```

@@ -47,7 +47,7 @@ C 经 `klua_loadlib` 注册到 `registry._PRELOAD`, Lua 侧 `require("kxxx")`. �
 
 L6 封装: [klbcore/readme.md](../klbcore/readme.md) + **klbcore-net-design**. C 栈: **klb-net-design**. 清单: [require-guide.md](../../klb/klua/design/require-guide.md) §2.
 
-**已迁 backup (旧栈 multiplex)**: `ktcp`, `kudp`, `khttp`, `kws` — 绑定 `klb/backup/klua_net/`; 归档 API 文档 `klb/backup/klua_doc/klb/klua/k/net/`.
+**已迁 backup (旧栈 multiplex)**: `ktcp`, `kudp`, `khttp`, `kws` — 绑定 `backup/klua_net/`; 归档 API 文档 `backup/klua_doc/klb/klua/k/net/`.
 
 ## guide
 
@@ -63,4 +63,4 @@ L6 封装: [klbcore/readme.md](../klbcore/readme.md) + **klbcore-net-design**. C
 | [klb/klua/design/lifecycle.md](../../klb/klua/design/lifecycle.md) | `klua_env` 生命周期 |
 | [klb/klua/design/preload.md](../../klb/klua/design/preload.md) | 预加载链 |
 | [klb/klua/api/klua_env.md](../../klb/klua/api/klua_env.md) | L1/L2 C API |
-| [klb/klua/design/require-guide.md](../../klb/klua/design/require-guide.md) | require 全量清单 (含 kpa_*, 待定) |
+| [klb/klua/design/require-guide.md](../../klb/klua/design/require-guide.md) | require 全量清单 (含 src_packages, 待定) |

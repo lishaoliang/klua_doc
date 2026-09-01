@@ -74,7 +74,7 @@
 | `khttp_flv`, `khttp_mnp`, `kws_flv`, `kws_mnp` | 同上 |
 | `krtp`, `kws_rtp` | 同上 (未进 `klua_loadlib_all`) |
 
-`kpa_*` 扩展包 (**待定**, 无独立 Lua 文档): 见 [require-guide.md](../klb/klua/design/require-guide.md) §3.
+**src_packages** 扩展 (**待定**): 现行 **klbwui**; 见 [require-guide.md](../klb/klua/design/require-guide.md) §3. 旧 `kpa_*` 已归档 backup.
 
 ## ⑤ kpfs (plugins)
 

@@ -49,20 +49,15 @@
 
 **未进 `klua_loadlib_all`**: 如 `krtp`, `kws_rtp` (须产品自行 `klua_loadlib`).
 
-## §3 kpa_* 扩展包
+## §3 src_packages 扩展
 
-> **待定** / **评估中**; `__KLB_NO_PACKAGES__` 可裁. 详 **klb-klua-design** § kpa_*; 源码 `klb/src_packages/kpa_*/`.
+> **待定** / **评估中**; 逐项 `no-<name>` 可裁. 详 **klb-klua-design** § src_packages.
 
-| require | 源码 |
-|---------|------|
-| `kpa_mgui` | `kpa_mgui/` |
-| `kpa_http` | `kpa_http/` |
-| `kpa_ws` | `kpa_ws/` |
-| `kpa_mnp` | `kpa_mnp/` |
-| `kpa_flv` | `kpa_flv/` |
-| `kpa_sip` | `kpa_sip/` |
+| 扩展 | 路径 | 裁剪 |
+|------|------|------|
+| **klbwui** | `src_packages/klbwui/` | `no-wui`（依赖 klbgui） |
 
-`kpa_rtsp` 已迁 `klb/backup/src_packages/kpa_rtsp/`.
+**已迁 backup**（不编入、不预加载）: `kpa_mgui`、`kpa_http`、`kpa_ws`、`kpa_mnp`、`kpa_flv`、`kpa_sip`、`kpa_rtsp` → `backup/src_packages/kpa_*/`.
 
 ## §4 klbcore 纯 Lua (须 package.path)
 
@@ -73,7 +68,7 @@
 | `klbcore.klbrtsp` | `klbrtsp/` | RTSP 脚本层; **klbcore-net-design** |
 | `klbcore.net.http_mime` | `http_mime.lua` | **klbcore-net-design** |
 
-**已迁 backup**: `klbcore.net.httpc` (`klb/backup/klbcore/net/`); 依赖旧 `khttp` multiplex 绑定.
+**已迁 backup**: `klbcore.net.httpc` (`backup/klbcore/net/`); 依赖旧 `khttp` multiplex 绑定.
 
 | require 前缀 | 路径 | 说明 |
 |--------------|------|------|

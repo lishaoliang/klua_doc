@@ -11,7 +11,7 @@
 | ③ 纯 Lua 脚本库 klbcore | [klbcore/](klbcore/readme.md) | `package.path` → `klbcore.*` |
 | ④ klua 扩展 (k*) | [klua/](klua/readme.md) | C 预加载 `require("kco")` 等 |
 | ⑤ kpfs 扩展 | [kpfs/](kpfs/readme.md) | plugins 注入 `require("kpfs")` |
-| ⑥ **lua test** 手测 | [lua_test/](lua_test/readme.md) | `bin/test.lua` + `lua_test.*` |
+| ⑥ **lua test** 手测 | [lua_test/](lua_test/readme.md) | `klua_run/test.lua` + `lua_test.*` |
 
 ## 快速入口
 
@@ -36,9 +36,9 @@
 
 ## 迁移状态
 
-| 来源 | 目标 | 状态 |
-|------|------|------|
-| `klb/klua/k/*.lua.md` 等 | `lua/klua/` | 已迁入; **klb/ 下 stub 已删除** |
-| `pfs/kpfs.md` | `lua/kpfs/` | 已迁入; stub 已删除 |
-| `klb/klbcore/` (已删) | `lua/klbcore/` | 已迁入; `klb/klbcore/` 目录已删除 |
-| C 侧文档 (`klb/klua/design/`, `klbgui/design/`) | — | 保留; **Lua API 链到 `lua/`** |
+| 来源                                           | 目标             | 状态                        |
+| -------------------------------------------- | -------------- | ------------------------- |
+| `klb/klua/k/*.lua.md` 等                      | `lua/klua/`    | 已迁入; **klb/ 下 stub 已删除**  |
+| `pfs/kpfs.md`                                | `lua/kpfs/`    | 已迁入; stub 已删除             |
+| `klb/klbcore/` (已删)                          | `lua/klbcore/` | 已迁入; `klb/klbcore/` 目录已删除 |
+| C 侧文档 (`klb/klua/design/`, `klbgui/design/`) | —              | 保留; **Lua API 链到 `lua/`** |

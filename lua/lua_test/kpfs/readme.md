@@ -1,13 +1,13 @@
 # 第 2 章 kpfs (Lua 手测)
 
-> `klua_doc/lua/lua_test/kpfs/` | API: [kpfs](../../kpfs/readme.md) | 源码: `bin/lua_test/pfs/`
+> `klua_doc/lua/lua_test/kpfs/` | API: [kpfs](../../kpfs/readme.md) | 源码: `klua_run/lua_test/`pfs/`
 > 约定 **klua-test-design**; C 回归对照 [pfs_test.md](../../../pfs/pfs_test.md) (**pfs-test-design**)
 
 章号 **2.x** 与 `pfs_test` 章 1–5 **编号空间独立**; 下文「对照」仅指能力/步骤语义, 非 doc_id 共用.
 
 **组织原则**: 按 **手测流程** 分节 (probe → 制盘 → mount → 文件 → 路径), **非** 照搬 API 子模块目录.
 
-**源码目录** (`bin/lua_test/pfs/`): 节子目录 `probe` `make` `mount` `file` `path` `mtd`; 用例 `ch2_s{M}_{z}.lua`（`2.M.z`）; 公共 `make/mount/mtd/common.lua`; 章共享 `test_disk.lua`. 详 **klua-test-design** § 用例目录.
+**源码目录** (`klua_run/lua_test/`pfs/`): 节子目录 `probe` `make` `mount` `file` `path` `mtd`; 用例 `ch2_s{M}_{z}.lua`（`2.M.z`）; 公共 `make/mount/mtd/common.lua`; 章共享 `test_disk.lua`. 详 **klua-test-design** § 用例目录.
 
 ---
 
@@ -53,7 +53,7 @@ Windows: `klua.exe test.lua 2.1.2`. 双入口: doc_id 或语义 id (`kpfs.*`; �
 | 破坏性写 | `force = true`; 标 **SINGLE_ONLY** |
 | 非格式化用例 | **禁止** [`mkpt`](../../kpfs/kpfs.md)/[`mkfs`](../../kpfs/kpfs.md)/[`mkvol`](../../kpfs/kpfs.md)/[`mtd.mkfs`](../../kpfs/kpfs_mtd.md) (主题即格式化除外; 同 **pfs-test-design**) |
 | 盘符路径 | `mount` 后 `"T1:/path"`; 须先 §2.3 [`kpfs.mount`](../../kpfs/kpfs.md) 再 §2.4/§2.5 [`kpfs.vfs`](../../kpfs/kpfs_vfs.md) |
-| 固定盘 M/N/P | `bin/tmp/test_disk/disks/`; `lua_test.pfs.test_disk` (`SLOT_LAYOUT`: M GPT×4, N MBR×2, P GPT×2); mount 盘名 **M**/**N**/**P** |
+| 固定盘 M/N/P | `klua_run/tmp/test_disk/disks/`; `lua_test.pfs.test_disk` (`SLOT_LAYOUT`: M GPT×4, N MBR×2, P GPT×2); mount 盘名 **M**/**N**/**P** |
 | MTD FS | **禁止** 走 [`kpfs.disk.mkfs`](../../kpfs/kpfs_disk.md); 须 [`kpfs.mtd.*`](../../kpfs/kpfs_mtd.md) (§2.6) |
 
 ## 节索引与用例
@@ -67,7 +67,7 @@ Windows: `klua.exe test.lua 2.1.2`. 双入口: doc_id 或语义 id (`kpfs.*`; �
 | 2.5 | [kpfs_path.md](kpfs_path.md) | 12 | `2.5.1`–`2.5.12` |
 | 2.6 | [kpfs_mtd.md](kpfs_mtd.md) | 20 | `2.6.1`–`2.6.20` |
 
-新增: 先写本节 `### x.y.z` 条文 → `bin/lua_test/pfs/` → `registry.lua` → 更新本页 § 已实现.
+新增: 先写本节 `### x.y.z` 条文 → `klua_run/lua_test/`pfs/` → `registry.lua` → 更新本页 § 已实现.
 
 ### 已实现
 

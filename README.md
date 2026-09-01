@@ -32,6 +32,7 @@ klua 生态集中文档库 (Obsidian vault). 与 `klb/`、`portfs/` 等代码仓
 | **lua** | [lua/readme.md](lua/readme.md) | `klb/` + `portfs/src_klua/` (脚本侧) |
 | klb | [klb/readme.md](klb/readme.md) | `klb/` |
 | pfs | [pfs/readme.md](pfs/readme.md) | `portfs/` |
+| wlua | [wlua/readme.md](wlua/readme.md) | `wlua/` (GUI 桌面宿主) |
 | 其它 | [misc/readme.md](misc/readme.md) | — |
 
 ## 基础设施

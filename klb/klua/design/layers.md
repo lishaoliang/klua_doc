@@ -67,7 +67,7 @@ Lua **不应**直接调用 `klua_env_register_extension`.
 | 线 | 层次 | 文档 |
 |----|------|------|
 | A C 预加载 | L0 + L3 | [preload.md](preload.md) |
-| B kpa_* | L0/L3 | [require-guide.md](require-guide.md) |
+| B src_packages | env / 可选 | [require-guide.md](require-guide.md) |
 | C klbcore | L6 | **klbcore-design**; [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) |
 | D env 扩展 | **L2** | [env-extension.md](env-extension.md) |
 | E plugins | L5→A | [plugins.md](../../klbapp/design/plugins.md) |

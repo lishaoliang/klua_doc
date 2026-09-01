@@ -118,7 +118,7 @@ C++: `CGui::RegisterExtension` 薄封装.
 - `klbuiex_wndhash_register(wndhash, "kbutton", cb_create)`
 - `kgui.append` → `klb_gui_append` → wndhash 查 creater
 
-核心 **`KLB_GUI_REGISTER_STD` 已注释**; k* 实现见 `klb/backup/wnd/`.
+核心 **`KLB_GUI_REGISTER_STD` 已注释**; k* 实现见 `backup/wnd/`.
 
 ## 相关
 

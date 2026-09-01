@@ -58,16 +58,17 @@ package.path = package.path .. ';' .. base .. '?.lua;' .. base .. '?/init.lua'
 
 ## klbui 控件与 CSS
 
-见 [css/](css/).
+见 [css/](css/). 文档与 C 实现对应、更新流程见 ai 技能 **klbcore-klbui-css-design**（台账 `reference.md`）。
 
-| 主题 | 文档 |
-|------|------|
-| CSS 约定 | [css/klbui_css.md](css/klbui_css.md) |
-| `kbutton` | [css/klbui_kbutton.md](css/klbui_kbutton.md) |
-| `kcombo` | [css/klbui_kcombo.md](css/klbui_kcombo.md) |
-| `kmessagebox` | [css/klbui_kmessagebox.md](css/klbui_kmessagebox.md) |
-| `kstatic` | [css/klbui_kstatic.md](css/klbui_kstatic.md) |
-| 默认 CSS | [css/klbui_default_css.md](css/klbui_default_css.md) |
+| 文档 | type | C 真源 (现行) | 状态 |
+|------|------|---------------|------|
+| [css/klbui_css.md](css/klbui_css.md) | — | 语法 / `csser.lua` | 稳定 |
+| [css/klbui_default_css.md](css/klbui_default_css.md) | — | `klbuiex_default.c` | 稳定 |
+| [css/klbui_kstatic.md](css/klbui_kstatic.md) | `kstatic` | `klbwui/embed_widgets/klbui_static.c` | 已对齐 |
+| [css/klbui_kview.md](css/klbui_kview.md) | `kview` | `klbwui/embed_widgets/klbui_view.c` | 已对齐 |
+| [css/klbui_kbutton.md](css/klbui_kbutton.md) | `kbutton` | `klbwui/embed_widgets/klbui_button.c` | 已对齐 |
+| [css/klbui_kpicture.md](css/klbui_kpicture.md) | `kpicture` | `klbwui/embed_widgets/klbui_picture.c` | 已对齐 |
+| [css/klbui_kdemo.md](css/klbui_kdemo.md) | `kdemo` | `klbwui/embed_widgets/klbui_demo.c` | 已对齐 |
 
 ## 相关
 

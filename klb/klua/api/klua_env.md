@@ -128,7 +128,7 @@ Lua 侧见 [lua/klua/klpc.md](../../../lua/klua/klpc.md); 路径详 [env-extensi
 
 实现多在 `extension/klua_ex_*.c`; Lua 侧通常经 `kgui`/`krtsp` 等 k* 访问.
 
-**已迁 backup**: `klua_multiplex.h` / `klua_ex_multiplex.c` — `klb/backup/inc/klua/`, `klb/backup/klua/extension/`.
+**已迁 backup**: `klua_multiplex.h` / `klua_ex_multiplex.c` — `backup/inc/klua/`, `backup/klua/extension/`.
 
 ## 内部头 (非产品直接 include)
 

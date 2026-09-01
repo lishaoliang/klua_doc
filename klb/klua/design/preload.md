@@ -46,12 +46,12 @@ luaL_openlibs(L)              // §0 Lua 5.4 标准库
 
 > 代码: `klb/src_c/klua/klua.c` (`klua_loadlib_all`)
 
-默认注册 bundled 第三方 + 全部 `k*` + (未裁剪时) `kpa_*`. 产品可在自有 `cb_pre_load` 中:
+默认注册 bundled 第三方 + 全部 `k*`。产品可在自有 `cb_pre_load` 中:
 
 - 直接调用 `klua_loadlib_all(L)`
 - 或按需 `klua_loadlib` 子集 (裁剪体积)
 
-裁剪宏示例: `__KLB_NO_LPEG__`, `__KLB_NO_ZLIB__`, `__KLB_NO_SQLITE__`, `__KLB_NO_PACKAGES__` (见 **klb-makefile** `clip.mk`).
+裁剪宏示例: `__KLB_NO_LPEG__`, `__KLB_NO_ZLIB__`, `__KLB_NO_SQLITE__`, `__KLB_NO_WUI__` (见 **klb-makefile** `clip.mk`).
 
 ## 与 Lua package.loadlib 的区别
 

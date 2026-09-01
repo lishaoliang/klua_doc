@@ -111,6 +111,6 @@ r:close()
 
 ### 注意
 
-- 记名 **kkpa** / require **`kkpa`**; 与 `kpa_*` 扩展包 (**待定**) 不同
+- 记名 **kkpa** / require **`kkpa`**; 与 **src_packages** 扩展（现行 klbwui）及已归档 **kpa_*** 不同
 - 显式 **`close()`** 可提前释放文件句柄; 否则依赖 GC
 - 读序号 **1-based**, 与 Lua 惯例一致

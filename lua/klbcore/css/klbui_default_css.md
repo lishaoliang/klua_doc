@@ -2,21 +2,44 @@
 
 * 无注册类型
 
-### 概述
+### 1. 概述
 
 ```c
 // C实现文件: ./klb/src_c/klbgui/extensions/klbuiex_default.c
 ```
 
-### 支持状态
+* 控件创建前通过 `klbui.default_css` / `kgui.set_default_css` 设置; 控件 `css_init` 从 `klb_gui_get_std_default` 复制参考属性
+* 键名公式: `property[:checked][:focus][:disabled][:input]` (见 [klbui_css.md](klbui_css.md))
 
-* 常规状态: normal
-* 聚焦状态: focus
-* 不使能状态: disable
-* 选中状态: check
-* 输入状态: input
+### 2. 支持状态
 
-### 参考使用
+| C 字段 | CSS 伪类 | 说明 |
+|--------|----------|------|
+| normal | (无后缀) | 常规 |
+| focus | `:focus` | 聚焦 |
+| disable | `:disabled` | 不使能 |
+| check | `:checked` | 选中参考 (toggle 控件) |
+| input | `:input` | 输入态 |
+
+### 3. 默认配置
+
+| 项 | 默认值 |
+|----|--------|
+| margin | 0,0,0,0 |
+| padding | 1,1,1,1 |
+| font-size | 24 |
+| text-align | left |
+| 配色 | Visual Studio 深色系 |
+
+| 状态 | 文本色 | 边框色 | 背景色 |
+|------|--------|--------|--------|
+| normal | #DCDCDC | #505050 | #1F1F1F |
+| focus | #DCDC0A | #DC5050 | #1F1F1F |
+| disabled | #B4B4B4 | #505050 | #1F1F1F |
+| checked | #0AD2D2 | #B450B4 | #1F1F1F |
+| input | #B4B4B4 | #505050 | #1F1F1F |
+
+### 4. 参考使用
 
 * 设置
 ```lua
@@ -26,7 +49,7 @@ local klbui = require("klbcore.klbui")
 klbui.default_css({
     ['color'] = {255,80,80,80},
     ['color:focus'] = {255,220,220,220},
-    ['color:disable'] = {255,20,20,20},
+    ['color:disabled'] = {255,20,20,20},
 })
 ```
 
@@ -39,9 +62,9 @@ local color = klbui.default_css('color')
 print('color:', color)
 ```
 
-### CSS属性
+### 5. CSS属性
 
-#### 外边距
+#### 5.1 外边距
 
 * 属性: margin
 * 无状态
@@ -62,7 +85,7 @@ print('color:', color)
     0
 ```
 
-#### 内边距
+#### 5.2 内边距
 
 * 属性: padding
 * 无状态
@@ -83,21 +106,21 @@ print('color:', color)
     0
 ```
 
-#### 文本
+#### 5.3 文本
 
-##### 文本颜色
+##### 5.3.1 文本颜色
 
 * 属性: color
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
 {
     ['color'] = {255,220,220,220},          -- normal 常规状态
     ['color:focus'] = 0xFFA0A0A0,           -- focus 聚焦状态
-    ['color:disable'] = '0xFFA0A0A0',       -- disable 不使能状态
-    ['color:check'] = {255,220,220,220},    -- check 选中状态
-    ['color:input'] = {255,220,220,220},    -- 输入状态
+    ['color:disabled'] = '0xFFA0A0A0',      -- disabled 不使能状态
+    ['color:checked'] = {255,220,220,220},  -- checked 选中参考
+    ['color:input'] = {255,220,220,220},    -- input 输入状态
 }
 ```
 
@@ -106,18 +129,18 @@ print('color:', color)
     0xFFA0A0A0
 ```
 
-##### 文本对齐
+##### 5.3.2 文本对齐
 
 * 属性: text-align
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
 {
     ['text-align'] = 'center',
     ['text-align:focus'] = 'left',
-    ['text-align:disable'] = 'right',
-    ['text-align:check'] = 'left',
+    ['text-align:disabled'] = 'right',
+    ['text-align:checked'] = 'left',
     ['text-align:input'] = 'left'
 }
 ```
@@ -129,38 +152,38 @@ print('color:', color)
     'right'         -- 右对齐
 ```
 
-#### 字体
+#### 5.4 字体
 
-##### 字体大小
+##### 5.4.1 字体大小
 
 * 属性: font-size
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
 {
     ['font-size'] = 24,
     ['font-size:focus'] = 28,
-    ['font-size:disable'] = 20,
-    ['font-size:check'] = 20,
+    ['font-size:disabled'] = 20,
+    ['font-size:checked'] = 20,
     ['font-size:input'] = 20,
 }
 ```
 
-#### 背景
+#### 5.5 背景
 
-##### 背景色
+##### 5.5.1 背景色
 
 * 属性: background-color
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
 {
     ['background-color'] = {255,220,80,20},
     ['background-color:focus'] = 0xFFA0A0A0,
-    ['background-color:disable'] = '0xFFA0A0A0',
-    ['background-color:check'] = {255,220,80,20},
+    ['background-color:disabled'] = '0xFFA0A0A0',
+    ['background-color:checked'] = {255,220,80,20},
     ['background-color:input'] = {255,220,80,20},
 }
 ```
@@ -170,18 +193,18 @@ print('color:', color)
     0xFFA0A0A0
 ```
 
-##### 背景图片
+##### 5.5.2 背景图片
 
 * 属性: background-image
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
 {
     ['background-image'] = '',
     ['background-image:focus'] = 'bbb.bmp',
-    ['background-image:disable'] = 'ccc.bmp',
-    ['background-image:check'] = 'eee.bmp',
+    ['background-image:disabled'] = 'ccc.bmp',
+    ['background-image:checked'] = 'eee.bmp',
     ['background-image:input'] = 'fff.bmp',
 }
 ```
@@ -191,12 +214,12 @@ print('color:', color)
     'bbb.bmp'
 ```
 
-#### 边框
+#### 5.6 边框
 
-##### 边框宽度
+##### 5.6.1 边框宽度
 
 * 属性: border-width
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
@@ -205,8 +228,8 @@ print('color:', color)
     ['border-width'] = {1, 1, 1, 1},
 
     ['border-width:focus'] = 1,
-    ['border-width:disable'] = 1,
-    ['border-width:check'] = 1,
+    ['border-width:disabled'] = 1,
+    ['border-width:checked'] = 1,
     ['border-width:input'] = 1,
 }
 ```
@@ -216,10 +239,10 @@ print('color:', color)
     1
 ```
 
-##### 边框颜色
+##### 5.6.2 边框颜色
 
 * 属性: border-color
-* 支持状态: normal, focus, disable, check, input
+* 支持状态: normal, focus, disabled, checked, input
 
 * 设置
 ```lua
@@ -229,8 +252,8 @@ print('color:', color)
     ['border-color'] = '0xFFA0A0A0',
 
     ['border-color:focus'] = {255,220,30,30},
-    ['border-color:disable'] = {255,220,30,30},
-    ['border-color:check'] = {255,220,30,30},
+    ['border-color:disabled'] = {255,220,30,30},
+    ['border-color:checked'] = {255,220,30,30},
     ['border-color:input'] = {255,220,30,30},
 }
 ```

@@ -23,7 +23,7 @@ klua 扩展分五条线 (详 **klb-klua-design**); 本文对应 **D 线**:
 
 ```
 A. C 预加载 (require)     → preload.md
-B. kpa_* 包               → require-guide.md
+B. src_packages 扩展       → require-guide.md
 C. klbcore 脚本           → require-guide.md
 D. env 框架扩展 (本文)    → klua_ex_*, loop_once
 E. plugins 注入           → klbapp/plugins.md
