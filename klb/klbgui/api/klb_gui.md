@@ -130,7 +130,6 @@
 |----|------|
 | env GUI 扩展 | `klua/extension/klua_ex_gui.c` |
 | kgui 绑定 | `klua/klua_base/klua_kgui.c` |
-| C++ GUI | `src_cpp/klbgui/`, `CKluaExGui.cpp` |
 
 ## 查阅顺序
 

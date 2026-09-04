@@ -7,9 +7,9 @@
 
 章号 **1.x** 与第 2/3 章、`pfs_test` **编号空间独立**. **冻结**: 1=klbui / 2=kpfs / 3=klb; 章内只追加节, 禁止再插入.
 
-**组织原则**: 按 **手测流程** 分节 (custom UI → parse → select → css → 已注册控件), **非** 照搬 API 子模块目录.
+**组织原则**: 按 **手测流程** 分节 (custom UI → 脚本层 → 壳/层叠 → 简易控件 → 复合控件), **非** 照搬 API 子模块目录.
 
-**源码目录** (`klua_run/lua_test/`klbui/`): 节子目录 `custom` `parse` `select` `css` `kview`; 用例 `ch1_s{M}_{z}.lua`（`1.M.z`）; 章共享 `common.lua` (CLI) + `ui.lua` (UI 开窗) + `pref.lua` (`kenv.pref_path("klua","lua_test")` / `klbui.json`); 1.1 模板 `custom/page_tmpl.lua`. 对齐第 2 章形态. **1.1 custom** 已登记; 1.2+ 条文 **待实现**, 不登记.
+**源码目录** (`klua_run/lua_test/`klbui/`): 节子目录 `custom` `script` `shell` `basic` `composite`; 用例 `ch1_s{M}_{z}.lua`（`1.M.z`）; 章共享 `common.lua` (CLI) + `ui.lua` (UI 开窗) + `pref.lua` (`kenv.pref_path("klua","lua_test")` / `klbui.json`) + `theme.lua` (外观 `dark`/`win11-dark`/`ios-dark`/`material-dark`/`github-dark`/`light`/`fluent`); 1.1 模板 `custom/page_tmpl.lua`. 对齐第 2 章形态. **1.1 custom** 与 **1.2 script** 已登记; **1.3.1–1.3.8** / **1.4.3** 已登记; 其余 1.4–1.5 条文 **待实现** (有桩), 不登记.
 
 ---
 
@@ -36,7 +36,11 @@ Windows: `klua.exe test.lua 1.1.1`. 双入口: doc_id 或语义 id (`klbui.*`).
 |------|------|
 | `1.x` | 第 1 章全部已登记条 |
 | `1.1.x` / `1.1` | 节 1.1 (UI custom) |
-| `a` / `all` | 含本章已登记条 (现行 1.1.1 .. 1.1.3) |
+| `1.2.x` / `1.2` | 节 1.2 (脚本层) |
+| `1.3.x` / `1.3` | 节 1.3 (壳; 现行 `1.3.1`–`1.3.8`) |
+| `1.4.x` / `1.4` | 节 1.4 (简易; 现行 `1.4.3`) |
+| `1.5.x` / `1.5` | 节 1.5 (复合; 待实现未登记) |
+| `a` / `all` | 含本章已登记条 (现行 1.1.1 .. 1.2.9, `1.3.1`–`1.3.8`, `1.4.3`) |
 
 无窗口依赖的 parse/set/get 可 `batch_ok=true`. 须 **wlua** 开窗/绘制的条标 **SINGLE_ONLY**.
 
@@ -45,19 +49,19 @@ Windows: `klua.exe test.lua 1.1.1`. 双入口: doc_id 或语义 id (`klbui.*`).
 | 本节 | 手测文档 | 阶段 | 主要 API |
 |------|----------|------|----------|
 | 1.1 | [klbui_custom.md](klbui_custom.md) | 自定义内容 (UI) | `lua_test.klbui.ui` / [`klbui.parse`](../../klbcore/klbui.md) |
-| 1.2 | [klbui_parse.md](klbui_parse.md) | 解析窗口树 | [`klbui.parse`](../../klbcore/klbui.md), [`kgui.append`](../../klua/kgui.md) / [`get_kwnd`](../../klua/kgui.md) |
-| 1.3 | [klbui_select.md](klbui_select.md) | 选择器 | [`klbui.select`](../../klbcore/klbui.md) |
-| 1.4 | [klbui_css.md](klbui_css.md) | CSS | [`default_css`](../../klbcore/klbui.md) / [`global_css`](../../klbcore/klbui.md) / 行内 `style` |
-| 1.5 | [klbui_kview.md](klbui_kview.md) | kview | type `kview`; C `klbwui/embed_widgets/klbui_view.c` |
+| 1.2 | [klbui_script.md](klbui_script.md) | 脚本层 (parse / select / css) | [`klbui.parse`](../../klbcore/klbui.md) / [`select`](../../klbcore/klbui.md) / [`has_global_css`](../../klbcore/klbui.md) |
+| 1.3 | [klbui_shell.md](klbui_shell.md) | 壳 / 层叠 | `kdialog` `kview` `ktab` `kmenu` `kdiv`; `modal` / `popup` / `messagebox` |
+| 1.4 | [klbui_basic.md](klbui_basic.md) | 简易控件 | `kstatic` `kbutton` `kedit` `kcombo` … |
+| 1.5 | [klbui_composite.md](klbui_composite.md) | 复合控件 | `klist` `klistex` `kdate` … |
 
-后续控件节 (kstatic / kbutton / …) 按已注册 type 增 `1.6+`, 不提前占号.
+节号 1.3–1.5 已占; 只追加条, 不提前占 1.6+.
 
 ## 公共约定
 
 | 项 | 约定 |
 |----|------|
 | 模块 | [`require("kgui")`](../../klua/kgui.md) 或 [`require("klbcore.klbui")`](../../klbcore/klbui.md) 失败 → skip (如 `no-gui` / `no-wui`) |
-| 顶层 type | **仅** 现行已注册: `kview` `kstatic` `kbutton` `kpicture` `kdemo` (**klbwui** `klbwui_register_embed`); **禁止** `kdialog` (现行未注册) |
+| 顶层 type | 脚本层 / 页面壳根用 **kview**; `kdialog` 在 1.3 测, 不作壳根 |
 | `pos` | 写死非负 `{x,y,w,h}`; 避免 `AutoRect` 依赖 `kgui.wh()` |
 | 工作目录 | `paths.case_dir(doc_id)` (本章无镜像 IO 也可不用) |
 | 非本主题 | **禁止** 开 SDL 窗、加载字库/图片、测绘制像素 (主题即 wlua 除外) |
@@ -74,9 +78,9 @@ Windows: `klua.exe test.lua 1.1.1`. 双入口: doc_id 或语义 id (`klbui.*`).
 | 单条 | 无 `wsdl` 时 `os.execute` 同目录 `wlua.exe` (或 `wlua`) 再跑 `test.lua <id>` |
 | 批量 | worker 无 SDL; `ensure_host` → skip `need wlua (batch)` |
 | 页面 | 元素只写在页面文件 (`page_tmpl`); `ui.run` 只开窗 / relocation / parse; **禁止** 外部注入或改 dialog child |
-| 配置 | `lua_test.klbui.pref`: `kenv.pref_path("klua","lua_test")` 下 `klbui.json` (`resolution`, `language`); `ui.run` 开窗前读取; 1.1.1 可改 |
+| 配置 | `lua_test.klbui.pref`: `kenv.pref_path("klua","lua_test")` 下 `klbui.json` (`resolution`, `language`, `font_size`, `font_face`, `appearance`); `ui.run` 开窗前读取; 1.1.1 可改; 外观见 `theme.lua` |
 | 资源 | `demores/font` `images` `language` (可用 `opts.load_*=false` 关) |
-| type | 与芯片公共约定相同; 壳根为 `kview`, **禁止** `kdialog` |
+| type | 壳根为 `kview`; `kdialog` 在 1.3 测, 不作 1.1 壳根 |
 
 用例 `run()` 主路径:
 
@@ -106,10 +110,10 @@ end
 | 节 | 文档 | 条数 | 已实现 |
 |----|------|------|--------|
 | 1.1 | [klbui_custom.md](klbui_custom.md) | 3 | 3 |
-| 1.2 | [klbui_parse.md](klbui_parse.md) | 3 | — |
-| 1.3 | [klbui_select.md](klbui_select.md) | 3 | — |
-| 1.4 | [klbui_css.md](klbui_css.md) | 3 | — |
-| 1.5 | [klbui_kview.md](klbui_kview.md) | 3 | — |
+| 1.2 | [klbui_script.md](klbui_script.md) | 9 | 9 |
+| 1.3 | [klbui_shell.md](klbui_shell.md) | 8 | 8 |
+| 1.4 | [klbui_basic.md](klbui_basic.md) | 22 | 1 (`1.4.3`) |
+| 1.5 | [klbui_composite.md](klbui_composite.md) | 7 | — (lua 桩 + 文档桩) |
 
 新增: 先写本节 `### x.y.z` 条文 → `klua_run/lua_test/`klbui/` → `registry_ch1.lua` → 更新本页与根 [readme.md](../readme.md) § 已实现.
 
@@ -120,10 +124,28 @@ end
 | `1.1.1` | `klbui.custom.chrome` | [klbui_custom.md](klbui_custom.md) |
 | `1.1.2` | `klbui.custom.widgets` | [klbui_custom.md](klbui_custom.md) |
 | `1.1.3` | `klbui.custom.types` | [klbui_custom.md](klbui_custom.md) |
+| `1.2.1` | `klbui.require` | [klbui_script.md](klbui_script.md) |
+| `1.2.2` | `klbui.parse.kview` | [klbui_script.md](klbui_script.md) |
+| `1.2.3` | `klbui.parse.child` | [klbui_script.md](klbui_script.md) |
+| `1.2.4` | `klbui.select.name` | [klbui_script.md](klbui_script.md) |
+| `1.2.5` | `klbui.select.type` | [klbui_script.md](klbui_script.md) |
+| `1.2.6` | `klbui.select.id` | [klbui_script.md](klbui_script.md) |
+| `1.2.7` | `klbui.css.style` | [klbui_script.md](klbui_script.md) |
+| `1.2.8` | `klbui.css.type` | [klbui_script.md](klbui_script.md) |
+| `1.2.9` | `klbui.has_global_css` | [klbui_script.md](klbui_script.md) |
+| `1.3.1` | `klbui.kdialog` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.2` | `klbui.kview` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.3` | `klbui.ktab` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.4` | `klbui.kmenu` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.5` | `klbui.kdiv` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.6` | `klbui.modal` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.7` | `klbui.popup` | [klbui_shell.md](klbui_shell.md) |
+| `1.3.8` | `klbui.messagebox` | [klbui_shell.md](klbui_shell.md) |
+| `1.4.3` | `klbui.kpicture` | [klbui_basic.md](klbui_basic.md) |
 
 ## 新增用例
 
-1. 在对应节 md 增 `### 1.x.y` (只追加, 新控件从 1.6 起).
+1. 在对应节 md 增 `### 1.x.y` (只追加; 1.3–1.5 已占节).
 2. `klua_run/lua_test/`klbui/<节>/ch1_s{M}_{z}.lua` 实现 `run(...)`.
 3. `registry_ch1.lua` 登记 `doc_id` 与 `ids`.
 4. 更新本页与根 [readme.md](../readme.md) § 已实现用例.

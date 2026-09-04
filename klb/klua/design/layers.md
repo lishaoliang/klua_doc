@@ -12,7 +12,7 @@ klua 自下而上 **8 层**: VM/bundled → C 运行时 → env 扩展 → C→L
 L7  产品业务脚本          bin/*lua/
 L6  klbcore 纯 Lua        klb/bin/klbcore/     require klbcore.*
 L5  app 集成              klbapp / plugins     klb_app_main, klbappex_*
-L4  C++ 包装 (可选)        src_cpp/klua/        CKluaEnv, CKluaExGui
+L4  C++ 包装 (已迁 backup) backup/src_cpp/klua/
 L3  C→Lua 绑定 k*         klua_k*.c            require("kco") 等
 L2  env 框架扩展           extension/klua_ex_*  无 require
 L1  C 运行时核心           klua_env.c           klua_env_*
@@ -27,7 +27,7 @@ L0  VM + bundled           lua-5.4.6/ 等        require("cjson") 等
 | L1 | C 运行时 | C 产品 / klbapp | `klua_env.c`, `klua_main.c` | `klua_env_*`, `klua_main` |
 | L2 | env 扩展 | C 绑定内部 | `extension/klua_ex_*.c` | `klua_env_register_extension` |
 | L3 | C→Lua k* | Lua 脚本 | `klua_base/`, `klua_net/`… | `require("kco")` 等 |
-| L4 | C++ 包装 | C++ 产品 | `src_cpp/klua/` | `CKluaEnv` |
+| L4 | C++ 包装 | — | `backup/src_cpp/klua/` | 已迁 backup, 不编入 |
 | L5 | app 集成 | 产品进程 | `klbapp/klbappex_klua.*` | 预加载链, plugins |
 | L6 | klbcore | Lua 业务 | `klb/bin/klbcore/` | `require("klbcore.*")` |
 | L7 | 产品脚本 | 应用 | `bin/*lua/` | 入口 `main.lua` |

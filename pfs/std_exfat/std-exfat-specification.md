@@ -36,6 +36,5 @@
 ## Related
 
 - Chinese index: [std-exfat-specification_cn.md](std-exfat-specification_cn.md)
-- Skill index (key points, not full text): **pfs-fs-std-exfat**
 - Implementation: `portfs/src/exfat/`
 - Kernel reference: `../linux-7.1.2/fs/exfat/`

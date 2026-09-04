@@ -50,6 +50,5 @@
 
 ## Related
 
-- Skill：**pfs-fs-std-fat**
 - 实现：`portfs/src/fat/`
 - 内核：`../linux-7.1.2/fs/fat/`

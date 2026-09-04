@@ -51,6 +51,5 @@
 
 ## Related
 
-- Skill：**pfs-fs-std-ntfs**
 - 实现：`portfs/src/ntfs/`
 - 内核：`../linux-7.1.2/fs/ntfs/`

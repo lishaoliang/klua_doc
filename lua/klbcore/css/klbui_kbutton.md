@@ -589,7 +589,7 @@
 
 * 属性: background-image-mode
 * 支持状态: normal, focus, disabled; 选中态加 `:checked` 后缀
-* 取值: `'default'` (默认拉伸/贴图), `'scale9'` (九宫格)
+* 取值: `'default'` (原图拷贝, 超出裁剪), `'resize'` (缩放铺满), `'scale9'` (九宫格)
 * 与 `background-image` 独立; 可组合
 
 * 设置
@@ -609,6 +609,7 @@
 * 获取
 ```lua
     'default'
+    'resize'
     'scale9'
 ```
 
@@ -760,7 +761,7 @@
 | CSS公共 | `background-image` + 伪类           | get/set | 背景图路径; 有图不画 border          |
 | CSS公共 | `border-width` + 伪类               | get/set | 无图时生效                       |
 | CSS公共 | `border-color` + 伪类               | get/set | 无图时生效                       |
-| CSS私有 | `background-image-mode` + 伪类      | get/set | `'default'` / `'scale9'`    |
+| CSS私有 | `background-image-mode` + 伪类      | get/set | `'default'` / `'resize'` / `'scale9'` |
 | CSS私有 | `background-image-color-key` + 伪类 | get/set | 关键色透明                       |
 | 自定义   | `title`                           | get/set | 显示文本                        |
 | 自定义   | `value`                           | get/set | 业务值; 与 title 独立             |

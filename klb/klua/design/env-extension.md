@@ -140,7 +140,6 @@ Lua 侧用法见 [lua/klua/klpc.md](../../../lua/klua/klpc.md). 找不到 `dst_n
 | `_KLUAEX_NETMULTI_` | `klua_ex_netmulti.c` | 新 netmulti | sleep 建议 | — |
 | `_KLUA_EX_LPC_` | `klua_ex_lpc.c` | 跨 env LPC | 消息驱动 | — |
 | `_KLUA_EX_GUI_` | `klua_ex_gui.c` | `klb_gui_t` | GUI loop | yes |
-| `_CKLUA_EX_GUI_` | `CKluaExGui.cpp` | C++ GUI | GUI loop | — |
 
 **非** `require` 名; C 绑定通过 `klua_ex_get_*` 懒激活:
 

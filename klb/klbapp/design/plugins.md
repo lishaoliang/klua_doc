@@ -28,7 +28,7 @@ klb_app_main(argc, argv, cb_pre_load);
 
 ## 默认路径 (klua 入口)
 
-> 代码: `klb/klua/klua.cpp` (`klua_setup_plugins_paths`)
+> 代码: `klb/proj/klua/klua.c` (`klua_setup_plugins_paths`)
 
 | 平台 | 默认 plugins 目录 |
 |------|-------------------|

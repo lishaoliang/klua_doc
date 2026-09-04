@@ -57,7 +57,7 @@ klb_base_quit()
 
 ## klua 可执行默认行为
 
-> 代码: `klb/klua/klua.cpp`
+> 代码: `klb/proj/klua/klua.c`
 
 `klua` 工具入口在 `klb_base_init` 后自动:
 
@@ -65,7 +65,7 @@ klb_base_quit()
 2. 按平台 push plugins 目录 (见 [plugins.md](plugins.md))
 3. `klb_app_main(argc, argv, klua_openlibs)` — `klua_openlibs` 内调 `klua_loadlib_all`
 
-产品自建 `main()` 若需 plugins, 须自行 `enable` + `push_path`; 不经过 `klua.cpp` 则 plugins **默认仍关闭**.
+产品自建 `main()` 若需 plugins, 须自行 `enable` + `push_path`; 不经过 `klua.c` 则 plugins **默认仍关闭`.
 
 ## 主循环与 sleep
 
@@ -84,4 +84,4 @@ klb_base_quit()
 | preload | 在 preload 回调里 `klb_app_register_extension` 注册产品 C 扩展 |
 | Lua 库 | `cb_pre_load` 内 `klua_loadlib` / `klua_loadlib_all` |
 | 多 worker | 入口脚本用 `kthread.start`; 子 env 复用同一预加载链 |
-| 范例 | `klb/klua/klua.cpp`, openipc 产品入口 |
+| 范例 | `klb/proj/klua/klua.c`, openipc 产品入口 |

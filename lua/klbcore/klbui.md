@@ -43,7 +43,6 @@ Lua table 描述界面 → `parse` → **`kgui`** → **klbgui**. 控件/CSS 约
 
 | 函数 | 说明 |
 |------|------|
-| `using_cpp()` | 启用 C++ 扩展控件 |
 | `is_multi_canvas_layer()` | modal/popup/msgbox 是否分画布 |
 | `load_image(key, path)` | 加载图片资源 |
 | `clear_msg()` | 清空消息队列 |
@@ -94,13 +93,6 @@ Lua table 描述界面 → `parse` → **`kgui`** → **klbgui**. 控件/CSS 约
 --]]
 
 local klbui = {}
-
-
--- @brief 启用 C++ 扩展控件
--- @return 无
-klbui.using_cpp = function ()
-	return
-end
 
 
 -- @brief 解析对话框/命令, 并完成 gui 窗口树初始创建

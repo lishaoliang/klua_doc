@@ -533,7 +533,7 @@
 
 * 属性: background-image-mode
 * 支持状态: normal
-* 取值: `'default'` (默认拉伸/贴图), `'scale9'` (九宫格)
+* 取值: `'default'` (原图拷贝, 超出裁剪), `'resize'` (缩放铺满), `'scale9'` (九宫格)
 * 与 `background-image` 独立; 可组合
 
 * 设置
@@ -547,6 +547,7 @@
 * 获取
 ```lua
     'default'
+    'resize'
     'scale9'
 ```
 
@@ -607,7 +608,7 @@
 | CSS公共 | `background-image`                | get/set | 背景图路径; 有图不画 border          |
 | CSS公共 | `border-width`                    | get/set | 无图时生效                       |
 | CSS公共 | `border-color`                    | get/set | 无图时生效                       |
-| CSS私有 | `background-image-mode`           | get/set | `'default'` / `'scale9'`    |
+| CSS私有 | `background-image-mode`           | get/set | `'default'` / `'resize'` / `'scale9'` |
 | CSS私有 | `background-image-color-key`      | get/set | 关键色透明                       |
 
 #### 6.1 参考

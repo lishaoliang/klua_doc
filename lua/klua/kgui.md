@@ -11,7 +11,6 @@
 
 | 函数 | 参数 | 返回 | 说明 |
 |------|------|------|------|
-| `using_cpp()` | — | — | 启用 C++ `CGui` 路径; env `_KLUA_EX_GUI_` / `_CKLUA_EX_GUI_` |
 | `set_default_css(...)` | CSS 键值 | `rc` | 默认 CSS; **须在控件创建前** |
 | `get_default_css(...)` | 查询键 | 多返回值 | 读取默认 CSS |
 | `set_global_css(t, ...)` | `t` 控件类型; CSS 键值 | `rc` | 某类型全局 CSS |
@@ -116,13 +115,6 @@
 --]]
 
 local kgui = {}
-
-
--- @brief 启用 C++ 扩展控件: 即 支持使用 CPP 相关的GUI接口
-kgui.using_cpp = function ()
-	return
-end
-
 
 
 -- @brief 设置默认CSS参数
@@ -670,6 +662,5 @@ klbui.parse(dialog, commands)   -- 内部调用 kgui.append / set / bind_command
 
 - **脚本 UI** 推荐 `require("klbcore.klbui")` → `klbui.parse` 再调 **kgui**; 见 [lua/klbcore/readme.md](../klbcore/readme.md)
 - 直接调 `kgui.append` / `set` / `bind_command` 为底层 C 绑定; 控件类型须已在 klbgui 注册
-- `using_cpp()` 启用 C++ `CGui` 路径; env 扩展 `_KLUA_EX_GUI_` / `_CKLUA_EX_GUI_`
 - 事件常量与 [klbgui extension](../../klb/klbgui/design/extension.md) / `klbui_event.h` 对应; `to_event` / `b1_event` 等解析复合 msg
 - CSS 键约定: [klbui_css.md](../klbcore/css/klbui_css.md)

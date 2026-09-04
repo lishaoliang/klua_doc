@@ -43,5 +43,4 @@
 
 ## Related
 
-- Skill：**pfs-fs-std-exfat**
 - 实现：`portfs/src/exfat/`

@@ -1,6 +1,6 @@
 # pfs 测试用例
 
-约定见 **pfs-test-design**。批量 `a`/`all`：章 1 普通 IO（`1.3`～`1.8` / `1.10`）标 `SHARE_MOUNT`，连续用例可共用一次 FS mount；`1.1.x` 挂载主题与 `UMOUNT_FLOW` 仍各自 mount/umount。
+批量 `a`/`all`：章 1 普通 IO（`1.3`～`1.8` / `1.10`）标 `SHARE_MOUNT`，连续用例可共用一次 FS mount；`1.1.x` 挂载主题与 `UMOUNT_FLOW` 仍各自 mount/umount。
 
 ---
 

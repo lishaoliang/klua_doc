@@ -52,7 +52,6 @@
 ## Related
 
 - Chinese index: [std-fat-specification_cn.md](std-fat-specification_cn.md)
-- Skill index (key points, not full text): **pfs-fs-std-fat**
 - Implementation: `portfs/src/fat/`
 - Kernel: `../linux-7.1.2/fs/fat/`
 - exFAT mirror: `../std_exfat/std-exfat-specification.md`

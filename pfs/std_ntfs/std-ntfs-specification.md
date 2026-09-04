@@ -19,7 +19,7 @@
 ## Important
 
 - Microsoft **没有**发布类似 [exFAT specification](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification) / fatgen103 的 **单一公开完整 NTFS on-disk 规范**。
-- 本目录镜像的是 **公开 Learn / TechNet 说明文档** + Developer Notes；改布局时仍以 **锁定 raw** 与 **内核 layout.h** 为可核对真源（见 **pfs-fs-std-ntfs**）。
+- 本目录镜像的是 **公开 Learn / TechNet 说明文档** + Developer Notes；改布局时仍以 **锁定 raw** 与 **内核 layout.h** 为可核对真源。
 
 ## Chapters
 
@@ -55,7 +55,6 @@
 ## Related
 
 - Chinese index: [std-ntfs-specification_cn.md](std-ntfs-specification_cn.md)
-- Skill index (key points, not full text): **pfs-fs-std-ntfs**
 - Implementation: `portfs/src/ntfs/`
 - Kernel: `../linux-7.1.2/fs/ntfs/`
 - FAT mirror: `../std_fat/std-fat-specification.md`

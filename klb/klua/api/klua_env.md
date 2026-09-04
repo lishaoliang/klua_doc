@@ -138,13 +138,6 @@ Lua 侧见 [lua/klua/klpc.md](../../../lua/klua/klpc.md); 路径详 [env-extensi
 | `src_c/klua/klua_help.h` | 错误报告等 |
 | `src_c/klua/extension/klua_extension.h` | `klua_register_extension_std` |
 
-## C++ (L4)
-
-| 文件 | 说明 |
-|------|------|
-| `src_cpp/klua/CKluaEnv.cpp` | C++ env 包装 |
-| `src_cpp/klua/extension/CKluaExGui.cpp` | C++ GUI 扩展 |
-
 ## app 集成 (L5, 非 inc/klua)
 
 | 头文件 | 说明 |
