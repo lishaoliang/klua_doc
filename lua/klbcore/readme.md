@@ -69,6 +69,35 @@ package.path = package.path .. ';' .. base .. '?.lua;' .. base .. '?/init.lua'
 | [css/klbui_kbutton.md](css/klbui_kbutton.md) | `kbutton` | `klbwui/embed_widgets/klbui_button.c` | 已对齐 |
 | [css/klbui_kpicture.md](css/klbui_kpicture.md) | `kpicture` | `klbwui/embed_widgets/klbui_picture.c` | 已对齐 |
 | [css/klbui_kdemo.md](css/klbui_kdemo.md) | `kdemo` | `klbwui/embed_widgets/klbui_demo.c` | 已对齐 |
+| [css/klbui_kcombo.md](css/klbui_kcombo.md) | `kcombo` | `klbwui/embed_widgets/klbui_combo.c` | 已对齐 |
+| [css/klbui_kip.md](css/klbui_kip.md) | `kip` | `klbwui/embed_widgets/klbui_ip.c` | 已对齐 |
+| [css/klbui_kcalendar.md](css/klbui_kcalendar.md) | `kcalendar` | `klbwui/embed_widgets/klbui_calendar.c` | 已对齐 |
+| [css/klbui_kbtnex.md](css/klbui_kbtnex.md) | `kbtnex` | `klbwui/embed_widgets/klbui_btnex.c` | 已对齐 |
+| [css/klbui_kline.md](css/klbui_kline.md) | `kline` | `klbwui/embed_widgets/klbui_line.c` | 已对齐 |
+| [css/klbui_kanimation.md](css/klbui_kanimation.md) | `kanimation` | `klbwui/embed_widgets/klbui_animation.c` | 已对齐 |
+| [css/klbui_kticker.md](css/klbui_kticker.md) | `kticker` | `klbwui/embed_widgets/klbui_ticker.c` | 已对齐 |
+| [css/klbui_kcheck.md](css/klbui_kcheck.md) | `kcheck` | `klbwui/embed_widgets/klbui_check.c` | 已对齐 |
+| [css/klbui_kdiv.md](css/klbui_kdiv.md) | `kdiv` | `klbwui/embed_widgets/klbui_div.c` | 已对齐 |
+| [css/klbui_kedit.md](css/klbui_kedit.md) | `kedit` | `klbwui/embed_widgets/klbui_edit.c` | 已对齐 |
+| [css/klbui_kpassword.md](css/klbui_kpassword.md) | `kpassword` | `klbwui/embed_widgets/klbui_password.c` | 已对齐 |
+| [css/klbui_kvscrollbar.md](css/klbui_kvscrollbar.md) | `kvscrollbar` | `klbwui/embed_widgets/klbui_vscrollbar.c` | 已对齐 |
+| [css/klbui_khscrollbar.md](css/klbui_khscrollbar.md) | `khscrollbar` | `klbwui/embed_widgets/klbui_hscrollbar.c` | 已对齐 |
+| [css/klbui_kprogress.md](css/klbui_kprogress.md) | `kprogress` | `klbwui/embed_widgets/klbui_progress.c` | 已对齐 |
+| [css/klbui_kslider.md](css/klbui_kslider.md) | `kslider` | `klbwui/embed_widgets/klbui_slider.c` | 已对齐 |
+| [css/klbui_kvslider.md](css/klbui_kvslider.md) | `kvslider` | `klbwui/embed_widgets/klbui_vslider.c` | 已对齐 |
+| [css/klbui_kdate.md](css/klbui_kdate.md) | `kdate` | `klbwui/embed_widgets/klbui_date.c` | 已对齐 |
+| [css/klbui_ktime.md](css/klbui_ktime.md) | `ktime` | `klbwui/embed_widgets/klbui_time.c` | 已对齐 |
+| [css/klbui_knum.md](css/klbui_knum.md) | `knum` | `klbwui/embed_widgets/klbui_num.c` | 已对齐 |
+| [css/klbui_kspin.md](css/klbui_kspin.md) | `kspin` | `klbwui/embed_widgets/klbui_spin.c` | 已对齐 |
+| [css/klbui_kgroup.md](css/klbui_kgroup.md) | `kgroup` | `klbwui/embed_widgets/klbui_group.c` | 已对齐 |
+| [css/klbui_kradio.md](css/klbui_kradio.md) | `kradio` | `klbwui/embed_widgets/klbui_radio.c` | 已对齐 |
+| [css/klbui_klist.md](css/klbui_klist.md) | `klist` | `klbwui/embed_widgets/klbui_list.c` | 已对齐 |
+| [css/klbui_klistex.md](css/klbui_klistex.md) | `klistex` | `klbwui/embed_widgets/klbui_listex.c` | 已对齐 |
+| [css/klbui_ktab.md](css/klbui_ktab.md) | `ktab` | `klbwui/embed_widgets/klbui_tab.c` | 已对齐 |
+| [css/klbui_kmenu.md](css/klbui_kmenu.md) | `kmenu` | `klbwui/embed_widgets/klbui_menu.c` | 已对齐 |
+| [css/klbui_krichtext.md](css/klbui_krichtext.md) | `krichtext` | `klbwui/embed_widgets/klbui_richtext.c` | 已对齐 |
+| [css/klbui_kqrcode.md](css/klbui_kqrcode.md) | `kqrcode` | `klbwui/embed_widgets/klbui_qrcode.c` | 已对齐 |
+| [css/klbui_kdialog.md](css/klbui_kdialog.md) | `kdialog` | `klbwui/embed_widgets/klbui_dialog.c` | 已对齐 |
 
 ## 相关
 

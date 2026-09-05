@@ -3,7 +3,7 @@
 > API: [klbui.md](../../klbcore/klbui.md), [kgui.md](../../klua/kgui.md) | 枢纽: [readme.md](readme.md)
 > 源码: `klua_run/lua_test/`klbui/custom/ch1_s1_{z}.lua` → `lua_test.klbui.custom.ch1_s1_{z}`
 
-约定见 [readme.md](readme.md). 本节为 **可运行 UI 自定义内容**: 开窗看界面; **不** 做 CLI 断言. 解析/选择器/CSS 语义见 1.2.
+约定见 [readme.md](readme.md). 本节为 **可运行 UI 自定义内容**: 开窗看界面; **不** 做 CLI 断言. 解析/选择器/CSS 语义见 klbcore [klbui.md](../../klbcore/klbui.md).
 
 页面写法: 复制 `klua_run/lua_test/klbui/custom/page_tmpl.lua`, 只改 `css` / `dialog` / `commands`.
 
@@ -35,7 +35,7 @@
 
 页面模块: 按 `page_tmpl`; 本页满窗 parse; 开窗由 `lua_test.klbui.ui.run`; 元素只写本页
 
-配置目录: `kenv.pref_path("klua", "lua_test")` (org=`klua`, app=`lua_test`). 文件 `klbui.json`: `resolution` (`720p` / `1366x768` / `900p` / `1080p` / `1440p` / `4k`; `1366x768` 即 WXGA, `900p` 即 HD+, `1440p` 即 2k), `language` (`en` / `zh` / `zh_tw`), `font_size` (`16` / `20` / `24` / `28` / `32`; 旧档名 `small`/`medium`/`large`/`xlarge` 读入时映射到上列), `font_face` (`auto` 自动选 `demores/font` 首个字库 / 或指定 stem 如 `simsun`), `appearance` (`dark` 仿 VS Code 黑 / `win11-dark` 仿 Win11 深色 / `ios-dark` 仿 iOS 深色 / `material-dark` 仿 Material 深色 / `github-dark` 仿 GitHub 深色 / `light` 仿 Windows XP 蓝 / `fluent` 仿 Win11 浅色; 旧值 `plain` 读入时映射为 `dark`). 缺省 `1080p` + `en` + `24` + `auto` + `dark`. 章共享 `lua_test.klbui.pref` / `theme`.
+配置目录: `kenv.pref_path("klua", "lua_test")` (org=`klua`, app=`lua_test`). 文件 `klbui.json`: `resolution` 标准称谓 `HD` / `WXGA` / `WXGA+` / `HD+` / `WSXGA+` / `Full HD` / `WUXGA` / `QHD` / `WQXGA` / `QHD+` / `UW-FHD` / `UWQHD` / `4K UHD`; 下拉显示经 `pref.rs_title` 附像素 (如 `Full HD (1920x1080)`). `language` (`en` / `zh` / `zh_tw`), `font_size` (`16` / `20` / `24` / `28` / `32`; 旧档名 `small`/`medium`/`large`/`xlarge` 读入时映射到上列), `font_face` (`auto` 自动选 `demores/font` 首个字库 / 或指定 stem 如 `simsun`), `appearance` (`dark` 仿 VS Code 黑 / `win11-dark` 仿 Win11 深色 / `ios-dark` 仿 iOS 深色 / `material-dark` 仿 Material 深色 / `github-dark` 仿 GitHub 深色 / `light` 仿 Windows XP 蓝 / `fluent` 仿 Win11 浅色; 旧值 `plain` 读入时映射为 `dark`). 缺省 `Full HD` + `en` + `24` + `auto` + `dark`. 章共享 `lua_test.klbui.pref` / `theme`.
 
 步骤: 1. `klua test.lua 1.1.1` (无 `wsdl` 则转 `wlua`); 2. 看本页内容区; 3. 用下拉选分辨率, 选语言 (English / 简体中文 / 繁體中文), 选字体大小, 选字体 (`auto` / 指定字库), 选外观; 4. 关窗
 

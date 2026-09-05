@@ -14,7 +14,7 @@ cd bin
 ./klua test.lua 3.1.1
 ./klua test.lua klb.kco.fork
 ./klua test.lua 1.2.1
-./klua test.lua klbui.require
+./klua test.lua klbui.kdialog
 ```
 
 启动时会打印 `[lua_test env]` (os/arch, HOME, cwd, tmp_root).
@@ -35,8 +35,8 @@ klua.exe test.lua pfs.probe
 ./klua test.lua a          # all registered cases
 ./klua test.lua 1.x        # chapter 1 klbui (1.1.1 ..)
 ./klua test.lua 1.1.x      # section 1.1 (UI custom)
-./klua test.lua 1.2.x      # section 1.2 (script)
-./klua test.lua 1.3.x      # section 1.3 (shell; 1.3.1–1.3.8)
+./klua test.lua 1.2.x      # section 1.2 (shell; 1.2.1–1.2.8)
+./klua test.lua 1.3.x      # section 1.3 (basic; 1.3.3)
 ./klua test.lua 2.x        # chapter 2 (2.1.1 .. 2.6.20)
 ./klua test.lua 2.1.x      # section 2.1 only
 ./klua test.lua 3.x        # chapter 3 klb (3.1.1 ..)
@@ -46,12 +46,11 @@ klua.exe test.lua pfs.probe
 | 过滤 | 说明 |
 |------|------|
 | `a` / `all` | 全部已登记用例 |
-| `1.x` | 第 1 章 klbui (现行 1.1.1 .. 1.2.9, `1.3.1`–`1.3.8`, `1.4.3`) |
+| `1.x` | 第 1 章 klbui (现行 1.1.1 .. `1.2.1`–`1.2.8`, `1.3.3`) |
 | `1.1.x` / `1.1` | 节 1.1 (UI custom) |
-| `1.2.x` / `1.2` | 节 1.2 (脚本层) |
-| `1.3.x` / `1.3` | 节 1.3 (壳; 现行 `1.3.1`–`1.3.8`) |
-| `1.4.x` / `1.4` | 节 1.4 (简易; 现行 `1.4.3`) |
-| `1.5.x` / `1.5` | 节 1.5 (复合; 待实现未登记) |
+| `1.2.x` / `1.2` | 节 1.2 (壳; 现行 `1.2.1`–`1.2.8`) |
+| `1.3.x` / `1.3` | 节 1.3 (简易; 现行 `1.3.3`) |
+| `1.4.x` / `1.4` | 节 1.4 (复合; 待实现未登记) |
 | `2.x` | 第 2 章全部 |
 | `2.1.x` / `2.1` | 节 2.1 |
 | `3.x` | 第 3 章 klb |
@@ -73,15 +72,14 @@ klua.exe test.lua pfs.probe
 
 ### 第 1 章 klbui
 
-枢纽 [klbui/readme.md](klbui/readme.md) (脚本 UI `klbcore.klbui` + `kgui`; **1.1** / **1.2** / **1.3.1–1.3.8** / **1.4.3** 已实现; 其余 **1.4–1.5** 条文+桩 **待实现**).
+枢纽 [klbui/readme.md](klbui/readme.md) (脚本 UI `klbcore.klbui` + `kgui`; **1.1** / **1.2.1–1.2.8** / **1.3.3** 已实现; 其余 **1.3–1.4** 条文+桩 **待实现**).
 
 | 节 | 手测文档 | 说明 |
 |----|----------|------|
 | 1.1 | [klbui/klbui_custom.md](klbui/klbui_custom.md) | 自定义内容 (UI) |
-| 1.2 | [klbui/klbui_script.md](klbui/klbui_script.md) | 脚本层 (parse / select / css) |
-| 1.3 | [klbui/klbui_shell.md](klbui/klbui_shell.md) | 壳 / 层叠 |
-| 1.4 | [klbui/klbui_basic.md](klbui/klbui_basic.md) | 简易控件 |
-| 1.5 | [klbui/klbui_composite.md](klbui/klbui_composite.md) | 复合控件 |
+| 1.2 | [klbui/klbui_shell.md](klbui/klbui_shell.md) | 壳 / 层叠 |
+| 1.3 | [klbui/klbui_basic.md](klbui/klbui_basic.md) | 简易控件 |
+| 1.4 | [klbui/klbui_composite.md](klbui/klbui_composite.md) | 复合控件 |
 
 ### 第 2 章 kpfs
 
@@ -107,24 +105,15 @@ klua.exe test.lua pfs.probe
 | `1.1.1` | `klbui.custom.chrome` | | [klbui/klbui_custom.md](klbui/klbui_custom.md) |
 | `1.1.2` | `klbui.custom.widgets` | | [klbui/klbui_custom.md](klbui/klbui_custom.md) |
 | `1.1.3` | `klbui.custom.types` | | [klbui/klbui_custom.md](klbui/klbui_custom.md) |
-| `1.2.1` | `klbui.require` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.2` | `klbui.parse.kview` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.3` | `klbui.parse.child` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.4` | `klbui.select.name` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.5` | `klbui.select.type` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.6` | `klbui.select.id` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.7` | `klbui.css.style` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.8` | `klbui.css.type` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.2.9` | `klbui.has_global_css` | | [klbui/klbui_script.md](klbui/klbui_script.md) |
-| `1.3.1` | `klbui.kdialog` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.2` | `klbui.kview` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.3` | `klbui.ktab` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.4` | `klbui.kmenu` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.5` | `klbui.kdiv` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.6` | `klbui.modal` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.7` | `klbui.popup` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.3.8` | `klbui.messagebox` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
-| `1.4.3` | `klbui.kpicture` | | [klbui/klbui_basic.md](klbui/klbui_basic.md) |
+| `1.2.1` | `klbui.kdialog` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.2` | `klbui.kview` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.3` | `klbui.ktab` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.4` | `klbui.kmenu` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.5` | `klbui.kdiv` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.6` | `klbui.modal` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.7` | `klbui.popup` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.2.8` | `klbui.messagebox` | | [klbui/klbui_shell.md](klbui/klbui_shell.md) |
+| `1.3.3` | `klbui.kpicture` | | [klbui/klbui_basic.md](klbui/klbui_basic.md) |
 | `2.1.1` | `kpfs.version` | `pfs.version` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
 | `2.1.2` | `kpfs.probe.all` | `pfs.probe.all`, `pfs.probe` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
 | `2.1.3` | `kpfs.probe.part` | `pfs.probe.part` | [kpfs/kpfs_probe.md](kpfs/kpfs_probe.md) |
@@ -148,7 +137,7 @@ kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 |------|------|
 | `klua_run/test.lua` | **唯一入口** |
 | `klua_run/lua_test/`` | 框架 (`registry`, `batch`, `paths`, `util/`) |
-| `klua_run/lua_test/`klbui/` | **第 1 章** klbui 用例 (1.1 / 1.2 / `1.3.1`–`1.3.8` / `1.4.3` 已实现; 其余 1.4–1.5 桩待实现) |
+| `klua_run/lua_test/`klbui/` | **第 1 章** klbui 用例 (1.1 / `1.2.1`–`1.2.8` / `1.3.3` 已实现; 其余 1.3–1.4 桩待实现) |
 | `klua_run/lua_test/`pfs/` | **第 2 章** kpfs 用例 |
 | `klua_run/lua_test/`klb/` | **第 3 章** klb k* 用例 |
 | `klua_run/tmp/` | Windows 运行时临时根 (`kenv.base_path() .. "tmp"`) |
@@ -157,7 +146,7 @@ kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 
 | 章 | 根目录 | 命名 |
 |----|--------|------|
-| **1** | `klbui/` | 节子目录 `custom` `script` `shell` `basic` `composite`；用例 `ch1_s{M}_{z}.lua`；`common.lua` / `ui.lua` / `pref.lua`；1.1 模板 `custom/page_tmpl.lua` |
+| **1** | `klbui/` | 节子目录 `custom` `shell` `basic` `composite`；用例 `ch1_s{M}_{z}.lua`；`common.lua` / `ui.lua` / `pref.lua`；1.1 模板 `custom/page_tmpl.lua` |
 | **2** | `pfs/` | 节子目录 `probe`…`mtd`；用例 `ch2_s{M}_{z}.lua`；公共 `make/mount/mtd/common.lua`；`test_disk.lua` |
 | **3** | `klb/` | 推荐 `ch3_s{M}_{z}.lua`（`3.M.z`）；现行 `kco_fork.lua` = `3.1.1` |
 
