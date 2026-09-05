@@ -1,5 +1,5 @@
-> **来源**: Microsoft fatgen103 (FAT32 File System Specification v1.03)
-> **本地镜像**: `portfs/doc/std_fat/`；权威以官方 fatgen103.doc 为准
+﻿> **来源**: Microsoft fatgen103 (FAT32 File System Specification v1.03)
+> **本地镜像**: [portfs/doc/std_fat/](https://gitee.com/klua/portfs/tree/trunk/doc/std_fat/)；权威以官方 fatgen103.doc 为准
 > **译文说明**: 中文译本；字段名保留英文；术语对齐 linux-7.1.2 `fs/fat/` 与 `pfs_fat_*`
 > **Fetched**: 2026-07-25
 

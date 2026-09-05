@@ -1,6 +1,10 @@
-# Lua 脚本文档
+﻿# Lua 脚本文档
 
 > `klua_doc/lua/` — 按 `require` 形态归类的 **Lua 脚本侧** 文档真源. C API 与 klua 机制见 [klb/](../klb/readme.md).
+
+## 代码路径与 Gitee
+
+脚本源码写 **[klb/bin/klbcore/...](https://gitee.com/klua/klb/tree/trunk/bin/klbcore)**; C 预加载 k* 见 [klb/src_c/klua/](https://gitee.com/klua/klb/tree/trunk/src_c/klua). 细则: [_meta/code-path-gitee.md](../_meta/code-path-gitee.md).
 
 ## 分类导航
 
@@ -38,7 +42,7 @@
 
 | 来源                                           | 目标             | 状态                        |
 | -------------------------------------------- | -------------- | ------------------------- |
-| `klb/klua/k/*.lua.md` 等                      | `lua/klua/`    | 已迁入; **klb/ 下 stub 已删除**  |
+| [klb/klua/k/*.lua.md](https://gitee.com/klua/klb/blob/trunk/klua/k/*.lua.md) 等                      | `lua/klua/`    | 已迁入; **klb/ 下 stub 已删除**  |
 | `pfs/kpfs.md`                                | `lua/kpfs/`    | 已迁入; stub 已删除             |
-| `klb/klbcore/` (已删)                          | `lua/klbcore/` | 已迁入; `klb/klbcore/` 目录已删除 |
-| C 侧文档 (`klb/klua/design/`, `klbgui/design/`) | —              | 保留; **Lua API 链到 `lua/`** |
+| [klb/klbcore/](https://gitee.com/klua/klb/tree/trunk/klbcore/) (已删)                          | `lua/klbcore/` | 已迁入; [klb/klbcore/](https://gitee.com/klua/klb/tree/trunk/klbcore/) 目录已删除 |
+| C 侧文档 ([klb/klua/design/](https://gitee.com/klua/klb/tree/trunk/klua/design/), `klbgui/design/`) | —              | 保留; **Lua API 链到 `lua/`** |

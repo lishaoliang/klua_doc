@@ -1,6 +1,6 @@
-## UTF-8 (utf8)
+﻿## UTF-8 (utf8)
 
-> **require**: `utf8` | 代码: `klb/src_c/klua/lua-5.4.6/src/lutf8lib.c` (`luaopen_utf8`)
+> **require**: `utf8` | 代码: [klb/src_c/klua/lua-5.4.6/src/lutf8lib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/lutf8lib.c) (`luaopen_utf8`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.5](https://www.lua.org/manual/5.4/manual.html#6.5)
 
 ### 导出 API

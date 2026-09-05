@@ -1,6 +1,6 @@
-## GUI 绑定
+﻿## GUI 绑定
 
-> **require**: `kgui` | 代码: `klb/src_c/klua/klua_base/klua_kgui.c` | C 侧 **klbgui** 见 `klb/inc/klbgui/`
+> **require**: `kgui` | 代码: [klb/src_c/klua/klua_base/klua_kgui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kgui.c) | C 侧 **klbgui** 见 [klb/inc/klbgui/](https://gitee.com/klua/klb/tree/trunk/inc/klbgui/)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 ### 导出 API
@@ -573,7 +573,7 @@ function kwnd:tick_count()
 end
 ```
 
-对照桩: `klb/bin/klbcore/help/k/kgui.lua` (模块级 API 与本文一致; `@note` 长注释见 help 桩).
+对照桩: [klb/bin/klbcore/help/k/kgui.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kgui.lua) (模块级 API 与本文一致; `@note` 长注释见 help 桩).
 
 ### 示例
 

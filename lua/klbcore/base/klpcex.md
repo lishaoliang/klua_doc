@@ -1,6 +1,6 @@
-## klpc 脚本扩展
+﻿## klpc 脚本扩展
 
-> **require**: `klbcore.base.klpcex` | 代码: `bin/klbcore/base/klpcex.lua` | C 绑定 **`klpc`** 见 [klua/klpc.md](../../klua/klpc.md)
+> **require**: `klbcore.base.klpcex` | 代码: [klb/bin/klbcore/base/klpcex.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/base/klpcex.lua) | C 绑定 **`klpc`** 见 [klua/klpc.md](../../klua/klpc.md)
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 跨 **`klua_env`** 调用本地模块方法的 **便捷封装**; 内部 `klpc.new()` → `co_call` → `close`.
@@ -13,7 +13,7 @@
 
 ### 伪代码
 
-源码: `bin/klbcore/base/klpcex.lua`
+源码: [klb/bin/klbcore/base/klpcex.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/base/klpcex.lua)
 
 ```lua
 --[[

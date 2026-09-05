@@ -1,6 +1,6 @@
-## 系统控制与序列化
+﻿## 系统控制与序列化
 
-> **require**: `ksys` | 代码: `klb/src_c/klua/klua_util/klua_ksys.c`
+> **require**: `ksys` | 代码: [klb/src_c/klua/klua_util/klua_ksys.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_util/klua_ksys.c)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 ### 导出 API
@@ -18,7 +18,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/ksys.lua`
+桩: [klb/bin/klbcore/help/k/ksys.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/ksys.lua)
 
 ```lua
 --[[

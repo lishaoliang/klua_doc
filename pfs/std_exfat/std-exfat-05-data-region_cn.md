@@ -1,5 +1,5 @@
-> **来源**: [exFAT File System Specification](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification) (Microsoft Learn)
-> **本地镜像**: `portfs/doc/std_exfat/`；权威以官方 Learn 英文页为准
+﻿> **来源**: [exFAT File System Specification](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification) (Microsoft Learn)
+> **本地镜像**: [portfs/doc/std_exfat/](https://gitee.com/klua/portfs/tree/trunk/doc/std_exfat/)；权威以官方 Learn 英文页为准
 > **译文说明**: 中文译本；Cluster Heap / Allocation Bitmap 对齐 `fs/exfat/balloc.c`
 > **Fetched**: 2026-07-25; ms.date 2025-07-08
 

@@ -1,6 +1,6 @@
-# exFAT File System Specification (local mirror)
+﻿# exFAT File System Specification (local mirror)
 
-> **Local mirror**: chapter split under `portfs/doc/std_exfat/std-exfat-*.md` for pfs offline reference; official Learn page is authoritative.
+> **Local mirror**: chapter split under [portfs/doc/std_exfat/std-exfat-*.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_exfat/std-exfat-*.md) for pfs offline reference; official Learn page is authoritative.
 > **Fetched**: 2026-07-25; ms.date 2025-07-08
 
 ## 拷贝来源
@@ -36,5 +36,5 @@
 ## Related
 
 - Chinese index: [std-exfat-specification_cn.md](std-exfat-specification_cn.md)
-- Implementation: `portfs/src/exfat/`
+- Implementation: [portfs/src/exfat/](https://gitee.com/klua/portfs/tree/trunk/src/exfat/)
 - Kernel reference: `../linux-7.1.2/fs/exfat/`

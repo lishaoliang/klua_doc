@@ -1,8 +1,8 @@
 # 底层消息 API 导读
 
-> `klua_doc/klb/klbgui/api/klb_msg.md` — 头文件: `klb/inc/klbgui/klb_msg.h`
+> `klua_doc/klb/klbgui/api/klb_msg.md` — 头文件: [klb/inc/klbgui/klb_msg.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_msg.h)
 
-架构 [../design/event.md](../design/event.md). 框架事件常量见 `klbui_event.h`（同 design 文档）.
+架构 [../design/event.md](../design/event.md). 框架事件常量见 [klb/inc/klbgui/klbui_event.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_event.h)（同 design 文档）.
 
 ## klb_msg.h
 
@@ -36,7 +36,7 @@ Windows `winuser.h` 风格键值与鼠标消息号的 **klb 拷贝**，供平台
 
 ## klb_msg_t（内部结构）
 
-定义于 `klb/src_c/klbgui/klb_gui_in.h`（非对外头）：
+定义于 [klb/src_c/klbgui/klb_gui_in.h](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_gui_in.h)（非对外头）：
 
 ```c
 typedef struct klb_msg_t_
@@ -61,6 +61,6 @@ typedef struct klb_msg_t_
 ## 查阅顺序
 
 1. [../design/event.md](../design/event.md)
-2. `klb/inc/klbgui/klb_msg.h`
-3. `klb/inc/klbgui/klbui_event.h`
-4. `klb/src_c/klbgui/klb_gui.c` — 消息分发
+2. [klb/inc/klbgui/klb_msg.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_msg.h)
+3. [klb/inc/klbgui/klbui_event.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_event.h)
+4. [klb/src_c/klbgui/klb_gui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_gui.c) — 消息分发

@@ -1,4 +1,4 @@
-# 简述
+﻿# 简述
 	在应用层，做跨平台文件系统
 
 # 目标文件系统
@@ -20,7 +20,11 @@ VHDX
 
 # 目录结构
 
-> 文档真源: `klua_doc/pfs/` (Obsidian vault 子树). `portfs/docs/` 仅留跳转.
+> 文档真源: `klua_doc/pfs/` (Obsidian vault 子树). [portfs/docs/](https://gitee.com/klua/portfs/tree/trunk/docs/) 仅留跳转.
+
+## 代码路径与 Gitee
+
+源码路径统一 **[portfs/src/...](https://gitee.com/klua/portfs/tree/trunk/src)**、**[portfs/src_mtd/...](https://gitee.com/klua/portfs/tree/trunk/src_mtd)** 并链 Gitee **`trunk`**. 细则: [_meta/code-path-gitee.md](../_meta/code-path-gitee.md). `pfs/api/*.md` 生成物须改 `.tmp/pfs-api-docs/gen-api-docs` 而非手改.
 
 ```
 klua_doc/pfs/

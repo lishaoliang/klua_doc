@@ -1,6 +1,6 @@
-> **Source**: [Master File Table (Developer Notes)](https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table) (Microsoft Learn)
+﻿> **Source**: [Master File Table (Developer Notes)](https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table) (Microsoft Learn)
 > **Also**: https://docs.microsoft.com/en-us/windows/win32/devnotes/master-file-table
-> **Local mirror**: `portfs/doc/std_ntfs/` offline reference for pfs; official Learn page is authoritative.
+> **Local mirror**: [portfs/doc/std_ntfs/](https://gitee.com/klua/portfs/tree/trunk/doc/std_ntfs/) offline reference for pfs; official Learn page is authoritative.
 > **Fetched**: 2026-07-25
 
 # Master File Table (Developer Notes)

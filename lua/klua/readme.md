@@ -1,6 +1,6 @@
-# klua 扩展 (k*)
+﻿# klua 扩展 (k*)
 
-> `klua_doc/lua/klua/` — 类别: ④ klua 扩展 (L3 C→Lua) | 代码: `klb/src_c/klua/**/klua_k*.c`
+> `klua_doc/lua/klua/` — 类别: ④ klua 扩展 (L3 C→Lua) | 代码: [klb/src_c/klua/**/klua_k*.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/**/klua_k*.c)
 
 C 经 `klua_loadlib` 注册到 `registry._PRELOAD`, Lua 侧 `require("kxxx")`. 机制与 **Lua API 文档** 四层见 [klb/klua/design/k-bindings.md](../../klb/klua/design/k-bindings.md) (导出 API 简略、伪代码详注; 样板 [kgui.md](kgui.md) / [kpfs.md](../kpfs/kpfs.md)).
 

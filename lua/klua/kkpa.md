@@ -1,6 +1,6 @@
-## 键值包文件 (kkpa)
+﻿## 键值包文件 (kkpa)
 
-> **require**: `kkpa` | 代码: `klb/src_c/klua/klua_base/klua_kpackage.c`
+> **require**: `kkpa` | 代码: [klb/src_c/klua/klua_base/klua_kpackage.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kpackage.c)
 > **文档样板**: k* Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 简单 **K:V 打包文件** 读写 (资源包/配置包). **P2** 模块, API 以源码为准.
@@ -30,7 +30,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kkpa.lua`
+桩: [klb/bin/klbcore/help/k/kkpa.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kkpa.lua)
 
 ```lua
 --[[

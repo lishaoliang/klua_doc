@@ -1,5 +1,5 @@
-> **Source**: [exFAT File System Specification](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification) (Microsoft Learn; also docs.microsoft.com redirect)
-> **Local mirror**: `portfs/doc/std_exfat/` offline reference for pfs; official Learn page is authoritative.
+﻿> **Source**: [exFAT File System Specification](https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification) (Microsoft Learn; also docs.microsoft.com redirect)
+> **Local mirror**: [portfs/doc/std_exfat/](https://gitee.com/klua/portfs/tree/trunk/doc/std_exfat/) offline reference for pfs; official Learn page is authoritative.
 > **Fetched**: 2026-07-25; ms.date 2025-07-08
 
 ## 6 Directory Structure

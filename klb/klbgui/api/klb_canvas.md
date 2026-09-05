@@ -1,6 +1,6 @@
 # 画布 C API 导读
 
-> `klua_doc/klb/klbgui/api/klb_canvas.md` — 头文件: `klb/inc/klbutil/klb_canvas.h`, `klb/inc/klbgui/klb_wnd_ex.h`
+> `klua_doc/klb/klbgui/api/klb_canvas.md` — 头文件: [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h), [klb/inc/klbgui/klb_wnd_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_wnd_ex.h)
 
 架构 [../design/canvas.md](../design/canvas.md). 分层 [../design/layers.md](../design/layers.md).
 
@@ -8,10 +8,10 @@
 
 | 头文件 | 说明 |
 |--------|------|
-| `klbutil/klb_canvas.h` | 画布对象、`vtable`、图层与刷新 |
-| `klbgui/klb_wnd_ex.h` | 窗口侧扩充绘图 API 与 opt 编号 |
+| [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h) | 画布对象、`vtable`、图层与刷新 |
+| [klb/inc/klbgui/klb_wnd_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_wnd_ex.h) | 窗口侧扩充绘图 API 与 opt 编号 |
 
-实现：`klb/src_c/klbutil/klb_canvas.c`, `klb_canvas_argb8888.c`; `klb/src_c/klbgui/klb_wnd_ex.c`.
+实现：[klb/src_c/klbutil/klb_canvas.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas.c), [klb/src_c/klbutil/klb_canvas_argb8888.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas_argb8888.c); [klb/src_c/klbgui/klb_wnd_ex.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_wnd_ex.c).
 
 ## klb_canvas.h — 软实现与包装 API
 
@@ -70,7 +70,7 @@ GUI 直通：`klb_gui_canvas_ioctrl_opt8(p_gui, …)`。
 
 分组：锁 (`lock`/`unlock`)、颜色与字体、图集、基础图元、文本与图片、`draw_copy`、刷新三件套 (`refresh_rect`/`refresh_rects`/`refresh`/`refresh_layer`)、`move`/`resize`/`malloc`/`free`、扩展 `draw_opt*` / `ioctrl_opt8`。
 
-未实现的 vtable 项由 `klb_canvas.c` 包装层判空返回失败。
+未实现的 vtable 项由 [klb/src_c/klbutil/klb_canvas.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas.c) 包装层判空返回失败。
 
 ## klb_wnd_ex.h — 窗口扩充绘图
 
@@ -109,6 +109,6 @@ GUI 直通：`klb_gui_canvas_ioctrl_opt8(p_gui, …)`。
 ## 查阅顺序
 
 1. [../design/canvas.md](../design/canvas.md)
-2. `klb/inc/klbutil/klb_canvas.h`
-3. `klb/src_c/klbutil/klb_canvas.c`
+2. [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h)
+3. [klb/src_c/klbutil/klb_canvas.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas.c)
 4. P0a 后端 [wlua/readme.md](../../../wlua/readme.md)

@@ -1,6 +1,6 @@
-# klb 编译裁剪
+﻿# klb 编译裁剪
 
-> `klua_doc/klb/build_clip.md` — 代码: `klb/clip.mk`, `klb/clip-build.sh`, `build/scripts/lib/klb-clip.sh`
+> `klua_doc/klb/build_clip.md` — 代码: [klb/clip.mk](https://gitee.com/klua/klb/blob/trunk/clip.mk), [klb/clip-build.sh](https://gitee.com/klua/klb/blob/trunk/clip-build.sh), `build/scripts/lib/klb-clip.sh`
 >
 > 编译入口 → [build.md](build.md)
 
@@ -41,7 +41,7 @@ make info   # 核对 MY_CLIP_TAG
 | `no-lpeg` | `use-lpeg` | `__KLB_NO_LPEG__` | lpeg |
 | `no-sqlite` | `use-sqlite` | `__KLB_NO_SQLITE__` | lsqlite3 |
 | `no-zlib` | `use-zlib` | `__KLB_NO_ZLIB__` | zlib, lua-zlib |
-| `no-cpp` | `use-cpp` | `__KLB_NO_CPP__` | `src_cpp/**` |
+| `no-cpp` | `use-cpp` | `__KLB_NO_CPP__` | 兼容入参; `src_cpp/`/`inc_hpp/` 已迁 backup, **无编译效果** ([klb/clip.mk](https://gitee.com/klua/klb/blob/trunk/clip.mk)) |
 | `no-gui` | `use-gui` | `__KLB_NO_GUI__` | klbgui, kgui |
 | `no-format` | `use-format` | `__KLB_NO_FORMAT__` | klbformat, kh26x |
 | `no-qrencode` | `use-qrencode` | `__KLB_NO_QRENCODE__` | qrencode |
@@ -53,7 +53,7 @@ make info   # 核对 MY_CLIP_TAG
 
 ## wui (`src_packages/klbwui`)
 
-> 代码: `klb/clip.mk` (wui 段), `klb/src_packages/klbwui/`
+> 代码: [klb/clip.mk](https://gitee.com/klua/klb/blob/trunk/clip.mk) (wui 段), [klb/src_packages/klbwui/](https://gitee.com/klua/klb/tree/trunk/src_packages/klbwui/)
 
 依赖 klbgui: `no-gui` 时整包跳过. **sim 含 embed**.
 
@@ -84,7 +84,7 @@ make MY_CLIP="no-gui" -j8
 make MY_CLIP="no-wui-sim" -j8
 ```
 
-脚本 (`klb/clip-build.sh`):
+脚本 ([klb/clip-build.sh](https://gitee.com/klua/klb/blob/trunk/clip-build.sh)):
 
 ```bash
 ./clip-build.sh --min-core --enable zlib --enable lpeg --print
@@ -97,6 +97,6 @@ make MY_CLIP="no-wui-sim" -j8
 | 主题 | 入口 |
 |------|------|
 | 编译命令 / 产物 | [build.md](build.md) |
-| 真源 | `klb/clip.mk` |
+| 真源 | [klb/clip.mk](https://gitee.com/klua/klb/blob/trunk/clip.mk) |
 | GUI | [klbgui/readme.md](klbgui/readme.md) |
 | 预加载与裁剪宏 | [klua/design/preload.md](klua/design/preload.md) |

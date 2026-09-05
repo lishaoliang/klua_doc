@@ -1,6 +1,6 @@
-## XML 解析 (LuaXML)
+﻿## XML 解析 (LuaXML)
 
-> **require**: `LuaXML_lib` | 代码: `klb/src_c/klua/LuaXML_130610/LuaXML_lib.c`
+> **require**: `LuaXML_lib` | 代码: [klb/src_c/klua/LuaXML_130610/LuaXML_lib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/LuaXML_130610/LuaXML_lib.c)
 > **文档样板**: bundled Lua API 四层 — 同 [ksys.md](../klua/ksys.md)
 > **上游**: LuaXml / Gerald Franz (MIT)
 

@@ -1,6 +1,6 @@
-# k* C→Lua 绑定 (L3)
+﻿# k* C→Lua 绑定 (L3)
 
-> `klua_doc/klb/klua/design/k-bindings.md` — 实现: `klb/src_c/klua/**/klua_k*.c` — **本文: C 注册机制**. Lua `require` API 真源: [lua/klua/readme.md](../../../lua/klua/readme.md).
+> `klua_doc/klb/klua/design/k-bindings.md` — 实现: [klb/src_c/klua/**/klua_k*.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/**/klua_k*.c) — **本文: C 注册机制**. Lua `require` API 真源: [lua/klua/readme.md](../../../lua/klua/readme.md).
 
 ## 结论
 
@@ -42,7 +42,7 @@
 | `klua_doc/lua/klua/kxxx.md` | L3 `require("kxxx")` |
 | `klua_doc/lua/kpfs/kpfs*.md` | `require("kpfs")` 及子模块 |
 
-**真源**: C `luaL_Reg` / userdata 方法表与实现; k* 伪代码宜对照 `klb/bin/klbcore/help/k/kxxx.lua` (若有).
+**真源**: C `luaL_Reg` / userdata 方法表与实现; k* 伪代码宜对照 [klb/bin/klbcore/help/k/kxxx.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kxxx.lua) (若有).
 
 **枢纽** (非 API 正文): `lua/kpfs/readme.md` — 总览、加载、返回值、CLI 对照、完整流程; **勿** 塞入 `kpfs.md` 等 API 页.
 

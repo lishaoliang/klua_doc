@@ -1,8 +1,8 @@
-# FAT 标准理解（个人笔记）
+﻿# FAT 标准理解（个人笔记）
 
 > **性质**: 个人对 FAT 标准的理解与归纳, 非官方规范全文, 非 pfs 实现设计稿.
 > **官方镜像**: [std_fat/](std_fat/) · 索引 [std-fat-specification_cn.md](std_fat/std-fat-specification_cn.md)
-> **冲突**: 官方源 / `std_fat/` / 锁定 `pfs_fat_raw.h` > 本文; 实现见 `portfs/src/fat/`
+> **冲突**: 官方源 / `std_fat/` / 锁定 `pfs_fat_raw.h` > 本文; 实现见 [portfs/src/fat/](https://gitee.com/klua/portfs/tree/trunk/src/fat/)
 
 ## 术语
 
@@ -24,7 +24,7 @@
 * BPB (BIOS Parameter Block; FAT12/16/32 共用前部, 后部 union 分扩展)
 * 位置: 0x0; 大小: 512B (结构体至扩展区; 扇区尾 `0xAA55` 在 offset 510); OEM `system_id[8]`; 尾标 `FAT_BOOT_SIGNATURE`
 * 变体判别: 根目录项数 / `fat_length` / `fat32.length` 等几何 → FAT12 / FAT16 / FAT32 (非仅看 `fs_type` 字符串)
-* 对应: `portfs/src/fat/pfs_fat_raw.h` → `fat_boot_sector_t`
+* 对应: [portfs/src/fat/pfs_fat_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/fat/pfs_fat_raw.h) → `fat_boot_sector_t`
 
 * 核心项：
 ```

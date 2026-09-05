@@ -1,8 +1,8 @@
-# exFAT 标准理解（个人笔记）
+﻿# exFAT 标准理解（个人笔记）
 
 > **性质**: 个人对 exFAT 标准的理解与归纳, 非官方规范全文, 非 pfs 实现设计稿.
 > **官方镜像**: [std_exfat/](std_exfat/) · 索引 [std-exfat-specification_cn.md](std_exfat/std-exfat-specification_cn.md)
-> **冲突**: 官方源 / `std_exfat/` > 本文; 实现见 `portfs/src/exfat/`
+> **冲突**: 官方源 / `std_exfat/` > 本文; 实现见 [portfs/src/exfat/](https://gitee.com/klua/portfs/tree/trunk/src/exfat/)
 
 ## 术语
 
@@ -24,7 +24,7 @@
 ## 1.1 引导扇区(Boot Sector)
 * 旧 BPB 区 (`must_be_zero[53]`) 须全 0; 几何在后续字段 (非 FAT 式 BPB)
 * 位置: Main Boot 扇区 0; Backup Boot 通常扇区 12 起; 大小: 512B; `fs_name` `"EXFAT   "` (`STR_EXFAT`); 尾标 `0xAA55` (`EXFAT_BOOT_SIGNATURE`)
-* 对应: `portfs/src/exfat/pfs_exfat_raw.h` → `exfat_boot_sector_t`
+* 对应: [portfs/src/exfat/pfs_exfat_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/exfat/pfs_exfat_raw.h) → `exfat_boot_sector_t`
 
 * 核心项：
 ```

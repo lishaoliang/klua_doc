@@ -1,6 +1,6 @@
-## 表操作 (table)
+﻿## 表操作 (table)
 
-> **require**: `table` | 代码: `klb/src_c/klua/lua-5.4.6/src/ltablib.c` (`luaopen_table`)
+> **require**: `table` | 代码: [klb/src_c/klua/lua-5.4.6/src/ltablib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/ltablib.c) (`luaopen_table`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.6](https://www.lua.org/manual/5.4/manual.html#6.6)
 
 ### 导出 API

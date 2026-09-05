@@ -1,6 +1,6 @@
-## SMP 脚本层
+﻿## SMP 脚本层
 
-> **require**: `klbcore.klbsmp` | 代码: `bin/klbcore/klbsmp/` | C 绑定 **`ksmp`** 见 [klua/readme.md](../klua/readme.md) 网络节
+> **require**: `klbcore.klbsmp` | 代码: [klb/bin/klbcore/klbsmp](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/klbsmp) | C 绑定 **`ksmp`** 见 [klua/readme.md](../klua/readme.md) 网络节
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 SMP 协议 **纯 Lua 封装**; 底层 **`ksmp`** / **`kurl`**. 协议与 C 栈见 **klb-mnp-smp-design**.
@@ -66,7 +66,7 @@ SMP 协议 **纯 Lua 封装**; 底层 **`ksmp`** / **`kurl`**. 协议与 C 栈�
 
 ### 伪代码
 
-源码: `bin/klbcore/klbsmp/init.lua` 及 `client/`、`serve/` 子模块
+源码: [klb/bin/klbcore/klbsmp/init.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbsmp/init.lua) 及 `client/`、`serve/` 子模块
 
 ```lua
 --[[
@@ -362,4 +362,4 @@ local msg, data = klbsmp.co_call_rpc(
 - IO 须在 **`kco` 协程**内 (`co_accept` / `co_call_rpc` 等)
 - **`ksmp`** C 绑定仍为 **待定** 文档; 以源码与 **klb-mnp-smp-design** 为准
 - 客户端 `send_*` / `co_recv_*` 部分为桩, 随 C 层补齐
-- 测试脚本: `bin/klbcore/klbsmp/test/test_*.lua`
+- 测试脚本: [klb/bin/klbcore/klbsmp/test/test_*.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbsmp/test/test_*.lua)

@@ -1,5 +1,5 @@
-> **Source**: [Boot Sector](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc976796(v=technet.10)) (Microsoft Learn; Windows 2000 Server TechNet archive)
-> **Local mirror**: `portfs/doc/std_ntfs/` offline reference for pfs; official Learn page is authoritative.
+﻿> **Source**: [Boot Sector](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc976796(v=technet.10)) (Microsoft Learn; Windows 2000 Server TechNet archive)
+> **Local mirror**: [portfs/doc/std_ntfs/](https://gitee.com/klua/portfs/tree/trunk/doc/std_ntfs/) offline reference for pfs; official Learn page is authoritative.
 > **Fetched**: 2026-07-25
 
 # Boot Sector | Microsoft Learn

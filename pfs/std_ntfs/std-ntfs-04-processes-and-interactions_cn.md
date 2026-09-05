@@ -1,5 +1,5 @@
-> **来源**: Microsoft Learn / TechNet NTFS public docs (see std-ntfs-specification.md 拷贝来源)
-> **本地镜像**: `portfs/doc/std_ntfs/`；权威以官方 Learn 英文页为准
+﻿> **来源**: Microsoft Learn / TechNet NTFS public docs (see std-ntfs-specification.md 拷贝来源)
+> **本地镜像**: [portfs/doc/std_ntfs/](https://gitee.com/klua/portfs/tree/trunk/doc/std_ntfs/)；权威以官方 Learn 英文页为准
 > **译文说明**: 中文译本；字段名保留英文；术语对齐 linux-7.1.2 `fs/ntfs/` 与 `pfs_ntfs_*`
 > **Fetched**: 2026-07-25
 

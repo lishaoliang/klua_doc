@@ -1,6 +1,6 @@
-# 扩展机制
+﻿# 扩展机制
 
-> `klua_doc/klb/klbapp/design/extension.md` — 代码: `klb/inc/klbapp/klb_app_extension.h`, `klb/src_c/klbapp/klb_app.c`
+> `klua_doc/klb/klbapp/design/extension.md` — 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h), [klb/src_c/klbapp/klb_app.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klb_app.c)
 
 ## 概述
 
@@ -10,7 +10,7 @@ App 与扩展均为 **单例** (2025-4).
 
 ## klb_app_extension_t
 
-> 代码: `klb/inc/klbapp/klb_app_extension.h`
+> 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 | 回调 | 必填 | 作用 |
 |------|------|------|
@@ -22,7 +22,7 @@ App 与扩展均为 **单例** (2025-4).
 
 ## 注册与获取
 
-> 代码: `klb/inc/klbapp/klb_app_extension.h`
+> 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 ```c
 // 注册模板 (preload 或模块 init 中)
@@ -41,18 +41,20 @@ void* p = klb_app_get_extension(p_app, "my-ext");
 
 ## ioctrl
 
-> 代码: `klb/inc/klbapp/klb_app_extension.h`
+> 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 `klbappex_ioctrl_t` 提供 `ioctrl_opt0` ~ `ioctrl_opt8`, 供扩展对外暴露次级接口. 调用方用 `klbappex_ioctrl_optN` 转发.
 
 ## 内置扩展
 
-> 代码: `klb/src_c/klbapp/klbappex_klua.c`, `klbappex_plugins.c`
+> 代码: [klb/src_c/klbapp/klbappex_klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_klua.c), `klbappex_plugins.c`
 
 | 名称 | 头文件 | 作用 |
 |------|--------|------|
-| `KLBAPPEX-klua` | `klbappex_klua.h` | 持有主 `klua_env_t`, 合并预加载链, `cb_loop_once` → `klua_env_loop_once` |
-| `KLBAPPEX-plugins` | `klbappex_plugins.h` | dll/so 扫描; 无 `cb_loop_once` |
+| `KLB-APPEX-klua` | `klbappex_klua.h` | 持有主 `klua_env_t`, 合并预加载链, `cb_loop_once` → `klua_env_loop_once` |
+| `KLB-APPEX-plugins` | `klbappex_plugins.h` | dll/so 扫描; 无 `cb_loop_once` |
+
+注册名规范见 [../../design/extension-naming.md](../../design/extension-naming.md).
 
 ### klua 内置扩展
 
@@ -78,13 +80,13 @@ void* p = klb_app_get_extension(p_app, "my-ext");
 | 编译 | 链入主程序 / libklb | 独立 `.dll` / `.so` |
 | 典型用途 | 产品同进程 C 模块 | 闭源扩展, 跨子项目 klua 绑定 |
 
-静态扩展源文件命名: `klbappex_*.c` (`klb/src_c/klbapp/` 或产品目录).
+静态扩展源文件命名: `klbappex_*.c` ([klb/src_c/klbapp/](https://gitee.com/klua/klb/tree/trunk/src_c/klbapp/) 或产品目录).
 
 ## 与 klua 的关系
 
 ```
 klbapp (壳)
-  └── KLBAPPEX-klua → klua_env_t → kco / netmulti / GUI 绑定
+  └── KLB-APPEX-klua → klua_env_t → kco / netmulti / GUI 绑定
   └── KLBAPPEX-plugins → 动态库扩展
 ```
 

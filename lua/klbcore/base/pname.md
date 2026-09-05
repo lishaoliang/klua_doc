@@ -1,6 +1,6 @@
-## 协议名常量
+﻿## 协议名常量
 
-> **require**: `klbcore.base.pname` | 代码: `bin/klbcore/base/pname.lua`
+> **require**: `klbcore.base.pname` | 代码: [klb/bin/klbcore/base/pname.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/base/pname.lua)
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 网络协议 **字符串常量** 表; 与 knet 命名对齐. 无函数 API.
@@ -20,7 +20,7 @@
 
 ### 伪代码
 
-源码: `bin/klbcore/base/pname.lua`
+源码: [klb/bin/klbcore/base/pname.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/base/pname.lua)
 
 ```lua
 --[[

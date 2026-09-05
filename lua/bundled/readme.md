@@ -1,6 +1,6 @@
-# bundled 第三方 Lua 库
+﻿# bundled 第三方 Lua 库
 
-> `klua_doc/lua/bundled/` — 类别: ② 第三方开源 (C 预加载) | 代码: `klb/src_c/klua/*-x.x/`
+> `klua_doc/lua/bundled/` — 类别: ② 第三方开源 (C 预加载) | 代码: [klb/src_c/klua/*-x.x/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/*-x.x/)
 
 经 `klua_loadlib` 写入 `registry._PRELOAD`, Lua 侧 `require("短名")` 加载. 详 [klb/klua/design/preload.md](../../klb/klua/design/preload.md).
 

@@ -1,6 +1,6 @@
-## 内置协程 (coroutine)
+﻿## 内置协程 (coroutine)
 
-> **require**: `coroutine` | 代码: `klb/src_c/klua/lua-5.4.6/src/lcorolib.c` (`luaopen_coroutine`)
+> **require**: `coroutine` | 代码: [klb/src_c/klua/lua-5.4.6/src/lcorolib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/lcorolib.c) (`luaopen_coroutine`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.2](https://www.lua.org/manual/5.4/manual.html#6.2)
 
 ### 导出 API

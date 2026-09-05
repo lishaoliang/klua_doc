@@ -1,8 +1,8 @@
-# NTFS 标准理解（个人笔记）
+﻿# NTFS 标准理解（个人笔记）
 
 > **性质**: 个人对 NTFS 公开说明与 on-disk 的理解与归纳, 非官方规范全文, 非 pfs 实现设计稿.
 > **公开说明镜像**: [std_ntfs/](std_ntfs/) · 索引 [std-ntfs-specification_cn.md](std_ntfs/std-ntfs-specification_cn.md)
-> **冲突**: 官方源 / `std_ntfs/` / `pfs_ntfs_raw.h` > 本文; 实现见 `portfs/src/ntfs/`
+> **冲突**: 官方源 / `std_ntfs/` / `pfs_ntfs_raw.h` > 本文; 实现见 [portfs/src/ntfs/](https://gitee.com/klua/portfs/tree/trunk/src/ntfs/)
 
 ## 术语
 
@@ -31,7 +31,7 @@
 ## 1.1 引导扇区(Boot Sector)
 * BPB (兼容区; 多数 FAT 字段在 NTFS 上为 0)
 * 位置: 0x0; 大小: 512B; OEM `"NTFS    "` (`NTFS_OEM_ID`); 尾标 `0xAA55`
-* 对应: `portfs/src/ntfs/pfs_ntfs_raw.h` → `ntfs_boot_sector_t` / `ntfs_bios_parameter_block_t`
+* 对应: [portfs/src/ntfs/pfs_ntfs_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/ntfs/pfs_ntfs_raw.h) → `ntfs_boot_sector_t` / `ntfs_bios_parameter_block_t`
 
 * 核心项：
 ```

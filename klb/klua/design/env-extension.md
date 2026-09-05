@@ -1,6 +1,6 @@
-# env 框架扩展
+﻿# env 框架扩展
 
-> `klua_doc/klb/klua/design/env-extension.md` — 代码: `klb/inc/klua/klua_env_extension.h`, `klb/src_c/klua/klua_env.c`, `klb/src_c/klua/extension/`
+> `klua_doc/klb/klua/design/env-extension.md` — 代码: [klb/inc/klua/klua_env_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/klua_env_extension.h), [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c), [klb/src_c/klua/extension/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/extension/)
 
 分层总览 [layers.md](layers.md).
 
@@ -31,7 +31,7 @@ E. plugins 注入           → klbapp/plugins.md
 
 ## 契约 (C API)
 
-> 头文件: `klb/inc/klua/klua_env_extension.h`
+> 头文件: [klb/inc/klua/klua_env_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/klua_env_extension.h)
 
 ```c
 typedef struct klua_env_extension_t_ {
@@ -62,11 +62,11 @@ typedef struct klua_env_extension_t_ {
 
 ## 两阶段: 注册表 + 激活表
 
-> 实现: `klb/src_c/klua/klua_env.c`
+> 实现: [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c)
 
 ```
 klua_env_create
-  → klua_register_extension_std / _cpp   // 写入 p_extension_hlist (vtable 副本)
+  → klua_register_extension_std   // 写入 p_extension_hlist (vtable 副本)
 
 首次 klua_env_get_extension(name)
   → cb_create(p_env)                     // 写入 p_extension_activate_hlist (实例)
@@ -87,7 +87,7 @@ klua_env_loop_once
 
 1. 原子锁搬运 LPC 消息 `p_lpc_msg_list` → `p_msg_list`
 2. **更新** `p_env->tc` (协程 `co_sleep` 等依赖滴答)
-3. `klua_env_loop_msg` — LPC 四类消息 → `_KLUA_EX_LPC_`
+3. `klua_env_loop_msg` — LPC 四类消息 → `_KLUAEX-lpc_`
 4. 遍历激活扩展 `cb_loop_once`, 累加建议已消耗 sleep
 5. 间隔约 30s 触发 `lua_gc`
 6. 返回 `loop_sleep - sleep` (默认 `loop_sleep` 10ms)
@@ -105,7 +105,7 @@ klua_env_loop_once
 
 ## LPC 消息
 
-> `klua_msg_t` 定义: `klb/inc/klua/klua_env.h`
+> `klua_msg_t` 定义: [klb/inc/klua/klua_env.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/klua_env.h)
 
 | type | 含义 |
 |------|------|
@@ -129,17 +129,18 @@ Lua 侧用法见 [lua/klua/klpc.md](../../../lua/klua/klpc.md). 找不到 `dst_n
 
 ## 标准 env 扩展
 
-> 注册: `klb/src_c/klua/extension/klua_extension.c`
+> 注册: [klb/src_c/klua/extension/klua_extension.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/extension/klua_extension.c)
+> 注册名规范: [../../design/extension-naming.md](../../design/extension-naming.md)
 
 | 注册名 | 源文件 | 作用 | loop | quit |
 |--------|--------|------|------|------|
-| `_KLUA_EX_OBJECT_` | `klua_ex_object.c` | `klb_obj_t` | — | — |
-| `_KLUAEX_BUFAGENT_` | `klua_ex_bufagent.c` | buf 池 | — | — |
-| `_KLUA_EX_COROUTINE_` | `klua_ex_coroutine.c` | kco 调度 | 唤醒/超时 | yes |
-| `_KLUA_EX_TIME_` | `klua_ex_time.c` | timer/ticker | 调 Lua 定时 | — |
-| `_KLUAEX_NETMULTI_` | `klua_ex_netmulti.c` | 新 netmulti | sleep 建议 | — |
-| `_KLUA_EX_LPC_` | `klua_ex_lpc.c` | 跨 env LPC | 消息驱动 | — |
-| `_KLUA_EX_GUI_` | `klua_ex_gui.c` | `klb_gui_t` | GUI loop | yes |
+| `_KLUAEX-object_` | `klua_ex_object.c` | `klb_obj_t` | — | — |
+| `_KLUAEX-bufagent_` | `klua_ex_bufagent.c` | buf 池 | — | — |
+| `_KLUAEX-coroutine_` | `klua_ex_coroutine.c` | kco 调度 | 唤醒/超时 | yes |
+| `_KLUAEX-time_` | `klua_ex_time.c` | timer/ticker | 调 Lua 定时 | — |
+| `_KLUAEX-netmulti_` | `klua_ex_netmulti.c` | 新 netmulti | sleep 建议 | — |
+| `_KLUAEX-lpc_` | `klua_ex_lpc.c` | 跨 env LPC | 消息驱动 | — |
+| `_KLUAEX-gui_` | `klua_ex_gui.c` | `klb_gui_t` | GUI loop | yes |
 
 **非** `require` 名; C 绑定通过 `klua_ex_get_*` 懒激活:
 
@@ -166,8 +167,8 @@ Lua 侧用法见 [lua/klua/klpc.md](../../../lua/klua/klpc.md). 找不到 `dst_n
 
 | 项 | 约定 |
 |----|------|
-| 注册名 | `_KPFS_EX_ENV_` (`PFS_KLUA_EX_NAME`) |
-| 源文件 | `portfs/src_klua/pfs_klua_ex.{h,c}` |
+| 注册名 | `_KLUAEX-kpfs-env_`（宏 `KLUAEX_kpfs_env`） |
+| 源文件 | [portfs/src_klua/pfs_klua_ex.{h,c}](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_ex.{h,c}) |
 | 触发 | `pfs_klua_ex_get` / `pfs_klua_ex_get_by_L` — 首次 get 注册 vtable 并创建实例; 绑定层按需调用 |
 | 作用 | 每 env 单例; disk 登记表; `KLUA_ENV_EX_quit` 兜底 close |
 | 设计 | **pfs-klua-design** § env 扩展 |

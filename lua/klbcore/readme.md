@@ -1,6 +1,6 @@
-# klbcore 纯 Lua 脚本库
+﻿# klbcore 纯 Lua 脚本库
 
-> `klua_doc/lua/klbcore/` — 类别: ③ 纯 Lua | 代码: `bin/klbcore/` (开发源 `klb/bin/klbcore/`) | klua 分层 **L6**
+> `klua_doc/lua/klbcore/` — 类别: ③ 纯 Lua | 代码: [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) (开发源 [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/)) | klua 分层 **L6**
 > **文档布局**: 根目录 [readme.md](readme.md); klbui 控件/CSS 见 [css/](css/)
 
 **非** C 预加载; 入口脚本须配置 `package.path`. 与 C 同名模块 (klbnet, klbgui) **分文档阅读**.
@@ -9,7 +9,7 @@
 
 1. 本目录模块 `*.md` (Lua 调用面)
 2. 技能 **klbcore-design** (架构) / **klbcore-net-design** (net/rtsp)
-3. `bin/klbcore/` 源码
+3. [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) 源码
 
 ## package.path
 

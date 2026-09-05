@@ -1,6 +1,6 @@
-## 工作线程
+﻿## 工作线程
 
-> **require**: `kthread` | 代码: `klb/src_c/klua/klua_multithread/klua_kthread.c`
+> **require**: `kthread` | 代码: [klb/src_c/klua/klua_multithread/klua_kthread.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_multithread/klua_kthread.c)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 ### 导出 API
@@ -13,7 +13,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kthread.lua`
+桩: [klb/bin/klbcore/help/k/kthread.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kthread.lua)
 
 ```lua
 --[[

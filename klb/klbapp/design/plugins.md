@@ -1,6 +1,6 @@
-# plugins 动态库
+﻿# plugins 动态库
 
-> `klua_doc/klb/klbapp/design/plugins.md` — 代码: `klb/src_c/klbapp/klbappex_plugins.c`, `klb/inc/klbapp/klb_app_extension.h`
+> `klua_doc/klb/klbapp/design/plugins.md` — 代码: [klb/src_c/klbapp/klbappex_plugins.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_plugins.c), [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 ## 概述
 
@@ -17,7 +17,7 @@
 
 ## 配置 API
 
-> 代码: `klb/inc/klbapp/klb_app.h`
+> 代码: [klb/inc/klbapp/klb_app.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app.h)
 
 ```c
 klb_app_enable_plugins(true);
@@ -28,7 +28,7 @@ klb_app_main(argc, argv, cb_pre_load);
 
 ## 默认路径 (klua 入口)
 
-> 代码: `klb/proj/klua/klua.c` (`klua_setup_plugins_paths`)
+> 代码: [klb/proj/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/proj/klua/klua.c) (`klua_setup_plugins_paths`)
 
 | 平台 | 默认 plugins 目录 |
 |------|-------------------|
@@ -52,7 +52,7 @@ step4  klbappex_klua_do_preinit → klua_env_doinit  // 合并预加载链执行
 
 ### 预加载链顺序
 
-> 代码: `klb/src_c/klbapp/klbappex_klua.c`
+> 代码: [klb/src_c/klbapp/klbappex_klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_klua.c)
 
 1. 产品 `cb_pre_load` (如 `klua_loadlib_all`)
 2. 各成功插件经 `klbappex_pre_open` 注入的 `lua_CFunction` (按 dl 加载顺序)
@@ -61,7 +61,7 @@ step4  klbappex_klua_do_preinit → klua_env_doinit  // 合并预加载链执行
 
 ## 扫描与 dlopen 规则
 
-> 代码: `klb/src_c/klbapp/klbappex_plugins.c`
+> 代码: [klb/src_c/klbapp/klbappex_plugins.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_plugins.c)
 
 | 步 | 行为 |
 |----|------|
@@ -75,7 +75,7 @@ step4  klbappex_klua_do_preinit → klua_env_doinit  // 合并预加载链执行
 
 ## 动态库导出契约
 
-> 代码: `klb/inc/klbapp/klb_app_extension.h`
+> 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 | 符号 | 类型 | 必填 | 作用 |
 |------|------|------|------|
@@ -108,8 +108,8 @@ step4  klbappex_klua_do_preinit → klua_env_doinit  // 合并预加载链执行
 
 | 项 | 说明 |
 |----|------|
-| 产物 | `portfs/lib/libkpfs.so` (不链接进 `klua`; 运行时 dlopen) |
-| 插件源 | `portfs/src_klua/pfs_klua_plugin.c` |
+| 产物 | [portfs/lib/libkpfs.so](https://gitee.com/klua/portfs/blob/trunk/lib/libkpfs.so) (不链接进 `klua`; 运行时 dlopen) |
+| 插件源 | [portfs/src_klua/pfs_klua_plugin.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_plugin.c) |
 | 导出 | `klbappex_pre_count` / `klbappex_pre_open` |
 | Lua | `require "kpfs"` |
 
@@ -124,4 +124,4 @@ klb_app_main
   require "短名" → 从 _PRELOAD 懒加载
 ```
 
-平台层 `klb_dlopen` / `klb_dlsym`: `klb/inc/klbplatform/klb_dynamic_link.h`.
+平台层 `klb_dlopen` / `klb_dlsym`: [klb/inc/klbplatform/klb_dynamic_link.h](https://gitee.com/klua/klb/blob/trunk/inc/klbplatform/klb_dynamic_link.h).

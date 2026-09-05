@@ -1,6 +1,6 @@
-# API 总览
+﻿# API 总览
 
-> 头文件真源: `portfs/src/*.h` 与 `portfs/src_mtd/pfsmtd.h` **根级**对外头文件 (子目录内头文件不在 `docs/api/` 范围)
+> 头文件真源: [portfs/src/*.h](https://gitee.com/klua/portfs/blob/trunk/src/*.h) 与 [portfs/src_mtd/pfsmtd.h](https://gitee.com/klua/portfs/blob/trunk/src_mtd/pfsmtd.h) **根级**对外头文件 (子目录内头文件不在 `docs/api/` 范围)
 
 ## include 策略
 
@@ -12,7 +12,7 @@
 
 - `pfs.h` 聚合 `pfs_ops.h` / `pfs_blkio.h` / `pfs_part.h`, 并声明 vfs 段 (ctx / mkfs / file / dir / path)
 - 分册头可单独 include; 实现分别位于 `vfs/`, `base/` (blkio facade), `partitions/`
-- MTD 扩展: `#include "pfsmtd.h"` (`portfs/src_mtd/`); 依赖 `-I portfs/src` + `-I portfs/src_mtd`
+- MTD 扩展: `#include "pfsmtd.h"` ([portfs/src_mtd/](https://gitee.com/klua/portfs/tree/trunk/src_mtd/)); 依赖 `-I portfs/src` + `-I portfs/src_mtd`
 - `pfs_compiler.h` / `pfs_endian.h` 为库内/扩展常用辅助; 一般经其它头间接 include
 
 ## 错误码

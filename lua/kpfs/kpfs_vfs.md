@@ -1,6 +1,6 @@
-# kpfs.vfs (Lua 子模块)
+﻿# kpfs.vfs (Lua 子模块)
 
-> **require**: `kpfs.vfs` | 代码: `portfs/src_klua/pfs_klua_vfs.c`, `pfs_klua_file.c`, `pfs_klua_dir.c`, `pfs_klua_vfs_path.c`
+> **require**: `kpfs.vfs` | 代码: [portfs/src_klua/pfs_klua_vfs.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_vfs.c), `pfs_klua_file.c`, `pfs_klua_dir.c`, `pfs_klua_vfs_path.c`
 > **文档格式**: Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 > **枢纽**: [readme.md](readme.md) (总览、返回值) | **前置**: 须先 `kpfs.mount` 登记盘符
 

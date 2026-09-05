@@ -1,6 +1,6 @@
-## 调试 (debug)
+﻿## 调试 (debug)
 
-> **require**: `debug` | 代码: `klb/src_c/klua/lua-5.4.6/src/ldblib.c` (`luaopen_debug`)
+> **require**: `debug` | 代码: [klb/src_c/klua/lua-5.4.6/src/ldblib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/ldblib.c) (`luaopen_debug`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.10](https://www.lua.org/manual/5.4/manual.html#6.10)
 
 ### 导出 API

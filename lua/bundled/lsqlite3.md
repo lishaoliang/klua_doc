@@ -1,6 +1,6 @@
-## SQLite3 绑定 (lsqlite3)
+﻿## SQLite3 绑定 (lsqlite3)
 
-> **require**: `lsqlite3` | 代码: `klb/src_c/klua/lsqlite3/lsqlite3.c`
+> **require**: `lsqlite3` | 代码: [klb/src_c/klua/lsqlite3/lsqlite3.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lsqlite3/lsqlite3.c)
 > **文档样板**: bundled Lua API 四层 — 同 [ksys.md](../klua/ksys.md)
 > **上游**: [lsqlite3](http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki) (MIT); 内嵌 SQLite3
 

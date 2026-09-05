@@ -1,6 +1,10 @@
-# klb 文档
+﻿# klb 文档
 
-> `klua_doc/klb/` — 代码: `klb/`. 文档真源 (Obsidian vault 子树); `klb/bin/klbdocs/` 仅留跳转.
+> `klua_doc/klb/` — 代码: [klb/](https://gitee.com/klua/klb). 文档真源 (Obsidian vault 子树); [klb/bin/klbdocs/](https://gitee.com/klua/klb/tree/trunk/bin/klbdocs/) 仅留跳转.
+
+## 代码路径与 Gitee
+
+源码路径统一 **[klb/inc/...](https://gitee.com/klua/klb/tree/trunk/inc)**、**[klb/src_c/...](https://gitee.com/klua/klb/tree/trunk/src_c)**、**[klb/bin/klbcore/...](https://gitee.com/klua/klb/tree/trunk/bin/klbcore)** 并链 Gitee **`trunk`**. 旧 C++ (`src_cpp/`、`inc_hpp/`) 已迁工作区 `backup/`, 不编入现行 klb. 细则: [_meta/code-path-gitee.md](../_meta/code-path-gitee.md).
 
 ## 导航
 
@@ -33,5 +37,5 @@ C/C++ 模块文档格式 (readme / design / api): **doc-writing** § klb C/C++ �
 ## 查阅顺序 (ai)
 
 1. 本目录用户文档
-2. `klb/inc/<模块>/`
-3. `klb/src_c/<模块>/` 或 `klb/src_cpp/<模块>/`
+2. [klb/inc/<模块>/](https://gitee.com/klua/klb/tree/trunk/inc/<模块>/)
+3. [klb/src_c/<模块>/](https://gitee.com/klua/klb/tree/trunk/src_c/<模块>/)（C 实现; C++ 包装归档见工作区 `backup/src_cpp/`、`backup/inc_hpp/`）

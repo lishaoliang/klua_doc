@@ -1,6 +1,6 @@
-# 协程: 为何用 kco
+﻿# 协程: 为何用 kco
 
-> `klua_doc/lua/klua/guide/coroutine.md` — 类别: ④ klua 扩展 | 代码: `klb/src_c/klua/klua_base/klua_kcoro.c`, `klb/src_c/klua/extension/klua_ex_coroutine.c`
+> `klua_doc/lua/klua/guide/coroutine.md` — 类别: ④ klua 扩展 | 代码: [klb/src_c/klua/klua_base/klua_kcoro.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kcoro.c), [klb/src_c/klua/extension/klua_ex_coroutine.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/extension/klua_ex_coroutine.c)
 
 ## 结论
 

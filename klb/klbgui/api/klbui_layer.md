@@ -1,6 +1,6 @@
 # 图层 API 导读
 
-> `klua_doc/klb/klbgui/api/klbui_layer.md` — 头文件: `klb/inc/klbgui/klbui_layer.h`
+> `klua_doc/klb/klbgui/api/klbui_layer.md` — 头文件: [klb/inc/klbgui/klbui_layer.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_layer.h)
 
 架构 [../design/layer.md](../design/layer.md). 画布图层类型见 [../design/canvas.md](../design/canvas.md).
 
@@ -40,5 +40,5 @@
 ## 查阅顺序
 
 1. [../design/layer.md](../design/layer.md)
-2. `klb/inc/klbgui/klbui_layer.h`
-3. `klb/src_c/klbgui/extensions/klbuiex_udatalayer.c`, `klbuiex_waitlayer.c`
+2. [klb/inc/klbgui/klbui_layer.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_layer.h)
+3. [klb/src_c/klbgui/extensions/klbuiex_udatalayer.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/extensions/klbuiex_udatalayer.c), [klb/src_c/klbgui/extensions/klbuiex_waitlayer.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/extensions/klbuiex_waitlayer.c)

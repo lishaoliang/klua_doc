@@ -1,6 +1,6 @@
-# klua 文档
+﻿# klua 文档
 
-> `klua_doc/klb/klua/` — 代码: `klb/inc/klua/`, `klb/src_c/klua/` — **C 运行时与机制**. Lua 脚本 API 真源: [lua/klua/](../../lua/klua/readme.md).
+> `klua_doc/klb/klua/` — 代码: [klb/inc/klua/](https://gitee.com/klua/klb/tree/trunk/inc/klua/), [klb/src_c/klua/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/) — **C 运行时与机制**. Lua 脚本 API 真源: [lua/klua/](../../lua/klua/readme.md).
 
 ## 子目录
 
@@ -49,6 +49,6 @@
 1. [design/layers.md](design/layers.md) — 分层总览
 2. C API: [api/klua_env.md](api/klua_env.md)
 3. L3 机制: [design/k-bindings.md](design/k-bindings.md) → Lua API [lua/klua/readme.md](../../lua/klua/readme.md)
-4. `klb/inc/klua/`
-5. `klb/src_c/klua/`
+4. [klb/inc/klua/](https://gitee.com/klua/klb/tree/trunk/inc/klua/)
+5. [klb/src_c/klua/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/)
 6. 设计技能 **klb-klua-design**, **klb-klua-env-design**, **klbcore-design**

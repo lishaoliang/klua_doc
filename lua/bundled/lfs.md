@@ -1,6 +1,6 @@
-## 文件系统 (LuaFileSystem)
+﻿## 文件系统 (LuaFileSystem)
 
-> **require**: `lfs` | 代码: `klb/src_c/klua/luafilesystem-2.0/src/lfs.c`
+> **require**: `lfs` | 代码: [klb/src_c/klua/luafilesystem-2.0/src/lfs.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/luafilesystem-2.0/src/lfs.c)
 > **文档样板**: bundled Lua API 四层 — 同 [ksys.md](../klua/ksys.md)
 > **上游**: [LuaFileSystem](https://lunarmodules.github.io/luafilesystem/) 1.6.3 (Kepler / MIT)
 

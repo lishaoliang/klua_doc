@@ -1,6 +1,6 @@
-# P0 平台画布
+﻿# P0 平台画布
 
-> `klua_doc/klb/klbgui/design/canvas.md` — 头文件: `klb/inc/klbutil/klb_canvas.h`, `klb/inc/klbgui/klb_wnd_ex.h`; 实现: `klb/src_c/klbutil/klb_canvas*.c`
+> `klua_doc/klb/klbgui/design/canvas.md` — 头文件: [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h), [klb/inc/klbgui/klb_wnd_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_wnd_ex.h); 实现: [klb/src_c/klbutil/klb_canvas.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas.c), [klb/src_c/klbutil/klb_canvas_argb8888.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas_argb8888.c)
 
 分层总览 [layers.md](layers.md). API 导读 [../api/klb_canvas.md](../api/klb_canvas.md).
 
@@ -73,7 +73,7 @@ P0b 嵌入式 fb    规划
 
 | 机制 | 说明 |
 |------|------|
-| `draw_opt1`～`draw_opt8` | 平台/控件私有绘图；窗口侧 opt 编号见 `klb_wnd_ex.h` 100～512 |
+| `draw_opt1`～`draw_opt8` | 平台/控件私有绘图；窗口侧 opt 编号见 [klb/inc/klbgui/klb_wnd_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_wnd_ex.h) 100～512 |
 | `ioctrl_opt8` | 设备直通；GUI `klb_gui_canvas_ioctrl_opt8` |
 | 字库/图集 | `vtable.load_font` / `load_image` 等（非 draw_opt） |
 
@@ -81,8 +81,8 @@ P0b 嵌入式 fb    规划
 
 | 后端 | 路径 | 文档 |
 |------|------|------|
-| P0a 桌面 SDL | `wlua/wsdl/` | [wlua/readme.md](../../../wlua/readme.md) |
-| 软 ARGB8888 | `klb/src_c/klbutil/klb_canvas_argb8888.c` | 本节 |
+| P0a 桌面 SDL | [wlua/wsdl/](https://gitee.com/klua/wlua/tree/trunk/wsdl/) | [wlua/readme.md](../../../wlua/readme.md) |
+| 软 ARGB8888 | [klb/src_c/klbutil/klb_canvas_argb8888.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbutil/klb_canvas_argb8888.c) | 本节 |
 | P0b fb | 规划 | **klb-gui-design** |
 
 ## 关联
@@ -90,5 +90,7 @@ P0b 嵌入式 fb    规划
 | 主题 | 入口 |
 |------|------|
 | 窗口图层栈 | [layer.md](layer.md) |
+| 渲染管线 | [render.md](render.md) |
+| 窗口绘制 | [draw.md](draw.md) |
 | 渲染扩展 | [extension.md](extension.md) § render |
 | 窗口扩充绘图 | [../api/klb_canvas.md](../api/klb_canvas.md) § klb_wnd_ex |

@@ -1,14 +1,14 @@
-# klua C API 导读 (L1/L2)
+﻿# klua C API 导读 (L1/L2)
 
-> `klua_doc/klb/klua/api/klua_env.md` — 头文件: `klb/inc/klua/`
+> `klua_doc/klb/klua/api/klua_env.md` — 头文件: [klb/inc/klua/](https://gitee.com/klua/klb/tree/trunk/inc/klua/)
 
-面向 **C/C++ 产品代码** (klbapp, 独立 `klua`, 高级绑定).
+面向 **C 产品代码** (klbapp, 独立 `klua`, 高级绑定). 头文件为 C API; 无现行 klb C++ 包装层.
 
 > **Lua 脚本 API (L3 k\*)**: [lua/klua/readme.md](../../../lua/klua/readme.md) 及各 `kxxx.md`; 机制见 [k-bindings.md](../design/k-bindings.md); 清单 [require-guide.md](../design/require-guide.md). 分层 [layers.md](../design/layers.md).
 
 ## klua_env.h (L1 核心)
 
-> 实现: `klb/src_c/klua/klua_env.c`
+> 实现: [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c)
 
 ### 生命周期
 
@@ -142,14 +142,14 @@ Lua 侧见 [lua/klua/klpc.md](../../../lua/klua/klpc.md); 路径详 [env-extensi
 
 | 头文件 | 说明 |
 |--------|------|
-| `klb/inc/klbapp/klbappex_klua.h` | 主 env, 预加载 push |
-| `klb/inc/klbapp/klb_app_extension.h` | plugins `klbappex_pre_*` |
+| [klb/inc/klbapp/klbappex_klua.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klbappex_klua.h) | 主 env, 预加载 push |
+| [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h) | plugins `klbappex_pre_*` |
 
 详 [klbapp 启动](../../klbapp/design/startup.md), [plugins](../../klbapp/design/plugins.md).
 
 ## 查阅顺序
 
 1. 本页 + [layers.md](../design/layers.md)
-2. `klb/inc/klua/*.h`
-3. `klb/src_c/klua/klua_env.c`, `extension/`
+2. [klb/inc/klua/*.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/*.h)
+3. [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c), `extension/`
 4. 设计技能 **klb-klua-env-design**

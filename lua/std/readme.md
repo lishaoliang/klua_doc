@@ -1,6 +1,6 @@
-# 标准 Lua 5.4
+﻿# 标准 Lua 5.4
 
-> `klua_doc/lua/std/` — 类别: ① 标准 Lua | 代码: `klb/src_c/klua/lua-5.4.6/src/linit.c` (`luaL_openlibs`)
+> `klua_doc/lua/std/` — 类别: ① 标准 Lua | 代码: [klb/src_c/klua/lua-5.4.6/src/linit.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/linit.c) (`luaL_openlibs`)
 
 `klua_env_doinit` 第一步调用 `luaL_openlibs`, 注册下列全局库.
 

@@ -1,6 +1,6 @@
-# pfs 用户工具
+﻿# pfs 用户工具
 
-> **性质**: 用户 CLI 说明; 实现 `portfs/src_tool/`; 产物 `portfs/bin/pfs`
+> **性质**: 用户 CLI 说明; 实现 [portfs/src_tool/](https://gitee.com/klua/portfs/tree/trunk/src_tool/); 产物 [portfs/bin/pfs](https://gitee.com/klua/portfs/blob/trunk/bin/pfs)
 > **与自测分界**: 回归 harness 见 [pfs_test.md](pfs_test.md); 本工具**无** doc_id / TID / `a`/`all` 语法
 
 ---

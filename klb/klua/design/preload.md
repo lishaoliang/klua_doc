@@ -1,6 +1,6 @@
-# 预加载与 require
+﻿# 预加载与 require
 
-> `klua_doc/klb/klua/design/preload.md` — 代码: `klb/src_c/klua/klua.c`, `klb/src_c/klua/klua_env.c`
+> `klua_doc/klb/klua/design/preload.md` — 代码: [klb/src_c/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua.c), [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c)
 >
 > **Lua 脚本 API**: [lua/readme.md](../../../lua/readme.md); 清单 [require-guide.md](require-guide.md).
 
@@ -15,7 +15,7 @@ klb 闭源 C 扩展 (如 `kpfs`) 走 app **plugins** 注入预加载链, 不走 
 
 ## klua_loadlib
 
-> 代码: `klb/src_c/klua/klua.c`
+> 代码: [klb/src_c/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua.c)
 
 ```c
 klua_loadlib(L, openlib, "短名");
@@ -44,7 +44,7 @@ luaL_openlibs(L)              // §0 Lua 5.4 标准库
 
 ## klua_loadlib_all
 
-> 代码: `klb/src_c/klua/klua.c` (`klua_loadlib_all`)
+> 代码: [klb/src_c/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua.c) (`klua_loadlib_all`)
 
 默认注册 bundled 第三方 + 全部 `k*`。产品可在自有 `cb_pre_load` 中:
 
@@ -65,7 +65,7 @@ luaL_openlibs(L)              // §0 Lua 5.4 标准库
 
 ## klbcore 脚本 (非预加载)
 
-`klb/bin/klbcore/` 下纯 Lua **不在** `_PRELOAD`. 入口脚本须扩展 `package.path`:
+[klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) 下纯 Lua **不在** `_PRELOAD`. 入口脚本须扩展 `package.path`:
 
 ```lua
 local base = kenv.base_path() .. '/klbcore/'
@@ -77,7 +77,7 @@ local klbui = require('klbcore.klbui')
 
 ## worker 子线程
 
-> 代码: `klb/src_c/klbapp/klbappex_klua.c`
+> 代码: [klb/src_c/klbapp/klbappex_klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_klua.c)
 
 `klbappex_klua_do_preinit` 为 worker 设 `klua_thread_set_preload(on_preload_klualib_klbappex_klua)`. `kthread.start` 新建 env 时 `klua_env_doinit` 复用 **同一** 预加载链 (含 plugins 已注入项).
 

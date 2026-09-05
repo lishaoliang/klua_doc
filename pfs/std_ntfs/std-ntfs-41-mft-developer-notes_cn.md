@@ -1,5 +1,5 @@
-> **来源**: Microsoft Learn / TechNet NTFS public docs (see std-ntfs-specification.md 拷贝来源)
-> **本地镜像**: `portfs/doc/std_ntfs/`；权威以官方 Learn 英文页为准
+﻿> **来源**: Microsoft Learn / TechNet NTFS public docs (see std-ntfs-specification.md 拷贝来源)
+> **本地镜像**: [portfs/doc/std_ntfs/](https://gitee.com/klua/portfs/tree/trunk/doc/std_ntfs/)；权威以官方 Learn 英文页为准
 > **译文说明**: 中文译本；字段名/元数据文件名保留英文；术语对齐 linux-7.1.2 `fs/ntfs/` 与 `pfs_ntfs_*`
 > **Fetched**: 2026-07-25
 
@@ -39,4 +39,4 @@ MFT 含 file record segment; 其中前 16 个保留给特殊文件, 例如:
 - [MULTI_SECTOR_HEADER](https://learn.microsoft.com/en-us/windows/win32/devnotes/multi-sector-header)
 - [STANDARD_INFORMATION](https://learn.microsoft.com/en-us/windows/win32/devnotes/standard-information)
 
-on-disk 布局与上述结构的对照见 `fs/ntfs/layout.h` 与 `portfs/src/ntfs/pfs_ntfs_raw.h`.
+on-disk 布局与上述结构的对照见 `fs/ntfs/layout.h` 与 [portfs/src/ntfs/pfs_ntfs_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/ntfs/pfs_ntfs_raw.h).

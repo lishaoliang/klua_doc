@@ -1,6 +1,6 @@
 # CSS C API 导读
 
-> `klua_doc/klb/klbgui/api/klbui_css.md` — 头文件: `klb/inc/klbgui/klbui_css.h`, `klbui_css_ex.h`
+> `klua_doc/klb/klbgui/api/klbui_css.md` — 头文件: [klb/inc/klbgui/klbui_css.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css.h), [klb/inc/klbgui/klbui_css_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css_ex.h)
 
 架构 [../design/css.md](../design/css.md). Lua CSS 属性表见 [lua/klbcore/css/klbui_css.md](../../../lua/klbcore/css/klbui_css.md).
 
@@ -8,10 +8,10 @@
 
 | 头文件 | 说明 |
 |--------|------|
-| `klbui_css.h` | 盒模型结构体、visibility、CSS map API；结构体 4 字节对齐 |
-| `klbui_css_ex.h` | `klbuicssex_*` 单属性操作与参考绘制（非「高级 CSS3 头」） |
+| [klb/inc/klbgui/klbui_css.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css.h) | 盒模型结构体、visibility、CSS map API；结构体 4 字节对齐 |
+| [klb/inc/klbgui/klbui_css_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css_ex.h) | `klbuicssex_*` 单属性操作与参考绘制（非「高级 CSS3 头」） |
 
-实现：`klb/src_c/klbgui/klbui_css.c`, `klbui_css_ex.c`, `klbui_css_std_function.c`.
+实现：[klb/src_c/klbgui/klbui_css.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css.c), [klb/src_c/klbgui/klbui_css_ex.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css_ex.c), [klb/src_c/klbgui/klbui_css_std_function.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css_std_function.c).
 
 ## 可见性
 
@@ -52,11 +52,11 @@ Lua 合并写法示例：`["margin"] = {25, 50, 75, 100}`（见头文件注释�
 
 | 头文件 | 说明 |
 |--------|------|
-| `klbui_shwnd.h` | 共享窗口 CSS 模板 |
-| `klbui_default.h` | 默认主题入口 |
+| [klb/inc/klbgui/klbui_shwnd.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_shwnd.h) | 共享窗口 CSS 模板 |
+| [klb/inc/klbgui/klbui_default.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_default.h) | 默认主题入口 |
 
 ## 查阅顺序
 
 1. [../design/css.md](../design/css.md)
-2. `klb/inc/klbgui/klbui_css.h`
-3. `klb/bin/klbcore/klbui/csser.lua`
+2. [klb/inc/klbgui/klbui_css.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css.h)
+3. [klb/bin/klbcore/klbui/csser.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbui/csser.lua)

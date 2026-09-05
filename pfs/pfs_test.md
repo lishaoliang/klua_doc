@@ -1,4 +1,4 @@
-# pfs 测试用例
+﻿# pfs 测试用例
 
 批量 `a`/`all`：章 1 普通 IO（`1.3`～`1.8` / `1.10`）标 `SHARE_MOUNT`，连续用例可共用一次 FS mount；`1.1.x` 挂载主题与 `UMOUNT_FLOW` 仍各自 mount/umount。
 
@@ -497,7 +497,7 @@
 
 ## 二 章 2：blkio
 
-对应：`portfs/src/pfs_blkio.h`、`portfs/src/base/pfs_blkio.c`
+对应：[portfs/src/pfs_blkio.h](https://gitee.com/klua/portfs/blob/trunk/src/pfs_blkio.h)、[portfs/src/base/pfs_blkio.c](https://gitee.com/klua/portfs/blob/trunk/src/base/pfs_blkio.c)
 
 ### 2.1 句柄打开关闭
 
@@ -791,7 +791,7 @@
 
 ## 三 章 3：镜像容器（image）
 
-实现：`portfs/src_test/pfs_test_image.c`。章 2–5 仅精确 doc_id。
+实现：[portfs/src_test/pfs_test_image.c](https://gitee.com/klua/portfs/blob/trunk/src_test/pfs_test_image.c)。章 2–5 仅精确 doc_id。
 
 ### 3.1 VHD
 
@@ -915,7 +915,7 @@
 
 ## 四 章 4：diskfs（FAT12 / FAT16 / FAT32 / exFAT / NTFS / ISOFS / UDF / ext2 / ext3 / ext4）
 
-实现：`portfs/src_test/pfs_test_diskfs.c`。对应代码支持的磁盘 FS（`PFS_FAT*` / `PFS_EXFAT` / `PFS_NTFS` / `PFS_ISOFS` / `PFS_UDF` / `PFS_EXT*`）。
+实现：[portfs/src_test/pfs_test_diskfs.c](https://gitee.com/klua/portfs/blob/trunk/src_test/pfs_test_diskfs.c)。对应代码支持的磁盘 FS（`PFS_FAT*` / `PFS_EXFAT` / `PFS_NTFS` / `PFS_ISOFS` / `PFS_UDF` / `PFS_EXT*`）。
 
 约定：各节 **`4.x.1` = `pfs_mkfs`**；**`4.x.2` = `pfs_mkvol`**（**简单源** `pfs_t_mkvol_simple`：根文件 `hello.txt` + 一级空目录 `subdir/` + 三级目录文件 `l1/l2/l3/deep.txt`；读回核对三项）；**`4.x.3` = mkvol 后源/目标整树与文件对比**（**完整源** `pfs_t_mkvol_src`；目录存在 + **每个文件**长度与全文；失败打印路径、长度、首差异偏移）；**`4.x.4` = 源与目标整树与文件对比**（只读 `mount` 已有卷，**不** `pfs_mkfs`/`pfs_mkvol`；比对完整源，同 `4.x.3`）。`4.x.1`～`4.x.3` 为格式化/毁卷主题，标 **DESTRUCTIVE**（`a` 省略；仅精确 doc_id 可跑）；`4.x.4` **不**毁卷（章 2–5 仍仅精确 doc_id）。前置：blkio 已 open；`4.x.1`～`4.x.3` 时**未** mount 目标卷；`vol_bytes` 须扇区对齐（超 `PFS_*_VOL_BYTES_MAX` 时截断前缀）。简单源 Win：`d:/work/tmp/pfs_t_mkvol_simple`；完整源 Win：`d:/work/tmp/pfs_t_mkvol_src`；**禁止覆盖**目录内已有文件/子目录；缺默认项才创建。`opts` 可 NULL（默认卷标）。`4.x.4` 前置：卷已由 **`4.x.3`** 用完整源灌入。`4.1.1`～`4.10.4` 均已接线。
 
@@ -1342,7 +1342,7 @@
 
 ## 五 章 5：pfsmtd（squashfs / ubifs / jffs2 / yaffs / erofs / cramfs / romfs）
 
-实现：`portfs/src_test/pfs_test_mtd.c`（合文件；用例表待接）。对应 `PFSMTD_REGISTER_FS_ALL` 七套目标 FS（`PFSMTD_*`）。须用 **`pfsmtd_mkfs` / `pfsmtd_mkvol`**（核心 `pfs_mkfs`/`pfs_mkvol` **不**认识 `PFSMTD_*`）。
+实现：[portfs/src_test/pfs_test_mtd.c](https://gitee.com/klua/portfs/blob/trunk/src_test/pfs_test_mtd.c)（合文件；用例表待接）。对应 `PFSMTD_REGISTER_FS_ALL` 七套目标 FS（`PFSMTD_*`）。须用 **`pfsmtd_mkfs` / `pfsmtd_mkvol`**（核心 `pfs_mkfs`/`pfs_mkvol` **不**认识 `PFSMTD_*`）。
 
 约定：各节 **`5.x.1` = `pfsmtd_mkfs`**；**`5.x.2` = `pfsmtd_mkvol`**。均为格式化/毁卷主题，标 **MANUAL**（章 2–5 仅精确 doc_id；精确 id 默认 SKIP）。前置：blkio 已 open（含 PFUB/ubi 等可用后端）；**未** mount 目标卷；`opts` 可 NULL。固有只读（squashfs / erofs / cramfs / romfs）挂载用 `PFS_MNT_RDONLY`；可写（ubifs / jffs2 / yaffs）可用 `PFS_MNT_RDWR`。
 

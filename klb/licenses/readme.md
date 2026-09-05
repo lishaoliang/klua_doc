@@ -1,8 +1,8 @@
-# klb 第三方协议副本
+﻿# klb 第三方协议副本
 
 > `klua_doc/klb/licenses/`
 
-第三方依赖协议副本. klb 源码协议真源: `klb/LICENSE` (LGPL-3.0).
+第三方依赖协议副本. klb 源码协议真源: [klb/LICENSE](https://gitee.com/klua/klb/blob/trunk/LICENSE) (LGPL-3.0).
 
 | 文件 | 说明 |
 |------|------|

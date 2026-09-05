@@ -1,6 +1,6 @@
-# exFAT 文件系统规范（本地镜像 · 中文索引）
+﻿# exFAT 文件系统规范（本地镜像 · 中文索引）
 
-> **本地镜像**: `portfs/doc/std_exfat/std-exfat-*_cn.md`；权威以官方 Learn **英文**页为准
+> **本地镜像**: [portfs/doc/std_exfat/std-exfat-*_cn.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_exfat/std-exfat-*_cn.md)；权威以官方 Learn **英文**页为准
 > **Fetched**: 2026-07-25; ms.date 2025-07-08
 > **译文说明**: 字段名保留英文；术语对齐 linux-7.1.2 `fs/exfat/` 与 `pfs_exfat_*`
 
@@ -39,8 +39,8 @@
 
 - 冲突时以官方 Learn 英文原文为准；中文仅供离线阅读。
 - §7.2 推荐 Up-case Table 的十六进制数据与英文保持一致（未改写）。
-- 内核对照：`../linux-7.1.2/fs/exfat/`；实现：`portfs/src/exfat/`。
+- 内核对照：`../linux-7.1.2/fs/exfat/`；实现：[portfs/src/exfat/](https://gitee.com/klua/portfs/tree/trunk/src/exfat/)。
 
 ## Related
 
-- 实现：`portfs/src/exfat/`
+- 实现：[portfs/src/exfat/](https://gitee.com/klua/portfs/tree/trunk/src/exfat/)

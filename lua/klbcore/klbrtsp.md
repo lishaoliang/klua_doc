@@ -1,6 +1,6 @@
-## RTSP 脚本层
+﻿## RTSP 脚本层
 
-> **require**: `klbcore.klbrtsp` | 代码: `bin/klbcore/klbrtsp/` | C 绑定 **`krtsp`** 见 [klua/readme.md](../klua/readme.md) 网络节
+> **require**: `klbcore.klbrtsp` | 代码: [klb/bin/klbcore/klbrtsp](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/klbrtsp) | C 绑定 **`krtsp`** 见 [klua/readme.md](../klua/readme.md) 网络节
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 RTSP 协议 **纯 Lua 封装**; 底层 **`krtsp`** / **`kurl`**. C 栈见 **klb-net-design**; 脚本设计 **klbcore-net-design**.
@@ -41,7 +41,7 @@ RTSP 协议 **纯 Lua 封装**; 底层 **`krtsp`** / **`kurl`**. C 栈见 **klb-
 
 ### 伪代码
 
-源码: `bin/klbcore/klbrtsp/init.lua` 及 `client/`、`serve/` 子模块
+源码: [klb/bin/klbcore/klbrtsp/init.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbrtsp/init.lua) 及 `client/`、`serve/` 子模块
 
 ```lua
 --[[

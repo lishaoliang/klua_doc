@@ -1,6 +1,6 @@
-## HTTP MIME 映射
+﻿## HTTP MIME 映射
 
-> **require**: `klbcore.net.http_mime` | 代码: `bin/klbcore/net/http_mime.lua`
+> **require**: `klbcore.net.http_mime` | 代码: [klb/bin/klbcore/net/http_mime.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/net/http_mime.lua)
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 按文件扩展名返回 **Content-Type**; 静态 HTTP 服务常用. 架构 **klbcore-net-design**.
@@ -17,7 +17,7 @@
 
 ### 伪代码
 
-源码: `bin/klbcore/net/http_mime.lua`
+源码: [klb/bin/klbcore/net/http_mime.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/net/http_mime.lua)
 
 ```lua
 --[[

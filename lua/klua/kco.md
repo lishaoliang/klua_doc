@@ -1,6 +1,6 @@
-## 协程
+﻿## 协程
 
-> **require**: `kco` | 代码: `klb/src_c/klua/klua_base/klua_kcoro.c`
+> **require**: `kco` | 代码: [klb/src_c/klua/klua_base/klua_kcoro.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kcoro.c)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 ### 导出 API
@@ -13,7 +13,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kco.lua`
+桩: [klb/bin/klbcore/help/k/kco.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kco.lua)
 
 ```lua
 --[[

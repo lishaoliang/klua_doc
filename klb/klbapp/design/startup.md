@@ -1,10 +1,10 @@
-# 启动流程
+﻿# 启动流程
 
-> `klua_doc/klb/klbapp/design/startup.md` — 代码: `klb/src_c/klbapp/klb_app.c`, `klb/src_c/klbbase/klb_base.c`
+> `klua_doc/klb/klbapp/design/startup.md` — 代码: [klb/src_c/klbapp/klb_app.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klb_app.c), [klb/src_c/klbbase/klb_base.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbbase/klb_base.c)
 
 ## 定位
 
-> 代码: `klb/inc/klbapp/klb_app.h`
+> 代码: [klb/inc/klbapp/klb_app.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app.h)
 
 klbapp 面向嵌入式产品 `main()`: 聚合模块, 统一扩展感知, 主循环驱动 Lua 业务.
 
@@ -16,7 +16,7 @@ klbapp 面向嵌入式产品 `main()`: 聚合模块, 统一扩展感知, 主循�
 
 ## 标准调用序
 
-> 代码: `klb/inc/klbapp/klb_app.h` (`klb_app_main` 注释)
+> 代码: [klb/inc/klbapp/klb_app.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app.h) (`klb_app_main` 注释)
 
 ```
 klb_base_init(NULL)
@@ -32,7 +32,7 @@ klb_base_quit()
 
 ## klb_app_main 五步
 
-> 代码: `klb/src_c/klbapp/klb_app.c`
+> 代码: [klb/src_c/klbapp/klb_app.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klb_app.c)
 
 | 步 | 动作 |
 |----|------|
@@ -46,7 +46,7 @@ klb_base_quit()
 
 ## 命令行与入口脚本
 
-> 代码: `klb/src_c/klbapp/klbappex_klua.c`
+> 代码: [klb/src_c/klbapp/klbappex_klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klbappex_klua.c)
 
 | 条件 | 行为 |
 |------|------|
@@ -57,7 +57,7 @@ klb_base_quit()
 
 ## klua 可执行默认行为
 
-> 代码: `klb/proj/klua/klua.c`
+> 代码: [klb/proj/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/proj/klua/klua.c)
 
 `klua` 工具入口在 `klb_base_init` 后自动:
 
@@ -69,7 +69,7 @@ klb_base_quit()
 
 ## 主循环与 sleep
 
-> 代码: `klb/src_c/klbapp/klb_app.c` (`klb_app_loop_once`)
+> 代码: [klb/src_c/klbapp/klb_app.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbapp/klb_app.c) (`klb_app_loop_once`)
 
 1. 取主 `klua_env` 的 `klua_env_get_loop_sleep` 为 `sleep_max`
 2. 遍历已注册 loop 扩展, 累加各 `cb_loop_once` 返回值
@@ -84,4 +84,4 @@ klb_base_quit()
 | preload | 在 preload 回调里 `klb_app_register_extension` 注册产品 C 扩展 |
 | Lua 库 | `cb_pre_load` 内 `klua_loadlib` / `klua_loadlib_all` |
 | 多 worker | 入口脚本用 `kthread.start`; 子 env 复用同一预加载链 |
-| 范例 | `klb/proj/klua/klua.c`, openipc 产品入口 |
+| 范例 | [klb/proj/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/proj/klua/klua.c), openipc 产品入口 |

@@ -1,6 +1,6 @@
-# require 库清单
+﻿# require 库清单
 
-> `klua_doc/klb/klua/design/require-guide.md` — 代码: `klb/src_c/klua/klua.c` (`klua_loadlib_all`)
+> `klua_doc/klb/klua/design/require-guide.md` — 代码: [klb/src_c/klua/klua.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua.c) (`klua_loadlib_all`)
 
 对话问「Lua 有哪些库」→ **本节 §0～§4** 为 klb 默认范畴; §5～§6 视产品而定.  
 **按 require 查文档**: [lua/index-by-require.md](../../../lua/index-by-require.md).  
@@ -8,7 +8,7 @@
 
 ## §0 Lua 5.4 标准库
 
-> 详 [lua/std/readme.md](../../../lua/std/readme.md). 代码: `klb/src_c/klua/lua-5.4.6/src/linit.c` (`luaL_openlibs`)
+> 详 [lua/std/readme.md](../../../lua/std/readme.md). 代码: [klb/src_c/klua/lua-5.4.6/src/linit.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/linit.c) (`luaL_openlibs`)
 
 | 全局名 | 说明 | klb 注意 |
 |--------|------|----------|
@@ -74,9 +74,9 @@
 |--------------|------|------|
 | `klbcore.util.*` | `util/` | **klbcore-design** § 通用模块 |
 | `klbcore.base.*` | `base/` | **klbcore-design** |
-| `klbcore.help.*` | `help/` | `klb/bin/klbcore/help/` (示例/桩) |
+| `klbcore.help.*` | `help/` | [klb/bin/klbcore/help/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/help/) (示例/桩) |
 
-路径根: `klb/bin/klbcore/` (部署常拷至产品 `bin/klbcore`).
+路径根: [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) (部署常拷至产品 `bin/klbcore`).
 
 ## §5 产品层追加
 

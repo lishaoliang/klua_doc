@@ -1,6 +1,6 @@
-## JSON 编解码 (lua-cjson)
+﻿## JSON 编解码 (lua-cjson)
 
-> **require**: `cjson`, `cjson.safe` | 代码: `klb/src_c/klua/lua-cjson-2.1.0/lua_cjson.c`
+> **require**: `cjson`, `cjson.safe` | 代码: [klb/src_c/klua/lua-cjson-2.1.0/lua_cjson.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-cjson-2.1.0/lua_cjson.c)
 > **文档样板**: bundled Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — 同 [ksys.md](../klua/ksys.md)
 > **上游**: [lua-cjson](https://github.com/openresty/lua-cjson) 2.1.0 (MIT)
 
@@ -25,7 +25,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/lib3d/cjson.lua`
+桩: [klb/bin/klbcore/help/lib3d/cjson.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/lib3d/cjson.lua)
 
 ```lua
 --[[

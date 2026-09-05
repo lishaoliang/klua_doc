@@ -1,6 +1,6 @@
-# kpfs.disk (Lua 子模块)
+﻿# kpfs.disk (Lua 子模块)
 
-> **require**: `kpfs.disk` | 代码: `portfs/src_klua/pfs_klua_disk.c` (+ `pfs_klua_part.c`, `pfs_klua_mkfs.c`)
+> **require**: `kpfs.disk` | 代码: [portfs/src_klua/pfs_klua_disk.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_disk.c) (+ `pfs_klua_part.c`, `pfs_klua_mkfs.c`)
 > **文档格式**: Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 > **枢纽**: [readme.md](readme.md) (返回值、CLI 对照、完整流程) | **CLI 真源**: [pfs_tool.md](../../pfs/pfs_tool.md) §3.5–§3.7
 

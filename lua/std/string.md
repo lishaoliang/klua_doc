@@ -1,6 +1,6 @@
-## 字符串 (string)
+﻿## 字符串 (string)
 
-> **require**: `string` | 代码: `klb/src_c/klua/lua-5.4.6/src/lstrlib.c` (`luaopen_string`)
+> **require**: `string` | 代码: [klb/src_c/klua/lua-5.4.6/src/lstrlib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/lstrlib.c) (`luaopen_string`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.4](https://www.lua.org/manual/5.4/manual.html#6.4)
 
 ### 导出 API

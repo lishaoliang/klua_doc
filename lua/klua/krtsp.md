@@ -1,6 +1,6 @@
-## RTSP 传输 (krtsp)
+﻿## RTSP 传输 (krtsp)
 
-> **require**: `krtsp` | 代码: `klb/src_c/klua/klua_net/klua_krtsp.c`, `klua_krtsp_serve.c`
+> **require**: `krtsp` | 代码: [klb/src_c/klua/klua_net/klua_krtsp.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_net/klua_krtsp.c), `klua_krtsp_serve.c`
 > **文档样板**: k* Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 RTSP 协议 **C 传输层** (L3); 脚本封装见 [klbrtsp.md](../klbcore/klbrtsp.md). C 栈 **klb-net-design**.

@@ -1,6 +1,6 @@
-## 数学 (math)
+﻿## 数学 (math)
 
-> **require**: `math` | 代码: `klb/src_c/klua/lua-5.4.6/src/lmathlib.c` (`luaopen_math`)
+> **require**: `math` | 代码: [klb/src_c/klua/lua-5.4.6/src/lmathlib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/lmathlib.c) (`luaopen_math`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.7](https://www.lua.org/manual/5.4/manual.html#6.7)
 
 ### 导出 API

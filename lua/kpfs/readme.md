@@ -1,6 +1,6 @@
-# kpfs 扩展
+﻿# kpfs 扩展
 
-> `klua_doc/lua/kpfs/` — 类别: ⑤ kpfs | 代码: `portfs/src_klua/` | 设计技能 **pfs-klua-design**
+> `klua_doc/lua/kpfs/` — 类别: ⑤ kpfs | 代码: [portfs/src_klua/](https://gitee.com/klua/portfs/tree/trunk/src_klua/) | 设计技能 **pfs-klua-design**
 > **Lua API 文档**: 四层 (导出 API 简略 → 伪代码详注 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档; 样板 [kpfs.md](kpfs.md)
 > **与 CLI**: 制盘/探测参数须与 [pfs_tool.md](../../pfs/pfs_tool.md) (**pfs-tool-design**) **保持接近**; 对照见 §4
 
@@ -20,7 +20,7 @@ plugins `dlopen` 注入的 klua 预加载模块. 构建期 klua **不链接** li
 | 挂接 | klb **plugins** `dlopen`; klua **构建期不链接** libkpfs |
 | env 状态 | 每 `klua_env_t` 单例 `pfs_klua_ex_t` (L2; 脚本不可见) |
 
-**预加载表** (`portfs/src_klua/pfs_klua_plugin.c` → `klbappex_pre_open`):
+**预加载表** ([portfs/src_klua/pfs_klua_plugin.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_plugin.c) → `klbappex_pre_open`):
 
 | 预加载名 | `require` | 职责 |
 |----------|-----------|------|

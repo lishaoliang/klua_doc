@@ -1,6 +1,6 @@
-## 声明式 UI
+﻿## 声明式 UI
 
-> **require**: `klbcore.klbui` | 代码: `bin/klbcore/klbui/` | C 绑定 **`kgui`** 见 [klua/kgui.md](../klua/kgui.md)
+> **require**: `klbcore.klbui` | 代码: [klb/bin/klbcore/klbui](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/klbui) | C 绑定 **`kgui`** 见 [klua/kgui.md](../klua/kgui.md)
 > **文档样板**: Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 Lua table 描述界面 → `parse` → **`kgui`** → **klbgui**. 控件/CSS 约定见 [css/](css/); 架构 **klbcore-design** § klbui.
@@ -78,7 +78,7 @@ Lua table 描述界面 → `parse` → **`kgui`** → **klbgui**. 控件/CSS 约
 
 ### 伪代码
 
-源码: `bin/klbcore/klbui/init.lua`; wnder: `bin/klbcore/klbui/wnder.lua`
+源码: [klb/bin/klbcore/klbui/init.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbui/init.lua); wnder: [klb/bin/klbcore/klbui/wnder.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbui/wnder.lua)
 
 ```lua
 --[[

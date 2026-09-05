@@ -1,6 +1,6 @@
-# klua 环境生命周期
+﻿# klua 环境生命周期
 
-> `klua_doc/klb/klua/design/lifecycle.md` — 代码: `klb/inc/klua/klua_env.h`, `klb/src_c/klua/klua_env.c`
+> `klua_doc/klb/klua/design/lifecycle.md` — 代码: [klb/inc/klua/klua_env.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/klua_env.h), [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c)
 
 分层总览 [layers.md](layers.md).
 
@@ -10,7 +10,7 @@
 
 ## 标准调用序 (C)
 
-> 代码: `klb/inc/klua/klua_env.h` @history
+> 代码: [klb/inc/klua/klua_env.h](https://gitee.com/klua/klb/blob/trunk/inc/klua/klua_env.h) @history
 
 ```
 klua_env_create(cb_pre_load)     // 创建, 不初始化 Lua
@@ -37,7 +37,7 @@ klua_env_create(cb_pre_load)     // 创建, 不初始化 Lua
 
 ## doinit 内部 (要点)
 
-> 代码: `klb/src_c/klua/klua_env.c` (`klua_pmain`)
+> 代码: [klb/src_c/klua/klua_env.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_env.c) (`klua_pmain`)
 
 1. `luaL_openlibs(L)` — Lua 5.4 标准库
 2. 依次执行 `p_preload_nlist` 中每条 `lua_CFunction` (产品 `klua_loadlib_all`, plugins 等)

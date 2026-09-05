@@ -1,6 +1,6 @@
-## H.26x 文件读取 (kh26x)
+﻿## H.26x 文件读取 (kh26x)
 
-> **require**: `kh26x` | 代码: `klb/src_c/klua/klua_format/klua_kh26x.c`
+> **require**: `kh26x` | 代码: [klb/src_c/klua/klua_format/klua_kh26x.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_format/klua_kh26x.c)
 > **文档样板**: k* Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 读取 **H.264/H.265** 裸流文件, 按帧返回 **`klb_buf_t*`** (lightuserdata). **P2** 模块.
@@ -21,7 +21,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kh26x.lua`
+桩: [klb/bin/klbcore/help/k/kh26x.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kh26x.lua)
 
 ```lua
 --[[

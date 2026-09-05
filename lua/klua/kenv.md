@@ -1,6 +1,6 @@
-## 运行环境
+﻿## 运行环境
 
-> **require**: `kenv` | 代码: `klb/src_c/klua/klua_util/klua_kenv.c`
+> **require**: `kenv` | 代码: [klb/src_c/klua/klua_util/klua_kenv.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_util/klua_kenv.c)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 ### 导出 API
@@ -20,7 +20,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kenv.lua`
+桩: [klb/bin/klbcore/help/k/kenv.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kenv.lua)
 
 ```lua
 --[[

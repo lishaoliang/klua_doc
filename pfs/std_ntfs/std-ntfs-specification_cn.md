@@ -1,6 +1,6 @@
-# NTFS 文件系统规范（本地镜像 · 中文索引）
+﻿# NTFS 文件系统规范（本地镜像 · 中文索引）
 
-> **本地镜像**: `portfs/doc/std_ntfs/std-ntfs-*_cn.md`；权威以官方 Learn 英文页为准
+> **本地镜像**: [portfs/doc/std_ntfs/std-ntfs-*_cn.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_ntfs/std-ntfs-*_cn.md)；权威以官方 Learn 英文页为准
 > **Fetched**: 2026-07-25
 > **译文说明**: 字段名/元数据文件名保留英文；术语对齐 linux-7.1.2 `fs/ntfs/` 与 `pfs_ntfs_*`
 
@@ -12,7 +12,7 @@
 | **文档全称** | How NTFS Works: Local File Systems (Windows Server 2003 TechNet archive) |
 | **拷贝来源（Boot Sector）** | https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc976796(v=technet.10) |
 | **拷贝来源（MFT Developer Notes）** | https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table |
-| **本仓 on-disk 对齐** | `portfs/src/ntfs/pfs_ntfs_raw.h` ← linux-7.1.2 `fs/ntfs/layout.h` |
+| **本仓 on-disk 对齐** | [portfs/src/ntfs/pfs_ntfs_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/ntfs/pfs_ntfs_raw.h) ← linux-7.1.2 `fs/ntfs/layout.h` |
 | **英文索引** | [std-ntfs-specification.md](std-ntfs-specification.md) |
 
 ## Important
@@ -51,5 +51,5 @@
 
 ## Related
 
-- 实现：`portfs/src/ntfs/`
+- 实现：[portfs/src/ntfs/](https://gitee.com/klua/portfs/tree/trunk/src/ntfs/)
 - 内核：`../linux-7.1.2/fs/ntfs/`

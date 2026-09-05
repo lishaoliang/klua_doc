@@ -1,10 +1,10 @@
-# 按 require 查文档
+﻿# 按 require 查文档
 
 > `klua_doc/lua/index-by-require.md` — 脚本侧 API 索引真源. 全量清单含 §5～§6 见 [require-guide.md](../klb/klua/design/require-guide.md).
 
 ## ① 标准 Lua 5.4
 
-详 [std/readme.md](std/readme.md). 代码: `klb/src_c/klua/lua-5.4.6/src/linit.c`.
+详 [std/readme.md](std/readme.md). 代码: [klb/src_c/klua/lua-5.4.6/src/linit.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/linit.c).
 
 | require / 全局 | 文档 | klb 注意 |
 |----------------|------|----------|
@@ -34,7 +34,7 @@
 
 ## ③ klbcore 纯 Lua
 
-详 [klbcore/readme.md](klbcore/readme.md). 路径根: `bin/klbcore/` (源 `klb/bin/klbcore/`).
+详 [klbcore/readme.md](klbcore/readme.md). 路径根: [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) (源 [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/)).
 
 | require | 文档 |
 |---------|------|
@@ -78,7 +78,7 @@
 
 ## ⑤ kpfs (plugins)
 
-枢纽 [kpfs/readme.md](kpfs/readme.md). 代码: `portfs/src_klua/`.
+枢纽 [kpfs/readme.md](kpfs/readme.md). 代码: [portfs/src_klua/](https://gitee.com/klua/portfs/tree/trunk/src_klua/).
 
 | require | 文档 | 说明 |
 |---------|------|------|

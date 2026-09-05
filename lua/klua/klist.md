@@ -1,6 +1,6 @@
-## 跨线程链表 (klist)
+﻿## 跨线程链表 (klist)
 
-> **require**: `klist` | 代码: `klb/src_c/klua/klua_multithread/klua_klist.c`
+> **require**: `klist` | 代码: [klb/src_c/klua/klua_multithread/klua_klist.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_multithread/klua_klist.c)
 > **文档样板**: k* Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 进程内 **FIFO 链表**, 按命名路径共享; 元素为 **`klb_obj_t*`** (lightuserdata). 适合 worker 线程生产、主线程消费.
@@ -26,7 +26,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/klist.lua`
+桩: [klb/bin/klbcore/help/k/klist.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/klist.lua)
 
 ```lua
 --[[

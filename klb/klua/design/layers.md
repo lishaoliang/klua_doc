@@ -1,6 +1,6 @@
-# klua 分层总览
+﻿# klua 分层总览
 
-> `klua_doc/klb/klua/design/layers.md` — 代码: `klb/inc/klua/`, `klb/src_c/klua/`
+> `klua_doc/klb/klua/design/layers.md` — 代码: [klb/inc/klua/](https://gitee.com/klua/klb/tree/trunk/inc/klua/), [klb/src_c/klua/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/)
 
 ## 结论
 
@@ -29,12 +29,14 @@ L0  VM + bundled           lua-5.4.6/ 等        require("cjson") 等
 | L3 | C→Lua k* | Lua 脚本 | `klua_base/`, `klua_net/`… | `require("kco")` 等 |
 | L4 | C++ 包装 | — | `backup/src_cpp/klua/` | 已迁 backup, 不编入 |
 | L5 | app 集成 | 产品进程 | `klbapp/klbappex_klua.*` | 预加载链, plugins |
-| L6 | klbcore | Lua 业务 | `klb/bin/klbcore/` | `require("klbcore.*")` |
+| L6 | klbcore | Lua 业务 | [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) | `require("klbcore.*")` |
 | L7 | 产品脚本 | 应用 | `bin/*lua/` | 入口 `main.lua` |
 
 ## 两类 C 接口
 
-### A. C/C++ 开发者 (L1/L2 + 工具头)
+### A. C 开发者 (L1/L2 + 工具头)
+
+现行 klb 以 **C API** 为主; 旧 C++ 包装 (`backup/src_cpp/klua/` 等) 已迁 backup, 不编入.
 
 | 头文件 | 层 | 说明 |
 |--------|-----|------|

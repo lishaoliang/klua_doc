@@ -1,6 +1,6 @@
-# FAT File System Specification (local mirror)
+﻿# FAT File System Specification (local mirror)
 
-> **Local mirror**: chapter split under `portfs/doc/std_fat/std-fat-*.md` for pfs offline reference; official sources are authoritative.
+> **Local mirror**: chapter split under [portfs/doc/std_fat/std-fat-*.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_fat/std-fat-*.md) for pfs offline reference; official sources are authoritative.
 > **Fetched**: 2026-07-25
 
 ## 拷贝来源
@@ -52,6 +52,6 @@
 ## Related
 
 - Chinese index: [std-fat-specification_cn.md](std-fat-specification_cn.md)
-- Implementation: `portfs/src/fat/`
+- Implementation: [portfs/src/fat/](https://gitee.com/klua/portfs/tree/trunk/src/fat/)
 - Kernel: `../linux-7.1.2/fs/fat/`
 - exFAT mirror: `../std_exfat/std-exfat-specification.md`

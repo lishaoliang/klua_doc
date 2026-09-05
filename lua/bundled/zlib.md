@@ -1,6 +1,6 @@
-## zlib 压缩 (lua-zlib)
+﻿## zlib 压缩 (lua-zlib)
 
-> **require**: `zlib` | 代码: `klb/src_c/klua/lua-zlib-1.3/lua_zlib.c`
+> **require**: `zlib` | 代码: [klb/src_c/klua/lua-zlib-1.3/lua_zlib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-zlib-1.3/lua_zlib.c)
 > **文档样板**: bundled Lua API 四层 — 同 [ksys.md](../klua/ksys.md)
 > **上游**: [lua-zlib](https://github.com/brimworks/lua-zlib) (MIT); 链接 klb `zlib-1.2.11`
 

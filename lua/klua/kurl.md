@@ -1,6 +1,6 @@
-## URL 解析
+﻿## URL 解析
 
-> **require**: `kurl` | 代码: `klb/src_c/klua/klua_net/klua_kurl.c`
+> **require**: `kurl` | 代码: [klb/src_c/klua/klua_net/klua_kurl.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_net/klua_kurl.c)
 > **文档样板**: k* Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 基于 `http_parser` 解析 URL 字符串; **只读**, 无网络 IO. 被 **klbsmp** / **klbrtsp** 等脚本层用于连接串解析.
@@ -25,7 +25,7 @@
 
 ### 伪代码
 
-桩: `klb/bin/klbcore/help/k/kurl.lua`
+桩: [klb/bin/klbcore/help/k/kurl.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/k/kurl.lua)
 
 ```lua
 --[[

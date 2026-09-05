@@ -1,6 +1,6 @@
-## 操作系统接口 (os)
+﻿## 操作系统接口 (os)
 
-> **require**: `os` | 代码: `klb/src_c/klua/lua-5.4.6/src/loslib.c` (`luaopen_os`)
+> **require**: `os` | 代码: [klb/src_c/klua/lua-5.4.6/src/loslib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/loslib.c) (`luaopen_os`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.9](https://www.lua.org/manual/5.4/manual.html#6.9)
 
 ### 导出 API

@@ -1,6 +1,6 @@
-# klbapp C API
+﻿# klbapp C API
 
-> `klua_doc/klb/klbapp/api/klb_app.md` — 代码: `klb/inc/klbapp/`
+> `klua_doc/klb/klbapp/api/klb_app.md` — 代码: [klb/inc/klbapp/](https://gitee.com/klua/klb/tree/trunk/inc/klbapp/)
 
 ## 头文件
 
@@ -13,7 +13,7 @@
 
 ## klb_app.h
 
-> 代码: `klb/inc/klbapp/klb_app.h`
+> 代码: [klb/inc/klbapp/klb_app.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app.h)
 
 ### klb_app_main
 
@@ -45,7 +45,7 @@ klb_app_t* klb_app_instance();
 
 ## klb_app_extension.h
 
-> 代码: `klb/inc/klbapp/klb_app_extension.h`
+> 代码: [klb/inc/klbapp/klb_app_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klb_app_extension.h)
 
 ### 注册与获取
 
@@ -91,7 +91,7 @@ int klbappex_ioctrl_opt0(klbappex_ioctrl_t* p_ioctrl, int opt);
 
 ## klbappex_klua.h
 
-> 代码: `klb/inc/klbapp/klbappex_klua.h`
+> 代码: [klb/inc/klbapp/klbappex_klua.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klbappex_klua.h)
 
 | API | 说明 |
 |-----|------|
@@ -102,7 +102,7 @@ int klbappex_ioctrl_opt0(klbappex_ioctrl_t* p_ioctrl, int opt);
 
 ## klbappex_plugins.h
 
-> 代码: `klb/inc/klbapp/klbappex_plugins.h`
+> 代码: [klb/inc/klbapp/klbappex_plugins.h](https://gitee.com/klua/klb/blob/trunk/inc/klbapp/klbappex_plugins.h)
 
 | API | 说明 |
 |-----|------|

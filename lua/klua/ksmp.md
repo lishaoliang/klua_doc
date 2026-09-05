@@ -1,6 +1,6 @@
-## SMP 传输 (ksmp)
+﻿## SMP 传输 (ksmp)
 
-> **require**: `ksmp` | 代码: `klb/src_c/klua/klua_net/klua_ksmp.c`, `klua_ksmp_serve.c`
+> **require**: `ksmp` | 代码: [klb/src_c/klua/klua_net/klua_ksmp.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_net/klua_ksmp.c), `klua_ksmp_serve.c`
 > **文档样板**: k* Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 SMP 协议 **C 传输层** (L3); 脚本封装见 [klbsmp.md](../klbcore/klbsmp.md). C 栈 **klb-net-design** / **klb-mnp-smp-design**.

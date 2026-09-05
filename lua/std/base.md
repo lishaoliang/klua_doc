@@ -1,6 +1,6 @@
-## 基础库 (_G)
+﻿## 基础库 (_G)
 
-> **全局**: `_G` (base) | 代码: `klb/src_c/klua/lua-5.4.6/src/lbaselib.c` (`luaopen_base`)
+> **全局**: `_G` (base) | 代码: [klb/src_c/klua/lua-5.4.6/src/lbaselib.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/lua-5.4.6/src/lbaselib.c) (`luaopen_base`)
 > **文档样板**: 标准 Lua API 四层 — 同 [ksys.md](../klua/ksys.md); 权威参考 [Lua 5.4 手册 §6.1](https://www.lua.org/manual/5.4/manual.html#6.1)
 
 ### 导出 API

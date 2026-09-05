@@ -1,6 +1,6 @@
-# kpfs.mtd (Lua 子模块)
+﻿# kpfs.mtd (Lua 子模块)
 
-> **require**: `kpfs.mtd` | 代码: `portfs/src_klua/pfs_klua_mtd.c`
+> **require**: `kpfs.mtd` | 代码: [portfs/src_klua/pfs_klua_mtd.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_mtd.c)
 > **文档格式**: Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 > **枢纽**: [readme.md](readme.md) (返回值、CLI 对照) | **CLI 真源**: [pfs_tool.md](../../pfs/pfs_tool.md) §3.9 | 设计 **pfsmtd-design**
 

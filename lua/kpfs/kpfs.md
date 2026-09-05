@@ -1,6 +1,6 @@
-# kpfs (根模块)
+﻿# kpfs (根模块)
 
-> **require**: `kpfs` | 代码: `portfs/src_klua/pfs_klua_kpfs.c`
+> **require**: `kpfs` | 代码: [portfs/src_klua/pfs_klua_kpfs.c](https://gitee.com/klua/portfs/blob/trunk/src_klua/pfs_klua_kpfs.c)
 > **文档格式**: Lua API 四层 (导出 API → 伪代码 → 示例 → 注意) — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 > **枢纽**: [readme.md](readme.md) (总览、加载、返回值、CLI 对照、完整流程)
 

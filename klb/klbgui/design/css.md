@@ -1,6 +1,6 @@
 # C 侧 CSS 模型
 
-> `klua_doc/klb/klbgui/design/css.md` — 头文件: `klb/inc/klbgui/klbui_css.h`, `klbui_css_ex.h`; 实现: `klb/src_c/klbgui/klbui_css*.c`
+> `klua_doc/klb/klbgui/design/css.md` — 头文件: [klb/inc/klbgui/klbui_css.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css.h), [klb/inc/klbgui/klbui_css_ex.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css_ex.h); 实现: [klb/src_c/klbgui/klbui_css.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css.c), [klb/src_c/klbgui/klbui_css_ex.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css_ex.c), [klb/src_c/klbgui/klbui_css_std_function.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css_std_function.c)
 
 API [../api/klbui_css.md](../api/klbui_css.md). Lua 脚本 CSS 约定 [lua/klbcore/css/klbui_css.md](../../../lua/klbcore/css/klbui_css.md).
 
@@ -53,7 +53,7 @@ klbgui CSS 参考 **CSS3 盒模型**（margin / border / padding / element）。
 |----|------|
 | `klbui_css.h` | 结构体与宏；CSS map / globalcss API；结构体 4 字节对齐 |
 | `klbui_css_ex.h` | `klbuicssex_*` set/get 与参考绘制 |
-| `klbui_css_std_function.c` | 控件通用命令/状态键（`move`、`resize`、`visibility`…） |
+| [klb/src_c/klbgui/klbui_css_std_function.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_css_std_function.c) | 控件通用命令/状态键（`move`、`resize`、`visibility`…） |
 
 ## 对齐与现行字段 (`klbui_css.h`)
 
@@ -69,7 +69,9 @@ klbgui CSS 参考 **CSS3 盒模型**（margin / border / padding / element）。
 
 嵌入式高相关、本头无：`overflow`、`opacity`、`font-family`、`text-decoration`、`vertical-align`、`box-sizing`、`display`、`position`、`background-size`、flex/`gap`、`box-shadow`、`:hover`。低相关不做：Grid、动画、`var()`、媒体查询。
 
-补齐建议（未实施）：先接线死结构体；然后 `font-family`/`opacity`/`overflow`；布局类与现有 wnd 树重叠，不宜当补字段。
+**自动布局**（BoxFlow、容器 flow 键、ARM 约束）→ [layout.md](layout.md)（自有）；外部原理 [../ref/layout-principles.md](../ref/layout-principles.md)；**禁止** suggestw 作布局输入。
+
+补齐建议（未实施）：先接线死结构体；然后 `font-family`/`opacity`/`overflow`；布局类走 [layout.md](layout.md)，不宜在本文件散补 flex 字段。
 
 ## 全局 CSS 与共享模板
 
@@ -77,10 +79,10 @@ klbgui CSS 参考 **CSS3 盒模型**（margin / border / padding / element）。
 |------|------|
 | `klb_gui_css_map` / `new_css_map` | 按 type 取/建控件 CSS 属性表 |
 | `klb_gui_globalcss_*` | 全局 CSS map（跨控件共享） |
-| `klbui_shwnd` + `klb_gui_shwnd_css_*` | 按 path 共享 CSS 模板 |
-| `klbuiex_default` | VS 深色系默认主题 |
+| `klbui_shwnd` + `klb_gui_shwnd_css_*` | 按 path 共享 CSS 模板 → [shwnd.md](shwnd.md) |
+| `klbuiex_default` | VS 深色系默认主题 → [default.md](default.md) |
 
-Lua 解析：`klb/bin/klbcore/klbui/csser.lua`, `parser.lua`。
+Lua 解析：[klb/bin/klbcore/klbui/csser.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbui/csser.lua), [klb/bin/klbcore/klbui/parser.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbui/parser.lua)。
 
 ## 布局时机
 
@@ -94,13 +96,14 @@ Lua 解析：`klb/bin/klbcore/klbui/csser.lua`, `parser.lua`。
 | 项 | 说明 |
 |----|------|
 | `klbui_util` / `klbuiex_util` | 去 margin/padding/border 算绘制区 |
-| `klb_gui_css_map_append_std_function` | 向 map 注册标准解析函数（`klb_gui_in.h`） |
+| `klb_gui_css_map_append_std_function` | 向 map 注册标准解析函数（[klb/src_c/klbgui/klb_gui_in.h](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_gui_in.h)） |
 
 ## 关联
 
 | 主题 | 入口 |
 |------|------|
 | 窗口坐标 | [wnd.md](wnd.md) |
+| 默认主题 | [default.md](default.md) |
 | 默认主题 | [lua/klbcore/css/klbui_default_css.md](../../../lua/klbcore/css/klbui_default_css.md) |
 | 事件 onparse | [event.md](event.md) |
 | Lua CSS 文档 ↔ C bind 台账 | ai 技能 **klbcore-klbui-css-design** / `reference.md` |

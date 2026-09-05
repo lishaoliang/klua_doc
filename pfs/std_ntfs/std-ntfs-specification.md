@@ -1,6 +1,6 @@
-# NTFS File System Specification (local mirror)
+﻿# NTFS File System Specification (local mirror)
 
-> **Local mirror**: chapter split under `portfs/doc/std_ntfs/std-ntfs-*.md` for pfs offline reference; official Learn pages are authoritative.
+> **Local mirror**: chapter split under [portfs/doc/std_ntfs/std-ntfs-*.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_ntfs/std-ntfs-*.md) for pfs offline reference; official Learn pages are authoritative.
 > **Fetched**: 2026-07-25
 
 ## 拷贝来源
@@ -14,7 +14,7 @@
 | **拷贝来源（MFT Developer Notes）** | https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table |
 | **docs 旧域（MFT）** | https://docs.microsoft.com/en-us/windows/win32/devnotes/master-file-table |
 | **社区 on-disk 详表（非微软官方全文）** | https://flatcap.github.io/linux-ntfs/ntfs/ |
-| **本仓 on-disk 对齐** | `portfs/src/ntfs/pfs_ntfs_raw.h` ← linux-7.1.2 `fs/ntfs/layout.h` |
+| **本仓 on-disk 对齐** | [portfs/src/ntfs/pfs_ntfs_raw.h](https://gitee.com/klua/portfs/blob/trunk/src/ntfs/pfs_ntfs_raw.h) ← linux-7.1.2 `fs/ntfs/layout.h` |
 
 ## Important
 
@@ -55,7 +55,7 @@
 ## Related
 
 - Chinese index: [std-ntfs-specification_cn.md](std-ntfs-specification_cn.md)
-- Implementation: `portfs/src/ntfs/`
+- Implementation: [portfs/src/ntfs/](https://gitee.com/klua/portfs/tree/trunk/src/ntfs/)
 - Kernel: `../linux-7.1.2/fs/ntfs/`
 - FAT mirror: `../std_fat/std-fat-specification.md`
 - exFAT mirror: `../std_exfat/std-exfat-specification.md`

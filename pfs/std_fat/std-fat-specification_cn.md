@@ -1,6 +1,6 @@
-# FAT 文件系统规范（本地镜像 · 中文索引）
+﻿# FAT 文件系统规范（本地镜像 · 中文索引）
 
-> **本地镜像**: `portfs/doc/std_fat/std-fat-*_cn.md`；权威以官方 fatgen103.doc / ECMA-107 为准
+> **本地镜像**: [portfs/doc/std_fat/std-fat-*_cn.md](https://gitee.com/klua/portfs/blob/trunk/doc/std_fat/std-fat-*_cn.md)；权威以官方 fatgen103.doc / ECMA-107 为准
 > **Fetched**: 2026-07-25
 > **译文说明**: 字段名保留英文；术语对齐 linux-7.1.2 `fs/fat/` 与 `pfs_fat_*`
 
@@ -50,5 +50,5 @@
 
 ## Related
 
-- 实现：`portfs/src/fat/`
+- 实现：[portfs/src/fat/](https://gitee.com/klua/portfs/tree/trunk/src/fat/)
 - 内核：`../linux-7.1.2/fs/fat/`

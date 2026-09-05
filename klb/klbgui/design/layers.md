@@ -1,34 +1,34 @@
 # klbgui 分层总览
 
-> `klua_doc/klb/klbgui/design/layers.md` — 代码: `klb/inc/klbgui/`, `klb/src_c/klbgui/`
+> `klua_doc/klb/klbgui/design/layers.md` — 代码: [klb/inc/klbgui/](https://gitee.com/klua/klb/tree/trunk/inc/klbgui), [klb/src_c/klbgui/](https://gitee.com/klua/klb/tree/trunk/src_c/klbgui)
 
 ## 结论
 
-klbgui 自下而上 **四层 C + 脚本**: 核心对象/窗口基类 → **11 个 klbuiex_*** 框架扩展 → 控件 type 工厂 → klbcore 脚本 UI. 2025-8 核心 **不内置** kbutton/kedit 等具体控件.
+klbgui 自下而上 **四层 C + 脚本**: 核心对象/窗口基类 → **10 个 klbuiex_*** 框架扩展 → 控件 type 工厂 → klbcore 脚本 UI. 2025-8 核心 **不内置** kbutton/kedit 等具体控件.
 
 与 klua 关系: 每 `klua_env_t` 经 `_KLUA_EX_GUI_` 持有一个 `klb_gui_t`; 见 [klua/design/layers.md](../../klua/design/layers.md).
 
 ## 层次图
 
 ```
-L4  脚本 UI (klbcore.klbui)     klb/bin/klbcore/klbui/
-L3  C→Lua 绑定 (kgui)           klua_kgui.c
-L2′ klua env GUI 扩展           klua_ex_gui.c (每 env 一个 p_gui)
-L2  GUI 框架扩展 (klbuiex_*)    extensions/ (每 p_gui 实例)
-L1  C 核心                      klb_gui.c, klb_wnd.c, klbui_css*
-L0  画布 (klbutil)              klb_canvas_t
+L4  脚本 UI (klbcore.klbui)     klb/bin/klbcore/klbui/   → [klb/bin/klbcore/klbui/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/klbui)
+L3  C→Lua 绑定 (kgui)           [klb/src_c/klua/klua_base/klua_kgui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kgui.c)
+L2′ klua env GUI 扩展           [klb/src_c/klua/extension/klua_ex_gui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/extension/klua_ex_gui.c) (每 env 一个 p_gui)
+L2  GUI 框架扩展 (klbuiex_*)    [klb/src_c/klbgui/extensions/](https://gitee.com/klua/klb/tree/trunk/src_c/klbgui/extensions) (每 p_gui 实例)
+L1  C 核心                      [klb/src_c/klbgui/klb_gui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_gui.c), [klb/src_c/klbgui/klb_wnd.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_wnd.c), klbui_css*
+L0  画布 (klbutil)              [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h)
 ```
 
 ## 分层表
 
 | 层 | 名称 | 谁用 | 典型路径 | 对外形态 |
 |----|------|------|----------|----------|
-| L0 | 画布 | 核心/扩展 | `klbutil/klb_canvas.h` | `klb_gui_attach_canvas` — [canvas.md](canvas.md) |
-| L1 | C 核心 | C/C++ 产品 | `klb_gui.c`, `klb_wnd.c` | `klb_gui.h` API |
-| L2 | klbuiex 扩展 | 框架内部 | `extensions/klbuiex_*.c` | `klbui_extension.h` |
-| L2′ | klua env GUI | klua 运行时 | `klua_ex_gui.c` | env 扩展, 非 require |
-| L3 | kgui 绑定 | Lua 脚本 | `klua_kgui.c` | `require("kgui")` |
-| L4 | klbcore.klbui | Lua 业务 | `klb/bin/klbcore/klbui/` | `require("klbcore.klbui")` |
+| L0 | 画布 | 核心/扩展 | [klb/inc/klbutil/klb_canvas.h](https://gitee.com/klua/klb/blob/trunk/inc/klbutil/klb_canvas.h) | `klb_gui_attach_canvas` — [canvas.md](canvas.md) |
+| L1 | C 核心 | C 产品 | [klb/src_c/klbgui/klb_gui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_gui.c), [klb/src_c/klbgui/klb_wnd.c](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klb_wnd.c) | [klb/inc/klbgui/klb_gui.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_gui.h) C API |
+| L2 | klbuiex 扩展 | 框架内部 | [klb/src_c/klbgui/extensions/](https://gitee.com/klua/klb/tree/trunk/src_c/klbgui/extensions) | [klb/inc/klbgui/klbui_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_extension.h) |
+| L2′ | klua env GUI | klua 运行时 | [klb/src_c/klua/extension/klua_ex_gui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/extension/klua_ex_gui.c) | env 扩展, 非 require |
+| L3 | kgui 绑定 | Lua 脚本 | [klb/src_c/klua/klua_base/klua_kgui.c](https://gitee.com/klua/klb/blob/trunk/src_c/klua/klua_base/klua_kgui.c) | `require("kgui")` |
+| L4 | klbcore.klbui | Lua 业务 | [klb/bin/klbcore/klbui/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/klbui) | `require("klbcore.klbui")` |
 
 ## 六部件 (L1 核心视角)
 
@@ -36,8 +36,8 @@ L0  画布 (klbutil)              klb_canvas_t
 |---|------|----------|------|
 | ① | 核心对象 | `klb_gui_t`, `klb_canvas_t`, `klb_msg` | GUI 根, 画布, 消息队列 |
 | ② | 窗口基类 | `klb_wnd_t`, vtable | 窗口树; **无具体 k* 控件体** |
-| ③ | 框架扩展 | 11× `klbuiex_*` | render/redraw/wndhash/tip… |
-| ④ | CSS | `klbui_css*.c` | 盒模型; 基础 wnd 无 CSS 字段 |
+| ③ | 框架扩展 | 10× `klbuiex_*` | render/redraw/wndhash/tip… |
+| ④ | CSS / 布局 | `klbui_css*.c`; 布局 [layout.md](layout.md)（桩） | 盒模型; BoxFlow 容器排布; 基础 wnd 无 CSS 字段 |
 | ⑤ | 消息/事件 | `klb_msg.h`, `klbui_event.h` | 键鼠 + `KLBUI_*` |
 | ⑥ | 脚本集成 | `kgui`, `klbcore.klbui` | Lua 驱动 |
 
@@ -45,14 +45,16 @@ L0  画布 (klbutil)              klb_canvas_t
 
 ## 两类 API
 
-### A. C/C++ 开发者
+### A. C 开发者
+
+klbgui 对外为 **C 头文件**; 旧 `klbui::CGui` 等 C++ 封装已迁 `backup/inc_hpp/klbgui/`、`backup/src_cpp/klbgui/`, 不编入现行 klb.
 
 | 类别 | 头文件 | 文档 |
 |------|--------|------|
-| GUI 主 API | `klb_gui.h` | [../api/klb_gui.md](../api/klb_gui.md) |
-| 窗口基类 | `klb_wnd.h` | 同上 |
-| GUI 扩展 | `klbui_extension.h` | [extension.md](extension.md) |
-| CSS / 事件 | `klbui_css.h`, `klbui_event.h` | [lua/klbcore/css/klbui_css.md](../../../lua/klbcore/css/klbui_css.md) |
+| GUI 主 API | [klb/inc/klbgui/klb_gui.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_gui.h) | [../api/klb_gui.md](../api/klb_gui.md) |
+| 窗口基类 | [klb/inc/klbgui/klb_wnd.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klb_wnd.h) | [wnd.md](wnd.md) |
+| GUI 扩展 | [klb/inc/klbgui/klbui_extension.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_extension.h) | [extension.md](extension.md) |
+| CSS / 事件 | [klb/inc/klbgui/klbui_css.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_css.h), [klb/inc/klbgui/klbui_event.h](https://gitee.com/klua/klb/blob/trunk/inc/klbgui/klbui_event.h) | [lua/klbcore/css/klbui_css.md](../../../lua/klbcore/css/klbui_css.md) |
 
 ### B. Lua 脚本
 
@@ -67,7 +69,7 @@ L0  画布 (klbutil)              klb_canvas_t
 
 - 契约: `klb_gui_extension_t` — create/destroy/control/loop_once
 - 双表: 注册表 + 激活表 (`klb_gui_get_extension` 懒激活)
-- `klb_gui_create` → `KLBUIEX_register_extensions_std` (11 个)
+- `klb_gui_create` → `KLBUIEX_register_extensions_std` (10 个)
 - 消息: `KLBUI_EX_MSG_quit`, `KLBUI_EX_MSG_clear`
 
 详 [extension.md](extension.md).
@@ -77,7 +79,7 @@ L0  画布 (klbutil)              klb_canvas_t
 | 项 | 说明 |
 |----|------|
 | 工厂 | `klbuiex_wndhash` — path 树 + type→create |
-| 注册 | `klbuiex_wndhash_register`; 宏 `klbui_register_k*` (`klbui_widgets.h`) |
+| 注册 | `klbuiex_wndhash_register`; 宏 `klbui_register_k*` ([klb/src_c/klbgui/klbui_widgets.h](https://gitee.com/klua/klb/blob/trunk/src_c/klbgui/klbui_widgets.h)) |
 | 现状 | **`KLB_GUI_REGISTER_STD` 已注释**; 控件实现归档 `backup/wnd/` (**klb-backup-design**) |
 | Lua | `dialog.type` 须已注册; `kgui.append(type, path, …)` |
 
@@ -105,8 +107,16 @@ klb_app_loop_once
 
 | 文档 | 内容 |
 |------|------|
-| [extension.md](extension.md) | klbuiex 11 表, loop/clear |
-| [klb_gui.md](../api/klb_gui.md) | `klb_gui.h` 导读 |
-| [wnd.md](wnd.md) | 窗口树 |
+| [wnd.md](wnd.md) | 窗口树、聚焦、modal/popup |
+| [wndhash.md](wndhash.md) | path / type 工厂 |
+| [render.md](render.md) | 绘制刷新管线 |
+| [draw.md](draw.md) | 窗口绘制 API |
+| [extension.md](extension.md) | klbuiex 10 表, loop/clear |
 | [layer.md](layer.md) | 多图层画布 |
+| [shwnd.md](shwnd.md) / [tip.md](tip.md) | 共享窗 / tip |
+| [default.md](default.md) / [css.md](css.md) | 主题 / 盒模型 |
+| [ticker.md](ticker.md) | 控件定时器 |
+| [klb_gui.md](../api/klb_gui.md) | `klb_gui.h` 导读 |
+| [layout.md](layout.md) | 自动布局 BoxFlow（桩） |
+| [../ref/layout-principles.md](../ref/layout-principles.md) | 外部布局原理（桩） |
 | [klua/design/layers.md](../../klua/design/layers.md) | klua 八层 |

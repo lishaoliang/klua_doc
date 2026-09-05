@@ -1,6 +1,6 @@
-## 通用工具 (util)
+﻿## 通用工具 (util)
 
-> 代码: `bin/klbcore/util/` | 架构 **klbcore-design** § 通用模块
+> 代码: [klb/bin/klbcore/util](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/util) | 架构 **klbcore-design** § 通用模块
 > **文档样板**: Lua API 四层 — [k-bindings.md](../../klb/klua/design/k-bindings.md) § Lua API 文档
 
 小工具模块; 按需 `require("klbcore.util.*")`.
@@ -34,7 +34,7 @@
 
 #### 伪代码
 
-源码: `bin/klbcore/util/stringex.lua`
+源码: [klb/bin/klbcore/util/stringex.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/util/stringex.lua)
 
 ```lua
 --[[
@@ -129,7 +129,7 @@ local s = stringex.join('a', 1, true)   -- 'a1true'
 
 #### 伪代码
 
-源码: `bin/klbcore/util/tableex.lua`
+源码: [klb/bin/klbcore/util/tableex.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/util/tableex.lua)
 
 ```lua
 --[[
@@ -210,7 +210,7 @@ end
 
 #### 伪代码
 
-源码: `bin/klbcore/util/xmlparser.lua`
+源码: [klb/bin/klbcore/util/xmlparser.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/util/xmlparser.lua)
 
 ```lua
 --[[
@@ -300,7 +300,7 @@ local back = xmlparser.to_table(xml)
 
 #### 伪代码
 
-源码: `bin/klbcore/util/printex.lua`
+源码: [klb/bin/klbcore/util/printex.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/util/printex.lua)
 
 ```lua
 --[[
