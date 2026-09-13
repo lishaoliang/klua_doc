@@ -11,8 +11,8 @@
 
 ## lua 对照
 
-| doc_id  | 语义 id            | lua `@brief`        | 文件                   |
-| ------- | ---------------- | ------------------- | -------------------- |
+| doc_id  | 语义 id              | lua `@brief`        | 文件                   |
+| ------- | ------------------ | ------------------- | -------------------- |
 | `1.2.1` | `klbui.kdialog`    | 1.2.1 UI kdialog    | `shell/ch1_s2_1.lua` |
 | `1.2.2` | `klbui.kview`      | 1.2.2 UI kview      | `shell/ch1_s2_2.lua` |
 | `1.2.3` | `klbui.ktab`       | 1.2.3 UI ktab       | `shell/ch1_s2_3.lua` |
@@ -40,11 +40,11 @@
 | 状态 | **已实现** |
 | registry | `ui=true`; `batch_ok=false` |
 
-页壳根 `kview`; 本条测子控件 `kdialog` (标题栏 + `title`/`value`). 体内一块 `kstatic`.
+页壳根 `kview`; 本条测子控件 `kdialog` (标题栏 + `title`/`value`). 体内一块 `kstatic` 固定 640x480.
 
 步骤: 1. `klua test.lua 1.2.1` (无 `wsdl` 则转 `wlua`); 2. 见带标题栏的 `kdialog` 与左侧 Get/Set/hide 按钮 (文案随 pref 语言); 3. 点 `Get` 读 `dlg` 的 title/value; 4. 点 `Set` 写 `dlg` title/value, 标题栏字立刻变; 5. 点 `Toggle hide` 显隐 `dlg`; 6. 关窗
 
-预期: `kdialog` 有标题栏与边框; 体内 `kstatic` 可见; `Get`/`Set` 后标签与控制台有对应字串; `Set` 后标题栏文本立刻换成第二标题; 切 hide 可见变化; 切语言后面板与标题栏文案跟着变; 关窗结束
+预期: `kdialog` 有标题栏与边框; 体内 `kstatic` 固定 640x480 可见; `Get`/`Set` 后标签与控制台有对应字串; `Set` 后标题栏文本立刻换成第二标题; 切 hide 可见变化; 切语言后面板与标题栏文案跟着变; 关窗结束
 
 失败: 未开窗; `kdialog` 未出现或 parse 失败; 按钮无反馈; `Set` 后标题栏不变
 

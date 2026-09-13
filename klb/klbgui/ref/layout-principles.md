@@ -64,14 +64,14 @@ klb BoxFlow（规划）刻意简化：**单遍、整数 px、O(n)**；不做完�
 
 ### 2.1 Flexbox
 
-| 属性 | 作用 |
-|------|------|
-| `display: flex` | 启用 flex 容器 |
-| `flex-direction` | row / column / *-reverse → 定主轴 |
-| `flex-wrap` | nowrap / wrap（klb 首版不做 wrap） |
-| `gap` | 子项间距 |
-| `justify-content` / `align-items` | 主轴 / 交叉轴对齐 |
-| `flex-grow` / `flex-shrink` / `flex-basis` | 分剩余 / 收缩 / 基准尺寸 |
+| 属性                                         | 作用                             |
+| ------------------------------------------ | ------------------------------ |
+| `display: flex`                            | 启用 flex 容器                     |
+| `flex-direction`                           | row / column / *-reverse → 定主轴 |
+| `flex-wrap`                                | nowrap / wrap（klb 首版不做 wrap）   |
+| `gap`                                      | 子项间距                           |
+| `justify-content` / `align-items`          | 主轴 / 交叉轴对齐                     |
+| `flex-grow` / `flex-shrink` / `flex-basis` | 分剩余 / 收缩 / 基准尺寸                |
 
 **子项 flex 三元组**（简写 `flex:1` ≈ `1 1 0%`）：
 
