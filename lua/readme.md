@@ -16,6 +16,7 @@
 | ④ klua 扩展 (k*) | [klua/](klua/readme.md) | C 预加载 `require("kco")` 等 |
 | ⑤ kpfs 扩展 | [kpfs/](kpfs/readme.md) | plugins 注入 `require("kpfs")` |
 | ⑥ **lua test** 手测 | [lua_test/](lua_test/readme.md) | `klua_run/test.lua` + `lua_test.*` |
+| ⑦ **lua demo** 场景 | [lua_demo/](lua_demo/readme.md) | `klua_run/demo.lua` + `lua_demo.*` |
 
 ## 快速入口
 
@@ -29,6 +30,7 @@
 | bundled 第三方 | [bundled/readme.md](bundled/readme.md) |
 | klua 八层架构 (C 侧) | [klb/klua/design/layers.md](../klb/klua/design/layers.md) |
 | require 全量清单 | [klb/klua/design/require-guide.md](../klb/klua/design/require-guide.md) |
+| lua demo 大型场景 | [lua_demo/readme.md](lua_demo/readme.md) |
 
 ## 加载顺序小结
 

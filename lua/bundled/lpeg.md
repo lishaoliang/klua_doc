@@ -2,7 +2,7 @@
 
 > **require**: `lpeg` | 代码: [klb/src_c/klua/lpeg-1.0.2/](https://gitee.com/klua/klb/tree/trunk/src_c/klua/lpeg-1.0.2/)
 > **文档样板**: bundled Lua API 四层 — 同 [ksys.md](../klua/ksys.md)
-> **上游**: [LPeg](http://www.inf.puc-rio.br/~roberto/lpeg/) 1.0.2 (MIT); 可选脚本 `re.lua` (未预加载)
+> **上游**: [LPeg](http://www.inf.puc-rio.br/~roberto/lpeg/) 1.0.2 (MIT)
 
 ### 导出 API
 
@@ -198,5 +198,5 @@ local g = lpeg.P {
 
 - 裁剪: `__KLB_NO_LPEG__` ([klb/clip.mk](https://gitee.com/klua/klb/blob/trunk/clip.mk) → `no-lpeg`); 未定义时默认编入
 - pattern 为 userdata, 用 `*` / `+` / `^` 等组合 (metamethods)
-- vendor 内 `re.lua` 为 PEG 语法糖, **未** 经 `klua_loadlib` 预加载; 需要时自行 `loadfile`
+- 上游可选 `re.lua` (PEG 语法糖) **未** 入库、**未** 预加载; 需要时自行从上游获取
 - 协议: `klua_doc/klb/licenses/LICENSE-lpeg-1.0.2`

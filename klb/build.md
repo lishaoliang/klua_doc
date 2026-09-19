@@ -15,8 +15,9 @@ GNU Make (WSL / Linux) 编 `lib/libklb.{a,so}` 与 `lib/klua`. Windows 日常调
 | 脚本 | `./clip-build.sh --min-core --enable zlib -j8` | [klb/clip-build.sh](https://gitee.com/klua/klb/blob/trunk/clip-build.sh); `--print` 只打印归一后的 `no-*` |
 | 查看归一 | `make 'MY_CLIP=…' info` | 看 `MY_CLIP_TAG`, `MY_CLIP_FLAGS`, `MY_DIRS` |
 | VS2015 | `make win` | `klb.sln` Debug x86; **裁剪未同步** |
+| mingw-w64 (可选) | `make mingw` | WSL 交叉; **非默认**; 产物 `lib/mingw/`; 可 `make mingw klua` |
 
-交叉: `MY_TOOL_CHAIN=arm-linux-gnueabi-`. 版本: `MY_VERSION=release` / `debug`.
+交叉: `MY_TOOL_CHAIN=arm-linux-gnueabi-`. 版本: `MY_VERSION=release` / `debug`. mingw 亦可 `MY_HOST=mingw` 或 `MY_TOOL_CHAIN=x86_64-w64-mingw32-`.
 
 ## 产物
 
@@ -24,6 +25,7 @@ GNU Make (WSL / Linux) 编 `lib/libklb.{a,so}` 与 `lib/klua`. Windows 日常调
 |------|------|
 | 静态 / 动态库 | [klb/lib/libklb.a](https://gitee.com/klua/klb/blob/trunk/lib/libklb.a), [klb/lib/libklb.so](https://gitee.com/klua/klb/blob/trunk/lib/libklb.so) |
 | klua 可执行 | [klb/lib/klua](https://gitee.com/klua/klb/blob/trunk/lib/klua) (目标 `make klua`) |
+| mingw-w64 (可选) | `klb/lib/mingw/libklb.{a,dll}` , `klua.exe` |
 | 工作区调试目录 | 根 `klua_run/` (与子项目 [klb/lib](https://gitee.com/klua/klb/blob/trunk/lib) 区分; 见工作区 **klua_run**) |
 
 [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) Lua 脚本 **不**由 `MY_CLIP` 裁剪, 部署侧选择.

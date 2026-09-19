@@ -380,7 +380,7 @@ local my_mime = {
 	jpg = 'image/jpeg',
 	jpeg = 'image/jpeg',
 	wasm = 'application/wasm',
-	mp4 = 'video/mpeg4',
+	mp4 = 'video/mp4',
 	-- ... 完整表见源码 my_mime
 }
 

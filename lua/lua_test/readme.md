@@ -188,3 +188,4 @@ Linux `build` stage/deploy 与 `copy_win.sh` 须同步 **`klua_run/lua_test/``**
 | k* 桩烟测 | 已从 `klbcore/help/k_test/` 移除 | 历史; 新用例优先 **lua_test** |
 | pfs C 回归 | `pfs_test` | C 控制台, 章号 **独立**, 非 Lua |
 | UI 演示 | `klua_run/sample/` | 产品 demo; **非** 第 1 章 klbui 手测 |
+| **lua demo** | `klua_run/demo.lua` + `lua_demo/` | 大型场景; 文档 [lua_demo/](../lua_demo/readme.md) |
