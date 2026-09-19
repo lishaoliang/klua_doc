@@ -58,7 +58,7 @@ L0  VM + bundled           lua-5.4.6/ 等        require("cjson") 等
 | C 预加载 | `require("kco")` | [lua/klua/readme.md](../../../lua/klua/readme.md) |
 | bundled | `require("cjson")` | [lua/bundled/readme.md](../../../lua/bundled/readme.md) |
 | klbcore | `require("klbcore.klbui")` | [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) |
-| klbcore net/rtsp | `require("klbcore.net.*")`, `klbcore.klbrtsp` | **klbcore-net-design** |
+| klbcore rtsp/http/ws | `require("klbcore.klbrtsp")`, `klbcore.klbhttp`, `klbcore.klbws` | **klbcore-net-design** |
 
 Lua **不应**直接调用 `klua_env_register_extension`.
 

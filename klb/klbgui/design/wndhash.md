@@ -8,7 +8,7 @@
 
 `klbuiex_wndhash` 是标准扩展 **`KLBUIEX-wndhash`**：维护 **path → 窗口** 索引与 **type → create 回调** 工厂。`kgui.append(type, path, …)` 最终走 `klbuiex_wndhash_append` → `get_creater(type)` → `cb_create`。
 
-核心 **`KLB_GUI_REGISTER_STD` 已注释**；k* 控件须产品或 **klbwui** 扩展包注册（**klb-wui-design**）。
+核心 **`KLB_GUI_REGISTER_STD` 已注释**；k* 控件须产品或 **klbwui** 扩展包注册（**klb-gui-wui-design**）。
 
 ## 二级 path 索引（2023-8）
 
@@ -69,6 +69,6 @@ klb_gui_append(type, path, x,y,w,h, style)
 
 | 主题 | 入口 |
 |------|------|
-| 控件包 | **klb-wui-design** |
+| 控件包 | **klb-gui-wui-design** |
 | modal 查窗 | [wnd.md](wnd.md) — `wndhash_find` + `KLB_WND_STYLE_TOP` |
 | 扩展 | [extension.md](extension.md) |

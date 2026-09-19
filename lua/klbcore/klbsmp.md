@@ -362,4 +362,4 @@ local msg, data = klbsmp.co_call_rpc(
 - IO 须在 **`kco` 协程**内 (`co_accept` / `co_call_rpc` 等)
 - **`ksmp`** C 绑定仍为 **待定** 文档; 以源码与 **klb-mnp-smp-design** 为准
 - 客户端 `send_*` / `co_recv_*` 部分为桩, 随 C 层补齐
-- 测试脚本: [klb/bin/klbcore/klbsmp/test/test_*.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/klbsmp/test/test_*.lua)
+- 旧测试脚本已从本包移除

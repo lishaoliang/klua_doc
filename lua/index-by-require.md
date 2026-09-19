@@ -43,10 +43,10 @@
 | klbui 控件/CSS | [klbcore/css/](klbcore/css/) |
 | `klbcore.klbrtsp` | [klbcore/klbrtsp.md](klbcore/klbrtsp.md) |
 | `klbcore.klbsmp` | [klbcore/klbsmp.md](klbcore/klbsmp.md) |
-| `klbcore.net.http_mime` | [klbcore/net/http_mime.md](klbcore/net/http_mime.md) |
 | `klbcore.util.*` | [klbcore/util.md](klbcore/util.md) |
-| `klbcore.base.pname` | [klbcore/base/pname.md](klbcore/base/pname.md) |
-| `klbcore.base.klpcex` | [klbcore/base/klpcex.md](klbcore/base/klpcex.md) |
+| `klbcore.util.http_mime` | [klbcore/util.md](klbcore/util.md#http_mime) |
+| `klbcore.util.klpcex` | [klbcore/util.md](klbcore/util.md#klpcex) |
+| `klbcore.util.pname` | [klbcore/util.md](klbcore/util.md#pname) |
 
 ## ④ klua k* (C 预加载)
 

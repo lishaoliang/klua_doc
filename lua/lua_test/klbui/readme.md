@@ -3,7 +3,7 @@
 > `klua_doc/lua/lua_test/klbui/` | API: [klbui](../../klbcore/klbui.md), [kgui](../../klua/kgui.md) | 源码规划: `klua_run/lua_test/`klbui/`
 > 约定 **klua-test-design**; 控件 CSS [klbcore/css](../../klbcore/css/)
 
-记名 **klbui** = 脚本 UI `require("klbcore.klbui")` (P3); 经 **`kgui`** 落到 **klbgui** + **klbwui** 已注册 type. **非** `klua_run/sample/` 演示, **非** `klbcore/help/k_test`.
+记名 **klbui** = 脚本 UI `require("klbcore.klbui")` (P3); 经 **`kgui`** 落到 **klbgui** + **klbwui** 已注册 type. **非** `klua_run/sample/` 演示, **非** 历史 k* 桩烟测.
 
 章号 **1.x** 与第 2/3 章、`pfs_test` **编号空间独立**. **冻结**: 1=klbui / 2=kpfs / 3=klb; 章内只追加节, 禁止再插入.
 

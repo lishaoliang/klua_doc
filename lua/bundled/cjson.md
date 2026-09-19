@@ -25,7 +25,7 @@
 
 ### 伪代码
 
-桩: [klb/bin/klbcore/help/lib3d/cjson.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/lib3d/cjson.lua)
+桩: [klb/bin/klbcore/help/bundled/cjson.lua](https://gitee.com/klua/klb/blob/trunk/bin/klbcore/help/bundled/cjson.lua)
 
 ```lua
 --[[

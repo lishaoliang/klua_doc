@@ -40,7 +40,8 @@ klua.exe test.lua pfs.probe
 ./klua test.lua 2.x        # chapter 2 (2.1.1 .. 2.6.20)
 ./klua test.lua 2.1.x      # section 2.1 only
 ./klua test.lua 3.x        # chapter 3 klb (3.1.1 ..)
-./klua test.lua 3.1.x      # section 3.1 kco
+./klua test.lua 3.1.x      # section 3.1 builtin k*
+./klua test.lua 3.2.x      # section 3.2 klbhttp (3.2.1–3.2.6)
 ```
 
 | 过滤 | 说明 |
@@ -53,8 +54,9 @@ klua.exe test.lua pfs.probe
 | `1.4.x` / `1.4` | 节 1.4 (复合; 待实现未登记) |
 | `2.x` | 第 2 章全部 |
 | `2.1.x` / `2.1` | 节 2.1 |
-| `3.x` | 第 3 章 klb |
-| `3.1.x` / `3.1` | 节 3.1 kco |
+| `3.x` | 第 3 章 klb (现行 `3.1.1`, `3.2.1`–`3.2.6`) |
+| `3.1.x` / `3.1` | 节 3.1 内置 k* (现行 `3.1.1`; `3.1.2+` 待实现未登记) |
+| `3.2.x` / `3.2` | 节 3.2 klbhttp (`3.2.1`–`3.2.6`) |
 
 `batch_ok=false` 在 `list` 标 `[SINGLE_ONLY]` (提示重流程); 批量 `a`/`N.x`/`N.M.x` 仍会执行. 详 **klua-test-design** § 批量.
 
@@ -66,7 +68,7 @@ klua.exe test.lua pfs.probe
 |----|--------|------|------|
 | **1** | klbui | [klbui/readme.md](klbui/readme.md) | `klua_run/lua_test/`klbui/` |
 | **2** | kpfs | 见下表 | `klua_run/lua_test/`pfs/` |
-| **3** | klb k* | [klb/readme.md](klb/readme.md) | `klua_run/lua_test/`klb/` |
+| **3** | klb | [klb/readme.md](klb/readme.md) | `klua_run/lua_test/`klb/` |
 
 章号 **冻结**: 1=klbui / 2=kpfs / 3=klb; 新子项目从 **4** 追加; 章内只追加节, 禁止插入.
 
@@ -96,7 +98,12 @@ klua.exe test.lua pfs.probe
 
 ### 第 3 章 klb
 
-枢纽 [klb/readme.md](klb/readme.md) (k* C→Lua; 现行 `3.1.1` `klb.kco.fork`).
+枢纽 [klb/readme.md](klb/readme.md) (内置 k* + 协议包/脚本; 现行 `3.1.1` `klb.kco.fork`; **3.2** [klbhttp](klb/klbhttp.md) `3.2.1`–`3.2.6`).
+
+| 节 | 手测文档 | 说明 |
+|----|----------|------|
+| 3.1 | [klb/readme.md](klb/readme.md) | 内置 k* (`kco` `kurl` …; 不含 `kgui`/`khttp`) |
+| 3.2 | [klb/klbhttp.md](klb/klbhttp.md) | `khttp` + `klbcore.klbhttp` |
 
 ### 已实现用例
 
@@ -126,6 +133,12 @@ klua.exe test.lua pfs.probe
 | `2.2.6` | `kpfs.mkfs` | `pfs.mkfs` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
 | `2.2.7` | `kpfs.mkvol` | `pfs.mkvol` | [kpfs/kpfs_make.md](kpfs/kpfs_make.md) |
 | `3.1.1` | `klb.kco.fork` | `klb.kco_fork` | [klb/readme.md](klb/readme.md) |
+| `3.2.1` | `klbhttp.co_get` | | [klb/klbhttp.md](klb/klbhttp.md) |
+| `3.2.2` | `klbhttp.co_post` | | [klb/klbhttp.md](klb/klbhttp.md) |
+| `3.2.3` | `klbhttp.connect` | | [klb/klbhttp.md](klb/klbhttp.md) |
+| `3.2.4` | `klbhttp.listen` | | [klb/klbhttp.md](klb/klbhttp.md) |
+| `3.2.5` | `klbhttp.co_get.public` | | [klb/klbhttp.md](klb/klbhttp.md) |
+| `3.2.6` | `klbhttp.co_post.public` | | [klb/klbhttp.md](klb/klbhttp.md) |
 
 kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 
@@ -139,7 +152,7 @@ kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 | `klua_run/lua_test/`` | 框架 (`registry`, `batch`, `paths`, `util/`) |
 | `klua_run/lua_test/`klbui/` | **第 1 章** klbui 用例 (1.1 / `1.2.1`–`1.2.8` / `1.3.3` 已实现; 其余 1.3–1.4 桩待实现) |
 | `klua_run/lua_test/`pfs/` | **第 2 章** kpfs 用例 |
-| `klua_run/lua_test/`klb/` | **第 3 章** klb k* 用例 |
+| `klua_run/lua_test/`klb/` | **第 3 章** klb 用例 (`kco_fork.lua`=`3.1.1`; 节目录 `builtin/` `http/`) |
 | `klua_run/tmp/` | Windows 运行时临时根 (`kenv.base_path() .. "tmp"`) |
 
 ### 用例源码布局（章 = 子项目目录）
@@ -148,7 +161,7 @@ kpfs 全文索引与规划条数见 [kpfs/readme.md](kpfs/readme.md).
 |----|--------|------|
 | **1** | `klbui/` | 节子目录 `custom` `shell` `basic` `composite`；用例 `ch1_s{M}_{z}.lua`；`common.lua` / `ui.lua` / `pref.lua`；1.1 模板 `custom/page_tmpl.lua` |
 | **2** | `pfs/` | 节子目录 `probe`…`mtd`；用例 `ch2_s{M}_{z}.lua`；公共 `make/mount/mtd/common.lua`；`test_disk.lua` |
-| **3** | `klb/` | 推荐 `ch3_s{M}_{z}.lua`（`3.M.z`）；现行 `kco_fork.lua` = `3.1.1` |
+| **3** | `klb/` | `3.1.1` 历史 `kco_fork.lua`; 节目录 `builtin` `http`; 新例 `ch3_s{M}_{z}.lua`（`3.M.z`） |
 
 示例: `2.3.8` → `pfs/mount/ch2_s3_8.lua` → `mod` `lua_test.pfs.mount.ch2_s3_8`. 详 **klua-test-design** § 用例目录.
 
@@ -172,6 +185,6 @@ Linux `build` stage/deploy 与 `copy_win.sh` 须同步 **`klua_run/lua_test/``**
 
 | 项 | 路径 | 区别 |
 |----|------|------|
-| k* 桩烟测 | `klbcore/help/k_test/` | 历史; 新用例优先 **lua_test** |
+| k* 桩烟测 | 已从 `klbcore/help/k_test/` 移除 | 历史; 新用例优先 **lua_test** |
 | pfs C 回归 | `pfs_test` | C 控制台, 章号 **独立**, 非 Lua |
 | UI 演示 | `klua_run/sample/` | 产品 demo; **非** 第 1 章 klbui 手测 |

@@ -35,24 +35,22 @@ package.path = package.path .. ';' .. base .. '?.lua;' .. base .. '?/init.lua'
 |---------|------|------|------|
 | `klbcore.klbrtsp` | [klbrtsp.md](klbrtsp.md) | `klbrtsp/` | **klbcore-net-design** |
 | `klbcore.klbsmp` | [klbsmp.md](klbsmp.md) | `klbsmp/` | **klb-mnp-smp-design** § klbcore 脚本层 |
-| `klbcore.net.http_mime` | [net/http_mime.md](net/http_mime.md) | `net/http_mime.lua` | **klbcore-net-design** |
-| `klbcore.net.httpc` | — | (待定) | **klbcore-net-design** |
 
 ### 通用
 
 | require | 文档 | 源码 | 设计 |
 |---------|------|------|------|
 | `klbcore.util.stringex` 等 | [util.md](util.md) | `util/` | **klbcore-design** § 通用模块 |
-| `klbcore.base.pname` | [base/pname.md](base/pname.md) | `base/pname.lua` | 同上 |
-| `klbcore.base.klpcex` | [base/klpcex.md](base/klpcex.md) | `base/klpcex.lua` | 同上 |
-| `klbcore.base.krpcex` | — | (待定) | 同上 |
+| `klbcore.util.http_mime` | [util.md](util.md#http_mime) | `util/http_mime.lua` | 同上 |
+| `klbcore.util.klpcex` | [util.md](util.md#klpcex) | `util/klpcex.lua` | 同上 |
+| `klbcore.util.pname` | [util.md](util.md#pname) | `util/pname.lua` | 同上 |
 
 ### 示例 / 桩
 
 | require | 文档 | 源码 | 说明 |
 |---------|------|------|------|
 | `klbcore.help.*` | — | `help/` | k* API 桩; 对照 [klua/](../klua/) |
-| `klbcore.help.k_test.*` | — | `help/k_test/` | 可跑示例 |
+| `klbcore.help.k_test.*` | — | (已废弃) | 已从现行 `help/` 移除 |
 
 架构与 C/k* 对照: 技能 **klbcore-design**; klua L6 见 [klb/klua/design/layers.md](../../klb/klua/design/layers.md).
 

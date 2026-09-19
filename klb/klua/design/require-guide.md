@@ -66,14 +66,12 @@
 | `klbcore.klbui` | `klbui/` | 声明式 UI; 见 [lua/klbcore/readme.md](../../../lua/klbcore/readme.md) § klbui |
 | `klbcore.klbsmp` | `klbsmp/` | **klb-mnp-smp-design** § klbcore 脚本层 |
 | `klbcore.klbrtsp` | `klbrtsp/` | RTSP 脚本层; **klbcore-net-design** |
-| `klbcore.net.http_mime` | `http_mime.lua` | **klbcore-net-design** |
 
-**已迁 backup**: `klbcore.net.httpc` (`backup/klbcore/net/`); 依赖旧 `khttp` multiplex 绑定.
+**已迁 backup**: `klbcore.net.httpc` (`backup/klbcore/net/`); 依赖旧 `khttp` multiplex 绑定. `base/`、`net/` 已删除; `klpcex`/`pname`/`http_mime` 现为 `klbcore.util.*`.
 
 | require 前缀 | 路径 | 说明 |
 |--------------|------|------|
 | `klbcore.util.*` | `util/` | **klbcore-design** § 通用模块 |
-| `klbcore.base.*` | `base/` | **klbcore-design** |
 | `klbcore.help.*` | `help/` | [klb/bin/klbcore/help/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/help/) (示例/桩) |
 
 路径根: [klb/bin/klbcore/](https://gitee.com/klua/klb/tree/trunk/bin/klbcore/) (部署常拷至产品 `bin/klbcore`).
