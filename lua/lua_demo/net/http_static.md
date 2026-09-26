@@ -13,7 +13,7 @@
 cd klua_run
 ./klua demo.lua 2.2
 ./klua demo.lua net.http.static
-./klua demo.lua 2.2 8000 8443
+./klua demo.lua 2.2 8000
 ./klua demo.lua 2.2 8000 0
 ```
 
@@ -28,7 +28,7 @@ Windows: `klua.exe demo.lua 2.2`.
 | 状态 | **已实现** |
 | 结束 | 人工停 (Ctrl+C) |
 
-参数: `[http_port] [https_port]`; 默认 **8000** / **8443**; `https_port=0` 关闭 TLS. 两端口冲突或越界则退出.
+参数: `[port]` 默认 **8000**; 同端口 HTTP+HTTPS 一个监听. 第2参 **`0`** 关闭 TLS. 端口越界则退出.
 
 `khttp` / `klbcore.klbhttp` 未加载 (`no-http`) 则退出.
 
@@ -44,7 +44,7 @@ Windows: `klua.exe demo.lua 2.2`.
 
 HTTPS: `klua_run/demores/tls/cert.pem` + `key.pem` (演示自签; 浏览器告警正常). 缺证书或 `no-ssl` 则只开 HTTP, 不退出.
 
-浏览示例: `http://127.0.0.1:8000/` 、`/lua_demo/` 、`/lua_test/`.
+浏览示例: `http://127.0.0.1:8000/` 、`https://127.0.0.1:8000/` 、`/lua_demo/` 、`/lua_test/`.
 
 ---
 
